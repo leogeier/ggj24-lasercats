@@ -1,9 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxtqm02dnl42d"]
+[gd_scene load_steps=5 format=3 uid="uid://dxtqm02dnl42d"]
 
-[ext_resource type="Texture2D" uid="uid://b81n7ug8kyjut" path="res://icon.svg" id="1_gyc7l"]
+[ext_resource type="PackedScene" uid="uid://bh28ccd421trc" path="res://scenes/cat/cat.tscn" id="1_1cu0m"]
+[ext_resource type="PackedScene" uid="uid://ciacvo6retlhy" path="res://scenes/laserpointer/laserpointer.tscn" id="2_x85f1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ci8g4"]
+friction = 0.58
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3ysrg"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(562, 317)
-texture = ExtResource("1_gyc7l")
+[node name="Cat" parent="." instance=ExtResource("1_1cu0m")]
+position = Vector2(386, 331)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(952, 1009)
+physics_material_override = SubResource("PhysicsMaterial_ci8g4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_3ysrg")
+
+[node name="Laserpointer" parent="." instance=ExtResource("2_x85f1")]

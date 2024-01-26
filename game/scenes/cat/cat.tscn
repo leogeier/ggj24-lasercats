@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bh28ccd421trc"]
+
+[ext_resource type="Texture2D" uid="uid://b81n7ug8kyjut" path="res://icon.svg" id="1_4tj4y"]
+[ext_resource type="Script" path="res://scenes/cat/cat.gd" id="1_mcim8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ovqkm"]
+radius = 33.0151
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xupk3"]
+size = Vector2(64, 7)
+
+[node name="Cat" type="RigidBody2D"]
+position = Vector2(1, 0)
+lock_rotation = true
+script = ExtResource("1_mcim8")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_4tj4y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ovqkm")
+
+[node name="GroundCheck" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundCheck"]
+position = Vector2(0, 37.5)
+shape = SubResource("RectangleShape2D_xupk3")
