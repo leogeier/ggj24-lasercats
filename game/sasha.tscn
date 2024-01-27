@@ -1,0 +1,107 @@
+[gd_scene load_steps=19 format=3 uid="uid://b4h13dq5xv7c"]
+
+[ext_resource type="PackedScene" uid="uid://bh28ccd421trc" path="res://scenes/cat/cat.tscn" id="1_4gta6"]
+[ext_resource type="PackedScene" uid="uid://b8hf5520cc006" path="res://scenes/obstacles/bowling_ball.tscn" id="1_qo8gh"]
+[ext_resource type="PackedScene" uid="uid://ciacvo6retlhy" path="res://scenes/laserpointer/laserpointer.tscn" id="2_jhogm"]
+[ext_resource type="PackedScene" uid="uid://duehi6pdpwp2t" path="res://scenes/camera/camera.tscn" id="3_hdihc"]
+[ext_resource type="PackedScene" uid="uid://dgd8s0xnbmy23" path="res://scenes/shelf/Shelf.tscn" id="4_20ksb"]
+[ext_resource type="PackedScene" uid="uid://bhkn2g6mktugj" path="res://scenes/window/window.tscn" id="5_fjj4s"]
+[ext_resource type="PackedScene" uid="uid://dhycu16i0hwl" path="res://scenes/obstacles/standing_lamp.tscn" id="7_vu30i"]
+[ext_resource type="PackedScene" uid="uid://casjp0djtvre" path="res://scenes/obstacles/lamp.tscn" id="8_p0pgq"]
+[ext_resource type="PackedScene" uid="uid://br58ke2lsx3vo" path="res://scenes/obstacles/trophy.tscn" id="9_iq8au"]
+[ext_resource type="PackedScene" uid="uid://b30rv2yrfa03i" path="res://scenes/obstacles/bowlingpin.tscn" id="10_4ukgd"]
+[ext_resource type="PackedScene" uid="uid://c5fwp8o3n08fb" path="res://scenes/obstacles/lamp1.tscn" id="12_4gv6g"]
+[ext_resource type="PackedScene" uid="uid://b3fwtijyy8f0e" path="res://scenes/obstacles/lamp5.tscn" id="12_e6ww5"]
+[ext_resource type="PackedScene" uid="uid://chtvvcb71rmve" path="res://scenes/obstacles/plant2.tscn" id="13_qwhac"]
+[ext_resource type="PackedScene" uid="uid://ck8kneyxxbbsk" path="res://scenes/obstacles/plant3.tscn" id="14_tkynx"]
+[ext_resource type="PackedScene" uid="uid://d4n1hjvo65214" path="res://scenes/obstacles/plant4.tscn" id="15_xuiwa"]
+[ext_resource type="PackedScene" uid="uid://dy65rypajb1j5" path="res://scenes/obstacles/plant5.tscn" id="16_tln1l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5jye"]
+size = Vector2(34, 112)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fo2e5"]
+
+[node name="Main" type="Node2D"]
+
+[node name="BowlingBall" parent="." instance=ExtResource("1_qo8gh")]
+position = Vector2(1322, -18)
+
+[node name="Cat" parent="." instance=ExtResource("1_4gta6")]
+position = Vector2(905, 953)
+
+[node name="Laserpointer" parent="." instance=ExtResource("2_jhogm")]
+position = Vector2(1037, 972)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(699, 202)
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_r5jye")
+
+[node name="Camera" parent="." instance=ExtResource("3_hdihc")]
+position = Vector2(1024, 544)
+
+[node name="Shelf" parent="." instance=ExtResource("4_20ksb")]
+position = Vector2(1520, 344)
+
+[node name="Shelf2" parent="." instance=ExtResource("4_20ksb")]
+position = Vector2(845, 721)
+
+[node name="Shelf3" parent="." instance=ExtResource("4_20ksb")]
+position = Vector2(1847, 598)
+
+[node name="Shelf4" parent="." instance=ExtResource("4_20ksb")]
+position = Vector2(644, 292)
+
+[node name="Shelf5" parent="." instance=ExtResource("4_20ksb")]
+position = Vector2(1224, 62)
+
+[node name="Shelf6" parent="." instance=ExtResource("4_20ksb")]
+position = Vector2(750, -315)
+
+[node name="Window" parent="." instance=ExtResource("5_fjj4s")]
+position = Vector2(721, -388)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(913, 995)
+shape = SubResource("WorldBoundaryShape2D_fo2e5")
+
+[node name="StandingLamp" parent="." instance=ExtResource("7_vu30i")]
+position = Vector2(189, 492)
+
+[node name="Lamp" parent="." instance=ExtResource("8_p0pgq")]
+position = Vector2(1459, 1051)
+
+[node name="Trophy" parent="." instance=ExtResource("9_iq8au")]
+position = Vector2(1181, -47)
+
+[node name="Bowlingpin" parent="." instance=ExtResource("10_4ukgd")]
+position = Vector2(1656, 550)
+
+[node name="Lamp2" parent="." instance=ExtResource("12_4gv6g")]
+position = Vector2(1591, 325)
+
+[node name="Lamp1" parent="." instance=ExtResource("12_4gv6g")]
+position = Vector2(1879, 562)
+
+[node name="Lamp6" parent="." instance=ExtResource("12_e6ww5")]
+position = Vector2(716, 165)
+
+[node name="Plant2" parent="." instance=ExtResource("13_qwhac")]
+position = Vector2(1343, 227)
+
+[node name="Plant3" parent="." instance=ExtResource("14_tkynx")]
+position = Vector2(395, 835)
+
+[node name="Plant4" parent="." instance=ExtResource("15_xuiwa")]
+position = Vector2(1659, 282)
+
+[node name="Plant5" parent="." instance=ExtResource("16_tln1l")]
+position = Vector2(683, 686)
