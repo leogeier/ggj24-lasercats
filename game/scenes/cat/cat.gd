@@ -6,7 +6,7 @@ extends RigidBody2D
 @export var just_landed_slowdown = 0.5
 @export var air_slowdown = 1.0
 @export var horizontal_deadzone = 30
-@export var jump_body_impulse_strength = 10000
+@export var jump_body_impulse_strength = 5000
 
 var last_laser_pointer_position = Vector2.ZERO
 var laser_pointer
