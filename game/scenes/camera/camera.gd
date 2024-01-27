@@ -1,12 +1,25 @@
 extends Camera2D
 
 var kitty
+
+var start_position
+var finished = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	kitty = get_tree().get_first_node_in_group("cat")
+	var end_window = get_tree().get_first_node_in_group("window")
+	end_window.game_finished.connect(end_game)
+	start_position = position
+
+func end_game():
+	finished = true
+	self.position = start_position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if finished:
+		return
+	
 	move_camera()
 	check_for_fall()
 	if Input.is_action_pressed("ui_down"):

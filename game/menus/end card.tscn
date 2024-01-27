@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6cp7h1kx6t63"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nfrxm"]
+font_size = 90
+
+[node name="EndCard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Well Done!"
+label_settings = SubResource("LabelSettings_nfrxm")
+horizontal_alignment = 1
+
+[node name="Spacer3" type="Control" parent="GridContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Spacer3" type="Control" parent="GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="GridContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+text = "Play Again"
+
+[node name="Spacer4" type="Control" parent="GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer2" type="Control" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3

@@ -11,6 +11,9 @@ extends RigidBody2D
 var last_laser_pointer_position = Vector2.ZERO
 var laser_pointer
 
+func end_game():
+	set_deferred("freeze", true)
+
 func get_lowest_point():
 	return %LowestPoint.global_position
 
@@ -95,3 +98,6 @@ func _process(_delta):
 func _ready():
 	laser_pointer = get_tree().get_first_node_in_group("laserpointer")
 	laser_pointer.position_changed.connect(_on_laser_pointer_position_changed)
+	
+	var end_window = get_tree().get_first_node_in_group("window")
+	end_window.game_finished.connect(end_game)
