@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b4h13dq5xv7c"]
+[gd_scene load_steps=24 format=3 uid="uid://b4h13dq5xv7c"]
 
 [ext_resource type="PackedScene" uid="uid://bh28ccd421trc" path="res://scenes/cat/cat.tscn" id="1_4gta6"]
 [ext_resource type="PackedScene" uid="uid://b8hf5520cc006" path="res://scenes/obstacles/bowling_ball.tscn" id="1_qo8gh"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dyh35kd320gm3" path="res://scenes/obstacles/plant7.tscn" id="18_mr00x"]
 [ext_resource type="PackedScene" uid="uid://dfd14ew6v7w8n" path="res://scenes/obstacles/trophy2.tscn" id="19_tu31h"]
 [ext_resource type="PackedScene" uid="uid://c24yhjpav4ww7" path="res://scenes/obstacles/vase1.tscn" id="20_bbxpa"]
+[ext_resource type="PackedScene" uid="uid://qdrxvhcsf5px" path="res://scenes/obstacles/vase2.tscn" id="21_1wvg6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5jye"]
 size = Vector2(34, 112)
@@ -120,4 +121,7 @@ position = Vector2(622, 270)
 position = Vector2(828, -373)
 
 [node name="Vase1" parent="." instance=ExtResource("20_bbxpa")]
-position = Vector2(686, 649)
+position = Vector2(996, 661)
+
+[node name="Vase2" parent="." instance=ExtResource("21_1wvg6")]
+position = Vector2(692, 676)
