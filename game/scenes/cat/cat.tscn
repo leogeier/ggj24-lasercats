@@ -1,10 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://bh28ccd421trc"]
+[gd_scene load_steps=11 format=3 uid="uid://bh28ccd421trc"]
 
-[ext_resource type="Texture2D" uid="uid://b81n7ug8kyjut" path="res://icon.svg" id="1_4tj4y"]
 [ext_resource type="Script" path="res://scenes/cat/cat.gd" id="1_mcim8"]
+[ext_resource type="Texture2D" uid="uid://dorugsjjg745x" path="res://Animations/Sitting Tail Tapping Cycle.png" id="2_ve6i5"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ovqkm"]
-radius = 33.0151
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjwwl"]
+atlas = ExtResource("2_ve6i5")
+region = Rect2(0, 0, 1223, 1120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81p4a"]
+atlas = ExtResource("2_ve6i5")
+region = Rect2(1223, 0, 1223, 1120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v340b"]
+atlas = ExtResource("2_ve6i5")
+region = Rect2(2446, 0, 1223, 1120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmbcg"]
+atlas = ExtResource("2_ve6i5")
+region = Rect2(3669, 0, 1223, 1120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6udcb"]
+animations = [{
+"frames": [{
+"duration": 20.0,
+"texture": SubResource("AtlasTexture_sjwwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81p4a")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_v340b")
+}, {
+"duration": 1.3,
+"texture": SubResource("AtlasTexture_pmbcg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r2qut"]
+radius = 18.19
+height = 64.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xupk3"]
 size = Vector2(64, 1)
@@ -15,19 +52,25 @@ height = 496.0
 
 [node name="Cat" type="RigidBody2D" groups=["cat"]]
 position = Vector2(1, 0)
+collision_layer = 4
+collision_mask = 4
 mass = 2.28
 can_sleep = false
 lock_rotation = true
 continuous_cd = 2
 script = ExtResource("1_mcim8")
 
-[node name="Icon" type="Sprite2D" parent="."]
+[node name="Icon" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_4tj4y")
+position = Vector2(-4, 0)
+scale = Vector2(0.06, 0.06)
+sprite_frames = SubResource("SpriteFrames_6udcb")
+animation = &"idle"
+frame_progress = 0.19361
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_ovqkm")
+unique_name_in_owner = true
+shape = SubResource("CapsuleShape2D_r2qut")
 
 [node name="GroundCheck" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -52,3 +95,7 @@ one_shot = true
 [node name="JustLandedTimer" type="Timer" parent="."]
 wait_time = 0.539
 one_shot = true
+
+[node name="LowestPoint" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 18)

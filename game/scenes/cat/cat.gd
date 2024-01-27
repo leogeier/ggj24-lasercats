@@ -2,12 +2,17 @@ extends RigidBody2D
 
 @export var horizontal_forward_force = 9000
 @export var jump_force = 6000
-@export var jump_flick_threshold = 100
+@export var jump_flick_threshold = 50
 @export var just_landed_slowdown = 0.5
-@export var horizontal_deadzone = 5
+@export var air_slowdown = 1.0
+@export var horizontal_deadzone = 30
+@export var jump_body_impulse_strength = 10000
 
 var last_laser_pointer_position = Vector2.ZERO
 var laser_pointer
+
+func get_lowest_point():
+	return %LowestPoint.global_position
 
 func is_on_ground():
 	return not %GroundCheck.get_overlapping_bodies().is_empty()
@@ -16,7 +21,7 @@ func is_laser_close():
 	return not %LaserCheck.get_overlapping_areas().is_empty()
 
 func get_height():
-	return %Icon.get_rect().size.y
+	return %CollisionShape2D.shape.get_rect().size.y
 
 var impulse_cooldown = false
 func is_jump_cooldown_complete():
@@ -41,28 +46,37 @@ func _integrate_forces(state):
 	var relative_laser_pos = last_laser_pointer_position - position
 	var laser_dir = relative_laser_pos.normalized()
 	
-	var force = Vector2.ZERO
-	print(relative_laser_pos.x)
-	if is_on_ground() and abs(relative_laser_pos.x) > horizontal_deadzone:
-		var horizontal_slowdown = 1.0 if is_jump_cooldown_complete() else just_landed_slowdown
-		force.x = laser_dir.x * horizontal_forward_force * horizontal_slowdown 
-	state.apply_central_force(force)
-	
 	if is_on_ground() and is_jump_cooldown_complete():
 		var should_jump = false
 		var jump_vector
 		
-		if not is_laser_close() and laser_dir.y < -0.8:
-			#print("here", impulse_cooldown)
-			should_jump = true
-			jump_vector = laser_dir * jump_force * Vector2(0.5, 1)
-		elif is_laser_close() and laser_pointer.velocity > jump_flick_threshold:
+		#if not is_laser_close() and laser_dir.y < -0.8:
+			##print("here", impulse_cooldown)
+			#should_jump = true
+			#jump_vector = laser_dir * jump_force * Vector2(0.5, 1)
+		if is_laser_close() and laser_pointer.velocity > jump_flick_threshold:
 			should_jump = true
 			jump_vector = laser_dir * jump_force
 		
 		if should_jump:
 			state.apply_central_impulse(jump_vector)
 			start_impulse_cooldown()
+			for body in %GroundCheck.get_overlapping_bodies():
+				if body is RigidBody2D:
+					var impulse_pos = body.to_local(%GroundCheck.global_position)
+					print(impulse_pos)
+					body.apply_impulse(Vector2.DOWN * jump_body_impulse_strength, impulse_pos)
+			return
+	
+	if abs(relative_laser_pos.x) > horizontal_deadzone:
+		var _air_slowdown = 1.0 if is_on_ground() else air_slowdown
+		var horizontal_slowdown = 1.0 if is_jump_cooldown_complete() else just_landed_slowdown
+		var force = Vector2.ZERO
+		force.x = laser_dir.x * horizontal_forward_force * horizontal_slowdown * _air_slowdown
+		state.apply_central_force(force)
+	elif is_on_ground():
+		linear_velocity *= 0.9
+
 
 var was_on_ground = true
 func _physics_process(_delta):
