@@ -15,6 +15,8 @@ height = 930.0
 
 [node name="Cat" type="RigidBody2D" groups=["cat"]]
 position = Vector2(1, 0)
+collision_layer = 4
+collision_mask = 4
 mass = 2.28
 can_sleep = false
 lock_rotation = true
@@ -53,3 +55,7 @@ one_shot = true
 [node name="JustLandedTimer" type="Timer" parent="."]
 wait_time = 0.539
 one_shot = true
+
+[node name="LowestPoint" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 18)

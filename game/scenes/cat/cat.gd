@@ -11,6 +11,9 @@ extends RigidBody2D
 var last_laser_pointer_position = Vector2.ZERO
 var laser_pointer
 
+func get_lowest_point():
+	return %LowestPoint.global_position
+
 func is_on_ground():
 	return not %GroundCheck.get_overlapping_bodies().is_empty()
 
