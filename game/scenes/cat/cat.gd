@@ -7,6 +7,7 @@ extends RigidBody2D
 @export var air_slowdown = 1.0
 @export var horizontal_deadzone = 30
 @export var jump_body_impulse_strength = 5000
+@export var auto_jump = true
 
 var last_laser_pointer_position = Vector2.ZERO
 var laser_pointer
@@ -54,11 +55,13 @@ func _integrate_forces(state):
 		var should_jump = false
 		var jump_vector
 		
-		#if not is_laser_close() and laser_dir.y < -0.8:
+		# Autojump fells more cat-like and works better with mouse
+		if auto_jump and relative_laser_pos.length() > 300 and laser_dir.y < -0.8:
 			##print("here", impulse_cooldown)
-			#should_jump = true
-			#jump_vector = laser_dir * jump_force * Vector2(0.5, 1)
-		if laser_pointer.velocity > jump_flick_threshold:
+			should_jump = true
+			jump_vector = laser_dir * jump_force * Vector2(0.5, 1)
+		# Without Autojump we require a flick (maybe better for trackpad)
+		if !auto_jump and laser_pointer.velocity > jump_flick_threshold:
 			should_jump = true
 			jump_vector = laser_dir * jump_force
 		
