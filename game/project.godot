@@ -25,6 +25,7 @@ window/stretch/mode="viewport"
 
 2d_physics/layer_1="ground"
 2d_physics/layer_2="laser"
+2d_physics/layer_3="cat"
 
 [physics]
 

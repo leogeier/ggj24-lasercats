@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgd8s0xnbmy23"]
+[gd_scene load_steps=6 format=3 uid="uid://dgd8s0xnbmy23"]
 
 [ext_resource type="Script" path="res://scenes/shelf/Shelf.gd" id="1_hlisx"]
+[ext_resource type="Script" path="res://scenes/shelf/board.gd" id="2_mouh0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a2aq4"]
 friction = 0.5
@@ -14,8 +15,13 @@ size = Vector2(500, 30)
 script = ExtResource("1_hlisx")
 
 [node name="board" type="RigidBody2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 5
+collision_mask = 5
 mass = 0.6
 physics_material_override = SubResource("PhysicsMaterial_a2aq4")
+gravity_scale = 0.5
+script = ExtResource("2_mouh0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="board"]
 shape = SubResource("RectangleShape2D_bsq5f")

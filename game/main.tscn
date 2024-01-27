@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dxtqm02dnl42d"]
+[gd_scene load_steps=12 format=3 uid="uid://dxtqm02dnl42d"]
 
 [ext_resource type="PackedScene" uid="uid://bh28ccd421trc" path="res://scenes/cat/cat.tscn" id="1_1cu0m"]
 [ext_resource type="PackedScene" uid="uid://ciacvo6retlhy" path="res://scenes/laserpointer/laserpointer.tscn" id="2_x85f1"]
 [ext_resource type="PackedScene" uid="uid://duehi6pdpwp2t" path="res://scenes/camera/camera.tscn" id="3_l7hjo"]
+[ext_resource type="PackedScene" uid="uid://dgd8s0xnbmy23" path="res://scenes/shelf/Shelf.tscn" id="4_p4kp4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ci8g4"]
 friction = 0.58
@@ -26,10 +27,12 @@ size = Vector2(34, 112)
 [node name="Main" type="Node2D"]
 
 [node name="Cat" parent="." instance=ExtResource("1_1cu0m")]
-position = Vector2(905, 955)
+position = Vector2(905, 953)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(952, 1009)
+collision_layer = 5
+collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_ci8g4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -41,9 +44,6 @@ position = Vector2(1037, 972)
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(1532, 779)
 physics_material_override = SubResource("PhysicsMaterial_5ruui")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-shape = SubResource("RectangleShape2D_2ywyu")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2(1808, 536)
@@ -166,3 +166,6 @@ shape = SubResource("RectangleShape2D_r5jye")
 
 [node name="Camera" parent="." instance=ExtResource("3_l7hjo")]
 position = Vector2(1024, 540)
+
+[node name="Shelf" parent="." instance=ExtResource("4_p4kp4")]
+position = Vector2(1432, 872)
