@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btn5fat4oghme"
-path="res://.godot/imported/pag.png-ef952ac0715b60adca149e2769da3514.ctex"
+uid="uid://c1jc4o0e0kxvt"
+path="res://.godot/imported/vase8.png-2fb00f2a75ee59e2f47f02a1f6ad8458.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/assets/shelves/pag.png"
-dest_files=["res://.godot/imported/pag.png-ef952ac0715b60adca149e2769da3514.ctex"]
+source_file="res://scenes/assets/vases/vase8.png"
+dest_files=["res://.godot/imported/vase8.png-2fb00f2a75ee59e2f47f02a1f6ad8458.ctex"]
 
 [params]
 

@@ -8,12 +8,19 @@ var finished = false
 func _ready():
 	kitty = get_tree().get_first_node_in_group("cat")
 	var end_window = get_tree().get_first_node_in_group("window")
-	end_window.game_finished.connect(end_game)
+	if end_window:
+		end_window.game_finished.connect(end_game)
 	start_position = position
 
 func end_game():
 	finished = true
-	self.position = start_position
+	await get_tree().create_timer(2).timeout
+	position_smoothing_enabled = false
+	var tween = get_tree().create_tween()
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.tween_property(self, "position", start_position, 4)
+	#self.position = start_position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -29,7 +36,7 @@ func _process(delta):
 
 func move_camera():
 	var new_position = kitty.position.y
-	new_position += self.get_half_extent().y / 3
+	new_position -= self.get_half_extent().y * 0.1
 	# negative is up, so use the "min" to ensure the camera never goes down!
 	position.y = min(new_position, position.y)
 
