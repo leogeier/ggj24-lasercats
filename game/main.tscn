@@ -54,6 +54,7 @@ shape = SubResource("RectangleShape2D_2ywyu")
 
 [node name="StaticBody2D4" type="RigidBody2D" parent="."]
 position = Vector2(1249, 337)
+mass = 6.45
 physics_material_override = SubResource("PhysicsMaterial_5ruui")
 gravity_scale = 0.5
 

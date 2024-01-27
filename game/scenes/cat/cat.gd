@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 @export var horizontal_forward_force = 9000
-@export var jump_force = 3000
+@export var jump_force = 6000
 @export var jump_flick_threshold = 100
 @export var just_landed_slowdown = 0.5
 @export var horizontal_deadzone = 5
@@ -73,6 +73,7 @@ func _physics_process(_delta):
 #var x = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 func _process(_delta):
 	queue_redraw()
+	gravity_scale = 0.0 if is_on_ground() else 1.0
 	#x.pop_front()
 	#x.append(laser_pointer.velocity)
 	#print(x.max())
