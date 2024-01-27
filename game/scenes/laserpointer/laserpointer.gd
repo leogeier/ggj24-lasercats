@@ -5,14 +5,24 @@ signal position_changed(pos)
 var velocity = 0
 var last_position = Vector2.ZERO
 var camera
+var finished = false
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	camera = get_tree().get_first_node_in_group("camera")
 	last_position = get_laser_position()
+	
+	var end_window = get_tree().get_first_node_in_group("window")
+	end_window.game_finished.connect(end_game)
+
+func end_game():
+	finished = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 const SENSITIVITY = 0.5
 func _input(event):
+	if finished:
+		return
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		set_laser_position(position + event.relative * SENSITIVITY)
 	if event is InputEventKey and event.keycode == KEY_ESCAPE:

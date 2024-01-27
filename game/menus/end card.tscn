@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6cp7h1kx6t63"]
+[gd_scene load_steps=3 format=3 uid="uid://b6cp7h1kx6t63"]
+
+[ext_resource type="Script" path="res://menus/end card.gd" id="1_eo8j0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nfrxm"]
 font_size = 90
@@ -10,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_eo8j0")
 
 [node name="GridContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -55,3 +58,5 @@ size_flags_vertical = 3
 [node name="Spacer2" type="Control" parent="GridContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+
+[connection signal="pressed" from="GridContainer/HBoxContainer/Button" to="." method="_on_try_again_pressed"]
