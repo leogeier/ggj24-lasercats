@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://536k3eyx2ow7"]
+[gd_scene load_steps=13 format=3 uid="uid://536k3eyx2ow7"]
 
 [ext_resource type="PackedScene" uid="uid://b8hf5520cc006" path="res://scenes/obstacles/bowling_ball.tscn" id="1_rrwgb"]
 [ext_resource type="PackedScene" uid="uid://bh28ccd421trc" path="res://scenes/cat/cat.tscn" id="1_vp0h8"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://casjp0djtvre" path="res://scenes/obstacles/lamp.tscn" id="8_1q4a7"]
 [ext_resource type="PackedScene" uid="uid://br58ke2lsx3vo" path="res://scenes/obstacles/trophy.tscn" id="9_cibi5"]
 [ext_resource type="PackedScene" uid="uid://dqdsvcpprwbaa" path="res://scenes/obstacles/vase1.tscn" id="10_0jajy"]
+[ext_resource type="PackedScene" uid="uid://doxdk084ismlb" path="res://scenes/obstacles/trophy_breakable.tscn" id="11_qdtuf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0688f"]
 
@@ -32,7 +33,7 @@ side_offset = -28.195
 
 [node name="Shelf2" parent="." instance=ExtResource("4_x3774")]
 position = Vector2(845, 721)
-peg_distance = 136.914
+peg_distance = 77.539
 
 [node name="Shelf3" parent="." instance=ExtResource("4_x3774")]
 position = Vector2(1847, 598)
@@ -83,3 +84,6 @@ position = Vector2(1499, -677)
 
 [node name="Camera" parent="." instance=ExtResource("3_a537d")]
 position = Vector2(1024, 544)
+
+[node name="TrophyBreakable" parent="." instance=ExtResource("11_qdtuf")]
+position = Vector2(628, 641)

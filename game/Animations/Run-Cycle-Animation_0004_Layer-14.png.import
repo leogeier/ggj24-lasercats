@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh63337ijyh1v"
-path="res://.godot/imported/stortsitem5-base.png-8ebf7928a6a8e8a470885604a77571d0.ctex"
+uid="uid://cbv4mvfxnya8o"
+path="res://.godot/imported/Run-Cycle-Animation_0004_Layer-14.png-fe9c6bedabad9bcc2de5e7153caec290.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/assets/breakablebobjects/stortsitem5-base.png"
-dest_files=["res://.godot/imported/stortsitem5-base.png-8ebf7928a6a8e8a470885604a77571d0.ctex"]
+source_file="res://Animations/Run-Cycle-Animation_0004_Layer-14.png"
+dest_files=["res://.godot/imported/Run-Cycle-Animation_0004_Layer-14.png-fe9c6bedabad9bcc2de5e7153caec290.ctex"]
 
 [params]
 
