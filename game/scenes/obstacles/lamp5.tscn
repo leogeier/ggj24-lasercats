@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3fwtijyy8f0e"]
+
+[ext_resource type="Texture2D" uid="uid://chqhedvvu8bsy" path="res://scenes/assets/lamps/lamp5.png" id="1_ajb0u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ap2ol"]
+size = Vector2(100.5, 129)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2cdk"]
+size = Vector2(20, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0gs6"]
+size = Vector2(97, 20)
+
+[node name="Lamp5" type="RigidBody2D"]
+collision_layer = 5
+collision_mask = 5
+mass = 0.23
+center_of_mass_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -2)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_ajb0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6.25, -55)
+shape = SubResource("RectangleShape2D_ap2ol")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 54)
+shape = SubResource("RectangleShape2D_b2cdk")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 100)
+shape = SubResource("RectangleShape2D_q0gs6")
