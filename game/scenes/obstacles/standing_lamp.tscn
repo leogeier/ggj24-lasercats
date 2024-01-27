@@ -17,24 +17,26 @@ size = Vector2(59, 513)
 [node name="StandingLamp" type="RigidBody2D"]
 collision_layer = 5
 collision_mask = 5
-mass = 30.0
+mass = 20.0
+center_of_mass_mode = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -433.75)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_13pfm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -411)
+position = Vector2(2, -844.75)
 shape = SubResource("RectangleShape2D_1ioid")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(2.75, -234)
+position = Vector2(2.75, -667.75)
 shape = SubResource("RectangleShape2D_7adg0")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2(5, 432.5)
+position = Vector2(5, -1.25)
 shape = SubResource("RectangleShape2D_ca5s2")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
-position = Vector2(5.5, 97.5)
+position = Vector2(5.5, -336.25)
 shape = SubResource("RectangleShape2D_gwxhc")

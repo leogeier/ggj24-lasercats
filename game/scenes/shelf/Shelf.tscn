@@ -33,7 +33,6 @@ scale = Vector2(0.265896, 0.265896)
 texture = ExtResource("3_4h076")
 
 [node name="Shadow" parent="board/Modularshelf" instance=ExtResource("4_8gsid")]
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="board"]
 shape = SubResource("RectangleShape2D_bsq5f")
