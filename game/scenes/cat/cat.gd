@@ -58,7 +58,7 @@ func _integrate_forces(state):
 			##print("here", impulse_cooldown)
 			#should_jump = true
 			#jump_vector = laser_dir * jump_force * Vector2(0.5, 1)
-		if is_laser_close() and laser_pointer.velocity > jump_flick_threshold:
+		if laser_pointer.velocity > jump_flick_threshold:
 			should_jump = true
 			jump_vector = laser_dir * jump_force
 		

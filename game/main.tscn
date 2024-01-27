@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxtqm02dnl42d"]
+[gd_scene load_steps=9 format=3 uid="uid://dxtqm02dnl42d"]
 
 [ext_resource type="PackedScene" uid="uid://bh28ccd421trc" path="res://scenes/cat/cat.tscn" id="1_1cu0m"]
+[ext_resource type="Texture2D" uid="uid://bt1snowhokw1u" path="res://scenes/assets/Livingroom/Floor.png" id="2_kiu21"]
 [ext_resource type="PackedScene" uid="uid://ciacvo6retlhy" path="res://scenes/laserpointer/laserpointer.tscn" id="2_x85f1"]
 [ext_resource type="PackedScene" uid="uid://duehi6pdpwp2t" path="res://scenes/camera/camera.tscn" id="3_l7hjo"]
 [ext_resource type="PackedScene" uid="uid://dgd8s0xnbmy23" path="res://scenes/shelf/Shelf.tscn" id="4_p4kp4"]
@@ -11,19 +12,26 @@ friction = 0.58
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3ysrg"]
 
-[node name="Main" type="Node2D"]
+[node name="Main2" type="Node2D"]
+position = Vector2(0, -144)
 
 [node name="Cat" parent="." instance=ExtResource("1_1cu0m")]
 position = Vector2(905, 953)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(952, 1009)
 collision_layer = 5
 collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_ci8g4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(0, -72)
 shape = SubResource("WorldBoundaryShape2D_3ysrg")
+
+[node name="Floor" type="Sprite2D" parent="Floor"]
+modulate = Color(1, 1, 1, 0.419608)
+position = Vector2(87, 111)
+texture = ExtResource("2_kiu21")
 
 [node name="Laserpointer" parent="." instance=ExtResource("2_x85f1")]
 position = Vector2(1037, 972)
@@ -32,56 +40,56 @@ position = Vector2(1037, 972)
 position = Vector2(1024, 540)
 
 [node name="Shelf" parent="." instance=ExtResource("4_p4kp4")]
-position = Vector2(1432, 872)
+position = Vector2(1432, 648)
 side_offset = -9.009
 
 [node name="Shelf12" parent="." instance=ExtResource("4_p4kp4")]
-position = Vector2(1704, 664)
+position = Vector2(1704, 440)
 peg_distance = 60.923
 side_offset = -52.252
 
 [node name="Shelf2" parent="." instance=ExtResource("4_p4kp4")]
-position = Vector2(552, 737)
+position = Vector2(552, 513)
 peg_distance = 155.068
 board_width = 1.618
 
 [node name="Shelf3" parent="." instance=ExtResource("4_p4kp4")]
-position = Vector2(1177, 457)
+position = Vector2(1177, 233)
 peg_distance = 30.968
 board_width = 2.08
 
 [node name="Shelf4" parent="." instance=ExtResource("4_p4kp4")]
-position = Vector2(395, 315)
+position = Vector2(395, 91)
 peg_distance = 73.761
 board_width = 1.331
 
 [node name="Shelf5" parent="." instance=ExtResource("4_p4kp4")]
-position = Vector2(1662, 132)
+position = Vector2(1662, -92)
 peg_distance = 114.414
 board_width = 0.934
 
 [node name="Shelf6" parent="." instance=ExtResource("4_p4kp4")]
-position = Vector2(753, -215)
+position = Vector2(753, -439)
 
 [node name="Shelf7" parent="." instance=ExtResource("4_p4kp4")]
-position = Vector2(1347, -368)
+position = Vector2(1347, -592)
 peg_distance = 142.23
 board_width = 1.904
 side_offset = -80.12
 
 [node name="Shelf8" parent="." instance=ExtResource("4_p4kp4")]
-position = Vector2(334, -474)
+position = Vector2(334, -698)
 
 [node name="Shelf9" parent="." instance=ExtResource("4_p4kp4")]
-position = Vector2(954, -679)
+position = Vector2(954, -903)
 
 [node name="Shelf10" parent="." instance=ExtResource("4_p4kp4")]
-position = Vector2(1061, 16)
+position = Vector2(1061, -208)
 board_width = 1.728
 
 [node name="Shelf11" parent="." instance=ExtResource("4_p4kp4")]
-position = Vector2(1816, -204)
+position = Vector2(1816, -428)
 board_width = 1.596
 
 [node name="Window" parent="." instance=ExtResource("5_vdtd7")]
-position = Vector2(971, -882)
+position = Vector2(971, -1106)

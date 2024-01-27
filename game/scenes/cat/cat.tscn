@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://d0yynw7nan1ff" path="res://Animations/Run-Cycle-Animation_0003_Layer-17.png" id="7_kal8u"]
 [ext_resource type="Texture2D" uid="uid://ck2yrs747ijo1" path="res://Animations/Run-Cycle-Animation_0004_Layer-14.png" id="8_xln33"]
 [ext_resource type="Texture2D" uid="uid://cnm1wqexpen7k" path="res://Animations/Run-Cycle-Animation_0006_Layer-9.png" id="9_ytkva"]
-[ext_resource type="Texture2D" uid="uid://yigwkwoy3no0" path="res://Animations/Stand-and-look_0002_Layer-2.png" id="10_tff5o"]
-[ext_resource type="Texture2D" uid="uid://duxmowcsv3gbp" path="res://Animations/Stand-and-look_0001_Layer-4.png" id="11_erl7o"]
-[ext_resource type="Texture2D" uid="uid://d1u3fh62nfedl" path="res://Animations/Stand-and-look_0000_Layer-5.png" id="12_7drcb"]
+[ext_resource type="Texture2D" uid="uid://tgnb4uub7wge" path="res://Animations/Stand-and-look_0002_Layer-2.png" id="10_tff5o"]
+[ext_resource type="Texture2D" uid="uid://cn1rsmneadbf4" path="res://Animations/Stand-and-look_0001_Layer-4.png" id="11_erl7o"]
+[ext_resource type="Texture2D" uid="uid://b0njda4lbefvo" path="res://Animations/Stand-and-look_0000_Layer-5.png" id="12_7drcb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sjwwl"]
 atlas = ExtResource("2_ve6i5")
@@ -102,8 +102,8 @@ height = 190.0
 size = Vector2(64, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fi3d3"]
-radius = 276.0
-height = 774.0
+radius = 54.0
+height = 378.0
 
 [node name="Cat" type="RigidBody2D" groups=["cat"]]
 position = Vector2(1, 0)
@@ -145,7 +145,8 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LaserCheck"]
-position = Vector2(-1, -157)
+position = Vector2(28, -209)
+rotation = 1.57079
 shape = SubResource("CapsuleShape2D_fi3d3")
 
 [node name="JumpTimer" type="Timer" parent="."]
