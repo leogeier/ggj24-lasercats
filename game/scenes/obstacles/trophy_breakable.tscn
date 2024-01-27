@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://doxdk084ismlb"]
+[gd_scene load_steps=7 format=3 uid="uid://jn7l4rp06k8"]
 
 [ext_resource type="Texture2D" uid="uid://bh63337ijyh1v" path="res://scenes/assets/breakablebobjects/sportsitem5-base.png" id="1_psmrx"]
+[ext_resource type="PackedScene" uid="uid://v4yt1hf67uqr" path="res://scenes/shadow/shadow.tscn" id="2_t4ikq"]
 [ext_resource type="Texture2D" uid="uid://clb2erurwgpyu" path="res://scenes/assets/breakablebobjects/sportsitem5-statue.png" id="2_xc84y"]
 [ext_resource type="Script" path="res://scenes/obstacles/BreakableJoint.gd" id="3_prepj"]
 
@@ -26,6 +27,9 @@ position = Vector2(0, 1.90735e-06)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("1_psmrx")
 
+[node name="Shadow" parent="base/Sportsitem5-base" instance=ExtResource("2_t4ikq")]
+position = Vector2(0, 133.333)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="base"]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_sahff")
@@ -42,6 +46,9 @@ contact_monitor = true
 position = Vector2(16, -67)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_xc84y")
+
+[node name="Shadow" parent="top/Sportsitem5-statue" instance=ExtResource("2_t4ikq")]
+position = Vector2(0, 133.333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="top"]
 position = Vector2(16, -77)

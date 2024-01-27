@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3fwtijyy8f0e"]
+[gd_scene load_steps=6 format=3 uid="uid://b3fwtijyy8f0e"]
 
 [ext_resource type="Texture2D" uid="uid://chqhedvvu8bsy" path="res://scenes/assets/lamps/lamp5.png" id="1_ajb0u"]
+[ext_resource type="PackedScene" uid="uid://v4yt1hf67uqr" path="res://scenes/shadow/shadow.tscn" id="2_b6coj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ap2ol"]
 size = Vector2(100.5, 129)
@@ -21,6 +22,9 @@ center_of_mass_mode = 1
 position = Vector2(-2, -2)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_ajb0u")
+
+[node name="Shadow" parent="Sprite2D" instance=ExtResource("2_b6coj")]
+position = Vector2(0, 80)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-6.25, -55)

@@ -57,10 +57,10 @@ board_width = 1.804
 position = Vector2(750, -315)
 
 [node name="Shelf8" parent="." instance=ExtResource("4_x3774")]
-position = Vector2(220, -829)
+position = Vector2(310, -721)
 
 [node name="Window" parent="." instance=ExtResource("5_pluiw")]
-position = Vector2(155, -929)
+position = Vector2(296, -846)
 
 [node name="StandingLamp" parent="." instance=ExtResource("7_7re07")]
 position = Vector2(192, 969)
@@ -86,4 +86,4 @@ position = Vector2(1499, -677)
 position = Vector2(1024, 544)
 
 [node name="TrophyBreakable" parent="." instance=ExtResource("11_qdtuf")]
-position = Vector2(628, 641)
+position = Vector2(300, -854)

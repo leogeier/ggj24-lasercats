@@ -10,6 +10,7 @@ var finished = false
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	camera = get_tree().get_first_node_in_group("camera")
+	camera.kitty_fell.connect(end_game)
 	last_position = get_laser_position()
 	
 	var end_window = get_tree().get_first_node_in_group("window")

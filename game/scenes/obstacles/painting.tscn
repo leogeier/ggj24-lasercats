@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://b662bj4elnqs6"]
+
+[ext_resource type="Script" path="res://scenes/obstacles/painting.gd" id="1_78fc8"]
+[ext_resource type="Script" path="res://scenes/obstacles/painting_parent.gd" id="1_bmv06"]
+[ext_resource type="Texture2D" uid="uid://h5tnupo2p0ir" path="res://scenes/assets/arts/picture4.png" id="1_s00li"]
+[ext_resource type="PackedScene" uid="uid://v4yt1hf67uqr" path="res://scenes/shadow/shadow.tscn" id="3_y8lng"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlald"]
+size = Vector2(490, 64)
+
+[node name="Painting" type="Node2D"]
+position = Vector2(-1, 0)
+script = ExtResource("1_bmv06")
+
+[node name="Painting" type="RigidBody2D" parent="."]
+position = Vector2(0, 288)
+collision_layer = 4
+collision_mask = 4
+mass = 3.94
+script = ExtResource("1_78fc8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Painting"]
+scale = Vector2(0.640301, 0.640301)
+texture = ExtResource("1_s00li")
+
+[node name="Shadow" parent="Painting/Sprite2D" instance=ExtResource("3_y8lng")]
+position = Vector2(0, 31.2353)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Painting"]
+position = Vector2(0, -128)
+shape = SubResource("RectangleShape2D_wlald")
+one_way_collision = true
+
+[node name="MarkerLeft" type="Marker2D" parent="Painting"]
+position = Vector2(-230, -155)
+
+[node name="MarkerRight" type="Marker2D" parent="Painting"]
+position = Vector2(210, -154)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("../Painting")
+node_b = NodePath("../StaticBody2D")
