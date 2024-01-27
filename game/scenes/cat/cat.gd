@@ -2,7 +2,7 @@ extends RigidBody2D
 
 @export var horizontal_forward_force = 9000
 @export var jump_force = 6000
-@export var jump_flick_threshold = 100
+@export var jump_flick_threshold = 50
 @export var just_landed_slowdown = 0.5
 @export var air_slowdown = 1.0
 @export var horizontal_deadzone = 30
@@ -43,15 +43,6 @@ func _integrate_forces(state):
 	var relative_laser_pos = last_laser_pointer_position - position
 	var laser_dir = relative_laser_pos.normalized()
 	
-	if abs(relative_laser_pos.x) > horizontal_deadzone:
-		var _air_slowdown = 1.0 if is_on_ground() else air_slowdown
-		var horizontal_slowdown = 1.0 if is_jump_cooldown_complete() else just_landed_slowdown
-		var force = Vector2.ZERO
-		force.x = laser_dir.x * horizontal_forward_force * horizontal_slowdown * _air_slowdown
-		state.apply_central_force(force)
-	elif is_on_ground():
-		linear_velocity *= 0.9
-	
 	if is_on_ground() and is_jump_cooldown_complete():
 		var should_jump = false
 		var jump_vector
@@ -72,6 +63,17 @@ func _integrate_forces(state):
 					var impulse_pos = body.to_local(%GroundCheck.global_position)
 					print(impulse_pos)
 					body.apply_impulse(Vector2.DOWN * jump_body_impulse_strength, impulse_pos)
+			return
+	
+	if abs(relative_laser_pos.x) > horizontal_deadzone:
+		var _air_slowdown = 1.0 if is_on_ground() else air_slowdown
+		var horizontal_slowdown = 1.0 if is_jump_cooldown_complete() else just_landed_slowdown
+		var force = Vector2.ZERO
+		force.x = laser_dir.x * horizontal_forward_force * horizontal_slowdown * _air_slowdown
+		state.apply_central_force(force)
+	elif is_on_ground():
+		linear_velocity *= 0.9
+
 
 var was_on_ground = true
 func _physics_process(_delta):
