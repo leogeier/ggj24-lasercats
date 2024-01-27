@@ -39,7 +39,9 @@ func get_laser_position():
 
 var laser_line = []
 func _draw():
-	draw_circle(Vector2.ZERO, 10, Color.RED)
+	draw_circle(Vector2.ZERO, 10, Color(Color.RED, 0.3))
+	draw_circle(Vector2.ZERO, 7, Color(Color.RED, 0.3))
+	draw_circle(Vector2.ZERO, 3, Color(Color.RED, 0.5))
 	
 	if laser_line.size() >= 1:
 		var points = [Vector2.ZERO] + (laser_line).map(func (global_p): return to_local(global_p))
