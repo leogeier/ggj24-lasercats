@@ -12,7 +12,7 @@ func _on_window_entered(area):
 	finished = true
 	
 	var end_screen = end_scene.instantiate()
-	get_tree().root.add_child(end_screen)
+	get_tree().get_first_node_in_group("camera").add_child(end_screen)
 
 	game_finished.emit()
 	

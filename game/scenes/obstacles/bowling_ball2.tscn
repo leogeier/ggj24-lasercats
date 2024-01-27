@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b7u7ha2jvxtqw" path="res://scenes/assets/sports/sportitem1.png" id="1_al76n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_twjdo"]
-radius = 56.0
+radius = 92.0489
 
 [node name="BowlingBall" type="RigidBody2D"]
 collision_layer = 5
@@ -11,7 +11,7 @@ collision_mask = 5
 mass = 12.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_al76n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
