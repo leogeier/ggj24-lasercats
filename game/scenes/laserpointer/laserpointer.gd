@@ -49,7 +49,7 @@ func _draw():
 		var colors = [Color(Color.RED, 0), Color(Color.RED, 0.5)]
 		draw_polyline_colors(points, colors, 5, true)
 
-const LASER_LINE_LENGTH = 10
+const LASER_LINE_LENGTH = 5
 
 func _physics_process(delta):
 	queue_redraw()

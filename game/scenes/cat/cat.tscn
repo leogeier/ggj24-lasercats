@@ -10,8 +10,8 @@ radius = 33.0151
 size = Vector2(64, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fi3d3"]
-radius = 195.0
-height = 496.0
+radius = 290.0
+height = 930.0
 
 [node name="Cat" type="RigidBody2D" groups=["cat"]]
 position = Vector2(1, 0)
@@ -43,6 +43,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LaserCheck"]
 position = Vector2(-1, -157)
+rotation = 1.57079
 shape = SubResource("CapsuleShape2D_fi3d3")
 
 [node name="JumpTimer" type="Timer" parent="."]
