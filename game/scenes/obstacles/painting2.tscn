@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://co8y188ycb8fj"]
+[gd_scene load_steps=6 format=3 uid="uid://co8y188ycb8fj"]
 
 [ext_resource type="Script" path="res://scenes/obstacles/painting.gd" id="1_0voqn"]
+[ext_resource type="Script" path="res://scenes/obstacles/painting_parent.gd" id="1_eu74o"]
 [ext_resource type="Texture2D" uid="uid://ccruc327bum4r" path="res://scenes/assets/arts/picture2.png" id="2_quhto"]
 [ext_resource type="PackedScene" uid="uid://v4yt1hf67uqr" path="res://scenes/shadow/shadow.tscn" id="3_15vs3"]
 
@@ -9,6 +10,7 @@ size = Vector2(544, 66)
 
 [node name="Painting" type="Node2D"]
 position = Vector2(-1, 0)
+script = ExtResource("1_eu74o")
 
 [node name="Painting" type="RigidBody2D" parent="."]
 position = Vector2(0, 288)
