@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvtx8g7me3aw2"
-path="res://.godot/imported/fixedshelf2.png-0891b125c6f36174df5e9eea92f21ebf.ctex"
+uid="uid://grxnhfw568dv"
+path="res://.godot/imported/vase1.png-964f4a1f24f1ec3095d085dade5eac68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/assets/shelves/fixedshelf2.png"
-dest_files=["res://.godot/imported/fixedshelf2.png-0891b125c6f36174df5e9eea92f21ebf.ctex"]
+source_file="res://scenes/assets/vases/vase1.png"
+dest_files=["res://.godot/imported/vase1.png-964f4a1f24f1ec3095d085dade5eac68.ctex"]
 
 [params]
 
