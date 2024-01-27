@@ -13,8 +13,7 @@ func _ready():
 const SENSITIVITY = 0.5
 func _input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		position += event.relative * SENSITIVITY
-		position_changed.emit(get_laser_position())
+		set_laser_position(position + event.relative * SENSITIVITY)
 	if event is InputEventKey and event.keycode == KEY_ESCAPE:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if event is InputEventMouseButton:
@@ -29,10 +28,18 @@ func _draw():
 	var colors = [Color.RED, red_transparent]
 	draw_polyline_colors(points, colors, 5, true)
 
+func set_laser_position(new_pos):
+	var cam_pos = camera.get_screen_center_position()
+	var max = get_parent().to_local(cam_pos + camera.get_half_extent())
+	var min = get_parent().to_local(cam_pos - camera.get_half_extent())
+	new_pos = new_pos.clamp(min, max)
+	if new_pos != position:
+		position = new_pos
+		position_changed.emit(get_laser_position())
+
 func _process(delta):
-	#var camera_rect = camera.get_canvas_transform().affine_inverse().basiss_xform(camera.get_viewport_rect().size)
-	var camera_rect = camera.get_viewport_rect()
-	print(camera_rect)
+	# Ensure the laser pointer stays on screen
+	set_laser_position(position)
 
 func get_laser_position():
 	return position

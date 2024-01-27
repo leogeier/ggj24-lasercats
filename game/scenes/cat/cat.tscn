@@ -13,7 +13,7 @@ size = Vector2(64, 1)
 radius = 195.0
 height = 496.0
 
-[node name="Cat" type="RigidBody2D"]
+[node name="Cat" type="RigidBody2D" groups=["cat"]]
 position = Vector2(1, 0)
 can_sleep = false
 lock_rotation = true
@@ -21,6 +21,7 @@ continuous_cd = 2
 script = ExtResource("1_mcim8")
 
 [node name="Icon" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_4tj4y")
 

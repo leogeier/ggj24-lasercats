@@ -17,6 +17,9 @@ func is_on_ground():
 func is_laser_close():
 	return not %LaserCheck.get_overlapping_areas().is_empty()
 
+func get_height():
+	return %Icon.get_rect().size.y
+
 var impulse_cooldown = false
 func is_jump_cooldown_complete():
 	return $JumpTimer.is_stopped() and not impulse_cooldown
