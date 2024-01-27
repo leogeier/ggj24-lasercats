@@ -5,6 +5,8 @@ var jumping_frames = 0
 
 func _integrate_forces(_state):
 	var cat = get_tree().get_first_node_in_group("cat")
+	if not cat: return
+	
 	if cat.linear_velocity.y < -10:
 		jumping_frames += 1
 	else:

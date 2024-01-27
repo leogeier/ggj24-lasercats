@@ -13,7 +13,8 @@ func _ready():
 	last_position = get_laser_position()
 	
 	var end_window = get_tree().get_first_node_in_group("window")
-	end_window.game_finished.connect(end_game)
+	if end_window:
+		end_window.game_finished.connect(end_game)
 
 func end_game():
 	finished = true

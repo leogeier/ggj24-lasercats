@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgd8s0xnbmy23"]
+[gd_scene load_steps=9 format=3 uid="uid://dgd8s0xnbmy23"]
 
 [ext_resource type="Script" path="res://scenes/shelf/Shelf.gd" id="1_hlisx"]
 [ext_resource type="Script" path="res://scenes/shelf/board.gd" id="2_mouh0"]
-[ext_resource type="Texture2D" uid="uid://btn5fat4oghme" path="res://scenes/assets/shelves/pag.png" id="3_3t0t4"]
-[ext_resource type="Texture2D" uid="uid://dljeps1dasj0s" path="res://scenes/assets/shelves/modularshelf.png" id="4_cb1ww"]
+[ext_resource type="Texture2D" uid="uid://dljeps1dasj0s" path="res://scenes/assets/shelves/modular/modularshelf.png" id="3_4h076"]
+[ext_resource type="PackedScene" uid="uid://v4yt1hf67uqr" path="res://scenes/shadow/shadow.tscn" id="4_8gsid"]
+[ext_resource type="Texture2D" uid="uid://btn5fat4oghme" path="res://scenes/assets/shelves/modular/pag.png" id="4_8myiw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a2aq4"]
 friction = 0.5
@@ -17,7 +18,6 @@ height = 76.0
 
 [node name="Shelf" type="Node2D"]
 script = ExtResource("1_hlisx")
-side_offset = null
 
 [node name="board" type="RigidBody2D" parent="."]
 unique_name_in_owner = true
@@ -30,7 +30,10 @@ script = ExtResource("2_mouh0")
 
 [node name="Modularshelf" type="Sprite2D" parent="board"]
 scale = Vector2(0.265896, 0.265896)
-texture = ExtResource("4_cb1ww")
+texture = ExtResource("3_4h076")
+
+[node name="Shadow" parent="board/Modularshelf" instance=ExtResource("4_8gsid")]
+scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="board"]
 shape = SubResource("RectangleShape2D_bsq5f")
@@ -49,7 +52,7 @@ shape = SubResource("CapsuleShape2D_awuv4")
 [node name="Pag" type="Sprite2D" parent="pegs/Left Peg"]
 position = Vector2(-3.05176e-05, 0)
 scale = Vector2(0.206061, 0.206061)
-texture = ExtResource("3_3t0t4")
+texture = ExtResource("4_8myiw")
 
 [node name="Right Peg" type="CollisionShape2D" parent="pegs"]
 unique_name_in_owner = true
@@ -59,4 +62,4 @@ shape = SubResource("CapsuleShape2D_awuv4")
 [node name="Pag" type="Sprite2D" parent="pegs/Right Peg"]
 position = Vector2(-3.05176e-05, 0)
 scale = Vector2(0.206061, 0.206061)
-texture = ExtResource("3_3t0t4")
+texture = ExtResource("4_8myiw")

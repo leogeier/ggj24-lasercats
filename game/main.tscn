@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxtqm02dnl42d"]
+[gd_scene load_steps=8 format=3 uid="uid://dxtqm02dnl42d"]
 
 [ext_resource type="PackedScene" uid="uid://bh28ccd421trc" path="res://scenes/cat/cat.tscn" id="1_1cu0m"]
 [ext_resource type="PackedScene" uid="uid://ciacvo6retlhy" path="res://scenes/laserpointer/laserpointer.tscn" id="2_x85f1"]
 [ext_resource type="PackedScene" uid="uid://duehi6pdpwp2t" path="res://scenes/camera/camera.tscn" id="3_l7hjo"]
 [ext_resource type="PackedScene" uid="uid://dgd8s0xnbmy23" path="res://scenes/shelf/Shelf.tscn" id="4_p4kp4"]
+[ext_resource type="PackedScene" uid="uid://bhkn2g6mktugj" path="res://scenes/window/window.tscn" id="5_vdtd7"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ci8g4"]
 friction = 0.58
@@ -43,29 +44,24 @@ side_offset = -52.252
 position = Vector2(552, 737)
 peg_distance = 155.068
 board_width = 1.618
-side_offset = 0.0
 
 [node name="Shelf3" parent="." instance=ExtResource("4_p4kp4")]
 position = Vector2(1177, 457)
 peg_distance = 30.968
 board_width = 2.08
-side_offset = 0.0
 
 [node name="Shelf4" parent="." instance=ExtResource("4_p4kp4")]
 position = Vector2(395, 315)
 peg_distance = 73.761
 board_width = 1.331
-side_offset = 0.0
 
 [node name="Shelf5" parent="." instance=ExtResource("4_p4kp4")]
 position = Vector2(1662, 132)
 peg_distance = 114.414
 board_width = 0.934
-side_offset = 0.0
 
 [node name="Shelf6" parent="." instance=ExtResource("4_p4kp4")]
 position = Vector2(753, -215)
-side_offset = 0.0
 
 [node name="Shelf7" parent="." instance=ExtResource("4_p4kp4")]
 position = Vector2(1347, -368)
@@ -75,18 +71,17 @@ side_offset = -80.12
 
 [node name="Shelf8" parent="." instance=ExtResource("4_p4kp4")]
 position = Vector2(334, -474)
-side_offset = 0.0
 
 [node name="Shelf9" parent="." instance=ExtResource("4_p4kp4")]
 position = Vector2(954, -679)
-side_offset = 0.0
 
 [node name="Shelf10" parent="." instance=ExtResource("4_p4kp4")]
 position = Vector2(1061, 16)
 board_width = 1.728
-side_offset = 0.0
 
 [node name="Shelf11" parent="." instance=ExtResource("4_p4kp4")]
 position = Vector2(1816, -204)
 board_width = 1.596
-side_offset = 0.0
+
+[node name="Window" parent="." instance=ExtResource("5_vdtd7")]
+position = Vector2(971, -882)
