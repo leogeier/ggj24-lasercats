@@ -6,8 +6,8 @@ var finished = false
 var end_scene = preload("res://menus/end card.tscn")
 
 
-func _on_window_entered(area):
-	if finished:
+func _on_window_entered(body):
+	if !body.is_in_group("cat") or finished:
 		return
 	finished = true
 	
