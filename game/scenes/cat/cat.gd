@@ -18,7 +18,7 @@ func is_laser_close():
 	return not %LaserCheck.get_overlapping_areas().is_empty()
 
 func get_height():
-	return %Icon.get_rect().size.y
+	return %CollisionShape2D.shape.get_rect().size.y
 
 var impulse_cooldown = false
 func is_jump_cooldown_complete():
