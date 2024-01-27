@@ -28,7 +28,7 @@ window/stretch/mode="viewport"
 
 [physics]
 
-common/max_physics_steps_per_frame=30
+common/physics_ticks_per_second=180
 2d/default_gravity=9800.0
 
 [rendering]
