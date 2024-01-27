@@ -39,9 +39,9 @@ func start_impulse_cooldown():
 	await get_tree().create_timer(.1).timeout
 	impulse_cooldown = false
 
-func _draw():
-	var dir = position.direction_to(last_laser_pointer_position)
-	draw_line(Vector2.ZERO, dir * 100, Color.RED, 3)
+#func _draw():
+	#var dir = position.direction_to(last_laser_pointer_position)
+	#draw_line(Vector2.ZERO, dir * 100, Color.RED, 3)
 
 func _on_laser_pointer_position_changed(pos):
 	last_laser_pointer_position = pos
@@ -58,7 +58,7 @@ func _integrate_forces(state):
 			##print("here", impulse_cooldown)
 			#should_jump = true
 			#jump_vector = laser_dir * jump_force * Vector2(0.5, 1)
-		if is_laser_close() and laser_pointer.velocity > jump_flick_threshold:
+		if laser_pointer.velocity > jump_flick_threshold:
 			should_jump = true
 			jump_vector = laser_dir * jump_force
 		
@@ -91,7 +91,23 @@ func _physics_process(_delta):
 
 #var x = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 func _process(_delta):
-	queue_redraw()
+	if linear_velocity.x < -50:
+		%Icon.flip_h = true
+	elif linear_velocity.x > 50:
+		%Icon.flip_h = false
+	if is_on_ground():
+		if abs(linear_velocity.x) > 10:
+			%Icon.animation = "run"
+		else:
+			if is_laser_close():
+				%Icon.animation = "stand and look"
+			else:
+				%Icon.animation = "idle"
+	else:
+		%Icon.animation = "jump"
+	if not %Icon.is_playing() and not %Icon.animation == "stand and look":
+		%Icon.play()
+	#queue_redraw()
 	gravity_scale = 0.0 if is_on_ground() else 1.0
 	#x.pop_front()
 	#x.append(laser_pointer.velocity)
