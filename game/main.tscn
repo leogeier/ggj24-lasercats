@@ -1,18 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://dxtqm02dnl42d"]
+[gd_scene load_steps=11 format=3 uid="uid://dxtqm02dnl42d"]
 
 [ext_resource type="PackedScene" uid="uid://bh28ccd421trc" path="res://scenes/cat/cat.tscn" id="1_1cu0m"]
 [ext_resource type="Texture2D" uid="uid://bt1snowhokw1u" path="res://scenes/assets/Livingroom/Floor.png" id="2_kiu21"]
 [ext_resource type="PackedScene" uid="uid://ciacvo6retlhy" path="res://scenes/laserpointer/laserpointer.tscn" id="2_x85f1"]
 [ext_resource type="PackedScene" uid="uid://duehi6pdpwp2t" path="res://scenes/camera/camera.tscn" id="3_l7hjo"]
 [ext_resource type="PackedScene" uid="uid://dgd8s0xnbmy23" path="res://scenes/shelf/Shelf.tscn" id="4_p4kp4"]
+[ext_resource type="PackedScene" uid="uid://co8y188ycb8fj" path="res://scenes/obstacles/painting2.tscn" id="5_pyqlf"]
 [ext_resource type="PackedScene" uid="uid://bhkn2g6mktugj" path="res://scenes/window/window.tscn" id="5_vdtd7"]
+[ext_resource type="PackedScene" uid="uid://b662bj4elnqs6" path="res://scenes/obstacles/painting.tscn" id="7_lm102"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ci8g4"]
 friction = 0.58
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3ysrg"]
 
-[node name="Main2" type="Node2D"]
+[node name="Main" type="Node2D"]
 position = Vector2(0, -144)
 
 [node name="Cat" parent="." instance=ExtResource("1_1cu0m")]
@@ -39,6 +41,9 @@ position = Vector2(1037, 972)
 [node name="Camera" parent="." instance=ExtResource("3_l7hjo")]
 position = Vector2(1024, 540)
 
+[node name="Painting2" parent="." instance=ExtResource("5_pyqlf")]
+position = Vector2(1648, -447)
+
 [node name="Shelf" parent="." instance=ExtResource("4_p4kp4")]
 position = Vector2(1432, 648)
 side_offset = -9.009
@@ -47,11 +52,6 @@ side_offset = -9.009
 position = Vector2(1704, 440)
 peg_distance = 60.923
 side_offset = -52.252
-
-[node name="Shelf2" parent="." instance=ExtResource("4_p4kp4")]
-position = Vector2(552, 513)
-peg_distance = 155.068
-board_width = 1.618
 
 [node name="Shelf3" parent="." instance=ExtResource("4_p4kp4")]
 position = Vector2(1177, 233)
@@ -64,7 +64,7 @@ peg_distance = 73.761
 board_width = 1.331
 
 [node name="Shelf5" parent="." instance=ExtResource("4_p4kp4")]
-position = Vector2(1662, -92)
+position = Vector2(7, -121)
 peg_distance = 114.414
 board_width = 0.934
 
@@ -84,12 +84,11 @@ position = Vector2(334, -698)
 position = Vector2(954, -903)
 
 [node name="Shelf10" parent="." instance=ExtResource("4_p4kp4")]
-position = Vector2(1061, -208)
+position = Vector2(929, -183)
 board_width = 1.728
-
-[node name="Shelf11" parent="." instance=ExtResource("4_p4kp4")]
-position = Vector2(1816, -428)
-board_width = 1.596
 
 [node name="Window" parent="." instance=ExtResource("5_vdtd7")]
 position = Vector2(971, -1106)
+
+[node name="Painting" parent="." instance=ExtResource("7_lm102")]
+position = Vector2(484, 305)
