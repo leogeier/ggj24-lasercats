@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b4h13dq5xv7c"]
+[gd_scene load_steps=23 format=3 uid="uid://b4h13dq5xv7c"]
 
 [ext_resource type="PackedScene" uid="uid://bh28ccd421trc" path="res://scenes/cat/cat.tscn" id="1_4gta6"]
 [ext_resource type="PackedScene" uid="uid://b8hf5520cc006" path="res://scenes/obstacles/bowling_ball.tscn" id="1_qo8gh"]
@@ -16,6 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://ck8kneyxxbbsk" path="res://scenes/obstacles/plant3.tscn" id="14_tkynx"]
 [ext_resource type="PackedScene" uid="uid://d4n1hjvo65214" path="res://scenes/obstacles/plant4.tscn" id="15_xuiwa"]
 [ext_resource type="PackedScene" uid="uid://dy65rypajb1j5" path="res://scenes/obstacles/plant5.tscn" id="16_tln1l"]
+[ext_resource type="PackedScene" uid="uid://my2f37c2haa3" path="res://scenes/obstacles/plant6.tscn" id="17_keir4"]
+[ext_resource type="PackedScene" uid="uid://dyh35kd320gm3" path="res://scenes/obstacles/plant7.tscn" id="18_mr00x"]
+[ext_resource type="PackedScene" uid="uid://dfd14ew6v7w8n" path="res://scenes/obstacles/trophy2.tscn" id="19_tu31h"]
+[ext_resource type="PackedScene" uid="uid://c24yhjpav4ww7" path="res://scenes/obstacles/vase1.tscn" id="20_bbxpa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5jye"]
 size = Vector2(34, 112)
@@ -86,7 +90,7 @@ position = Vector2(1181, -47)
 position = Vector2(1656, 550)
 
 [node name="Lamp2" parent="." instance=ExtResource("12_4gv6g")]
-position = Vector2(1591, 325)
+position = Vector2(1544, 270)
 
 [node name="Lamp1" parent="." instance=ExtResource("12_4gv6g")]
 position = Vector2(1879, 562)
@@ -98,10 +102,22 @@ position = Vector2(716, 165)
 position = Vector2(1343, 227)
 
 [node name="Plant3" parent="." instance=ExtResource("14_tkynx")]
-position = Vector2(395, 835)
+position = Vector2(512, 158)
 
 [node name="Plant4" parent="." instance=ExtResource("15_xuiwa")]
 position = Vector2(1659, 282)
 
 [node name="Plant5" parent="." instance=ExtResource("16_tln1l")]
-position = Vector2(683, 686)
+position = Vector2(830, 263)
+
+[node name="Plant6" parent="." instance=ExtResource("17_keir4")]
+position = Vector2(1082, 18)
+
+[node name="Plant7" parent="." instance=ExtResource("18_mr00x")]
+position = Vector2(622, 270)
+
+[node name="Trophy2" parent="." instance=ExtResource("19_tu31h")]
+position = Vector2(828, -373)
+
+[node name="Vase1" parent="." instance=ExtResource("20_bbxpa")]
+position = Vector2(686, 649)
