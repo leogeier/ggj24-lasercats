@@ -12,7 +12,12 @@ func _input(event):
 
 var _laser_line = Vector2.ZERO
 func _draw():
-	draw_line(Vector2.ZERO, _laser_line, Color.RED, 2)
+	draw_circle(Vector2.ZERO, 10, Color.RED)
+	var points = [Vector2.ZERO, _laser_line]
+	var red_transparent = Color.RED
+	red_transparent.a = 0
+	var colors = [Color.RED, red_transparent]
+	draw_polyline_colors(points, colors, 5, true)
 
 func get_laser_position():
 	return position
