@@ -32,26 +32,27 @@ position = Vector2(1024, 544)
 
 [node name="Shelf" parent="." instance=ExtResource("4_x3774")]
 position = Vector2(1432, 872)
+side_offset = 0.0
 
 [node name="Shelf2" parent="." instance=ExtResource("4_x3774")]
 position = Vector2(845, 721)
-difficulty = 129.035
+side_offset = 0.0
 
 [node name="Shelf3" parent="." instance=ExtResource("4_x3774")]
 position = Vector2(1381, 456)
-difficulty = 129.035
+side_offset = 0.0
 
 [node name="Shelf4" parent="." instance=ExtResource("4_x3774")]
 position = Vector2(497, 278)
-difficulty = 129.035
+side_offset = 0.0
 
 [node name="Shelf5" parent="." instance=ExtResource("4_x3774")]
 position = Vector2(1224, 62)
-difficulty = 129.035
+side_offset = 0.0
 
 [node name="Shelf6" parent="." instance=ExtResource("4_x3774")]
 position = Vector2(129, 37)
-difficulty = 129.035
+side_offset = 0.0
 
 [node name="Window" parent="." instance=ExtResource("5_pluiw")]
 position = Vector2(143, -58)
