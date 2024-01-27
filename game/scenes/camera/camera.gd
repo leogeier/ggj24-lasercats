@@ -1,7 +1,8 @@
 extends Camera2D
 
-var kitty
+signal kitty_fell()
 
+var kitty
 var start_position
 var finished = false
 # Called when the node enters the scene tree for the first time.
@@ -47,8 +48,12 @@ func get_half_extent():
 func check_for_fall():
 	var kitty_height = kitty.get_height()
 	# For y positive is down, so if the position is too large, we've fallen!
-	if kitty.position.y > position.y + get_half_extent().y + kitty_height /2:
+	if kitty.position.y > position.y + get_half_extent().y + kitty_height:
 		game_over()
 
+var game_over_scene = preload("res://menus/game over.tscn")
 func game_over():
-	print("GAME OVER!")
+	
+	add_child(game_over_scene.instantiate())
+	kitty_fell.emit()
+	end_game()

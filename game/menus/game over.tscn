@@ -1,11 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6cp7h1kx6t63"]
+[gd_scene load_steps=6 format=3 uid="uid://cfwbufpdoblpj"]
 
-[ext_resource type="Script" path="res://menus/end card.gd" id="1_eo8j0"]
+[ext_resource type="Script" path="res://menus/end card.gd" id="1_8m17k"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nfrxm"]
 font_size = 90
 
-[sub_resource type="Animation" id="Animation_dh575"]
+[sub_resource type="Animation" id="Animation_12xf8"]
 resource_name = "fade_in"
 length = 10.0
 tracks/0/type = "value"
@@ -15,10 +15,10 @@ tracks/0/path = NodePath("GridContainer/HBoxContainer/Button:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.1, 10),
+"times": PackedFloat32Array(0, 2.3, 5.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -27,10 +27,10 @@ tracks/1/path = NodePath("GridContainer/HBoxContainer/Button:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(4.4, 4.7),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, false]
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -39,13 +39,13 @@ tracks/2/path = NodePath("GridContainer/Label:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.7),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_0then"]
+[sub_resource type="Animation" id="Animation_0tjjf"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -57,7 +57,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -84,10 +84,10 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jlcn8"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oxbvp"]
 _data = {
-"RESET": SubResource("Animation_0then"),
-"fade_in": SubResource("Animation_dh575")
+"RESET": SubResource("Animation_0tjjf"),
+"fade_in": SubResource("Animation_12xf8")
 }
 
 [node name="EndCard" type="Control"]
@@ -97,7 +97,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_eo8j0")
+script = ExtResource("1_8m17k")
 
 [node name="GridContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -115,7 +115,7 @@ size_flags_vertical = 3
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Well Done!"
+text = "Tragic!"
 label_settings = SubResource("LabelSettings_nfrxm")
 horizontal_alignment = 1
 
@@ -132,7 +132,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="GridContainer/HBoxContainer"]
-modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 disabled = true
@@ -149,7 +148,7 @@ size_flags_vertical = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_jlcn8")
+"": SubResource("AnimationLibrary_oxbvp")
 }
 autoplay = "fade_in"
 
