@@ -11,3 +11,7 @@ func _get_configuration_warnings():
 	if not get_parent() is Sprite2D:
 		return ["Parent is not a Sprite"]
 	return []
+
+func _process(_delta):
+	global_position = get_parent().global_position
+	global_position.y += 20
