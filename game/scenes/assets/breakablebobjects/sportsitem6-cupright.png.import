@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dljeps1dasj0s"
-path="res://.godot/imported/modularshelf.png-c14fa49e54c90dd4dfdbd41a2f8bc78b.ctex"
+uid="uid://cemdvwleggv6q"
+path="res://.godot/imported/sportsitem6-cupright.png-8ce041adecd3e765fe6d6d72bb53952d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/assets/shelves/modularshelf.png"
-dest_files=["res://.godot/imported/modularshelf.png-c14fa49e54c90dd4dfdbd41a2f8bc78b.ctex"]
+source_file="res://scenes/assets/breakablebobjects/sportsitem6-cupright.png"
+dest_files=["res://.godot/imported/sportsitem6-cupright.png-8ce041adecd3e765fe6d6d72bb53952d.ctex"]
 
 [params]
 

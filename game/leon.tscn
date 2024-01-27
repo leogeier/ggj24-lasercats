@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://536k3eyx2ow7"]
+[gd_scene load_steps=12 format=3 uid="uid://536k3eyx2ow7"]
 
+[ext_resource type="PackedScene" uid="uid://b8hf5520cc006" path="res://scenes/obstacles/bowling_ball.tscn" id="1_rrwgb"]
 [ext_resource type="PackedScene" uid="uid://bh28ccd421trc" path="res://scenes/cat/cat.tscn" id="1_vp0h8"]
 [ext_resource type="PackedScene" uid="uid://ciacvo6retlhy" path="res://scenes/laserpointer/laserpointer.tscn" id="2_dw5os"]
 [ext_resource type="PackedScene" uid="uid://duehi6pdpwp2t" path="res://scenes/camera/camera.tscn" id="3_a537d"]
 [ext_resource type="PackedScene" uid="uid://dgd8s0xnbmy23" path="res://scenes/shelf/Shelf.tscn" id="4_x3774"]
 [ext_resource type="PackedScene" uid="uid://bhkn2g6mktugj" path="res://scenes/window/window.tscn" id="5_pluiw"]
+[ext_resource type="PackedScene" uid="uid://dhycu16i0hwl" path="res://scenes/obstacles/standing_lamp.tscn" id="7_7re07"]
+[ext_resource type="PackedScene" uid="uid://casjp0djtvre" path="res://scenes/obstacles/lamp.tscn" id="8_1q4a7"]
+[ext_resource type="PackedScene" uid="uid://br58ke2lsx3vo" path="res://scenes/obstacles/trophy.tscn" id="9_cibi5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5jye"]
 size = Vector2(34, 112)
@@ -12,6 +16,9 @@ size = Vector2(34, 112)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fo2e5"]
 
 [node name="Main" type="Node2D"]
+
+[node name="BowlingBall" parent="." instance=ExtResource("1_rrwgb")]
+position = Vector2(1322, -18)
 
 [node name="Cat" parent="." instance=ExtResource("1_vp0h8")]
 position = Vector2(905, 953)
@@ -31,31 +38,33 @@ shape = SubResource("RectangleShape2D_r5jye")
 position = Vector2(1024, 544)
 
 [node name="Shelf" parent="." instance=ExtResource("4_x3774")]
-position = Vector2(1432, 872)
-side_offset = 0.0
+position = Vector2(1520, 344)
+peg_distance = 118.359
+board_width = 0.694
+side_offset = -28.195
 
 [node name="Shelf2" parent="." instance=ExtResource("4_x3774")]
 position = Vector2(845, 721)
-side_offset = 0.0
+peg_distance = 136.914
 
 [node name="Shelf3" parent="." instance=ExtResource("4_x3774")]
-position = Vector2(1381, 456)
-side_offset = 0.0
+position = Vector2(1847, 598)
+peg_distance = 100.0
 
 [node name="Shelf4" parent="." instance=ExtResource("4_x3774")]
-position = Vector2(497, 278)
-side_offset = 0.0
+position = Vector2(644, 292)
+peg_distance = 144.336
 
 [node name="Shelf5" parent="." instance=ExtResource("4_x3774")]
 position = Vector2(1224, 62)
-side_offset = 0.0
+peg_distance = 118.359
+board_width = 1.804
 
 [node name="Shelf6" parent="." instance=ExtResource("4_x3774")]
-position = Vector2(129, 37)
-side_offset = 0.0
+position = Vector2(750, -315)
 
 [node name="Window" parent="." instance=ExtResource("5_pluiw")]
-position = Vector2(143, -58)
+position = Vector2(721, -388)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 5
@@ -64,3 +73,12 @@ collision_mask = 5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(913, 995)
 shape = SubResource("WorldBoundaryShape2D_fo2e5")
+
+[node name="StandingLamp" parent="." instance=ExtResource("7_7re07")]
+position = Vector2(189, 492)
+
+[node name="Lamp" parent="." instance=ExtResource("8_1q4a7")]
+position = Vector2(1264, 964)
+
+[node name="Trophy" parent="." instance=ExtResource("9_cibi5")]
+position = Vector2(1181, -47)
