@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b662bj4elnqs6"]
+[gd_scene load_steps=5 format=3 uid="uid://b662bj4elnqs6"]
 
 [ext_resource type="Script" path="res://scenes/obstacles/painting.gd" id="1_78fc8"]
 [ext_resource type="Texture2D" uid="uid://h5tnupo2p0ir" path="res://scenes/assets/arts/picture4.png" id="1_s00li"]
+[ext_resource type="PackedScene" uid="uid://v4yt1hf67uqr" path="res://scenes/shadow/shadow.tscn" id="3_y8lng"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlald"]
 size = Vector2(490, 64)
@@ -19,6 +20,9 @@ script = ExtResource("1_78fc8")
 [node name="Sprite2D" type="Sprite2D" parent="Painting"]
 scale = Vector2(0.640301, 0.640301)
 texture = ExtResource("1_s00li")
+
+[node name="Shadow" parent="Painting/Sprite2D" instance=ExtResource("3_y8lng")]
+position = Vector2(0, 31.2353)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Painting"]
 position = Vector2(0, -128)

@@ -9,7 +9,7 @@ func _enter_tree():
 func _physics_process(_delta):
 	if not is_connected: return
 	
-	if abs(rotation) > 0.5:
+	if abs(rotation) > 0.6:
 		is_connected = false
 		queue_redraw()
 		$"../PinJoint2D".queue_free()
