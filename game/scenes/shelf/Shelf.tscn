@@ -1,18 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgd8s0xnbmy23"]
+[gd_scene load_steps=8 format=3 uid="uid://dgd8s0xnbmy23"]
 
 [ext_resource type="Script" path="res://scenes/shelf/Shelf.gd" id="1_hlisx"]
 [ext_resource type="Script" path="res://scenes/shelf/board.gd" id="2_mouh0"]
+[ext_resource type="Texture2D" uid="uid://btn5fat4oghme" path="res://scenes/assets/shelves/pag.png" id="3_3t0t4"]
+[ext_resource type="Texture2D" uid="uid://dljeps1dasj0s" path="res://scenes/assets/shelves/modularshelf.png" id="4_cb1ww"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a2aq4"]
 friction = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsq5f"]
-size = Vector2(500, 30)
+size = Vector2(456, 44)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4vsns"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_awuv4"]
+radius = 16.0
+height = 76.0
 
 [node name="Shelf" type="Node2D"]
 script = ExtResource("1_hlisx")
+side_offset = null
 
 [node name="board" type="RigidBody2D" parent="."]
 unique_name_in_owner = true
@@ -23,19 +28,35 @@ physics_material_override = SubResource("PhysicsMaterial_a2aq4")
 gravity_scale = 0.5
 script = ExtResource("2_mouh0")
 
+[node name="Modularshelf" type="Sprite2D" parent="board"]
+scale = Vector2(0.265896, 0.265896)
+texture = ExtResource("4_cb1ww")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="board"]
 shape = SubResource("RectangleShape2D_bsq5f")
 
 [node name="pegs" type="RigidBody2D" parent="."]
+modulate = Color(0.247059, 0.368627, 1, 1)
+position = Vector2(0, 8)
 lock_rotation = true
 freeze = true
 
-[node name="Right Peg" type="CollisionShape2D" parent="pegs"]
-unique_name_in_owner = true
-position = Vector2(200, 25)
-shape = SubResource("CircleShape2D_4vsns")
-
 [node name="Left Peg" type="CollisionShape2D" parent="pegs"]
 unique_name_in_owner = true
-position = Vector2(-200, 25)
-shape = SubResource("CircleShape2D_4vsns")
+position = Vector2(-200, 52)
+shape = SubResource("CapsuleShape2D_awuv4")
+
+[node name="Pag" type="Sprite2D" parent="pegs/Left Peg"]
+position = Vector2(-3.05176e-05, 0)
+scale = Vector2(0.206061, 0.206061)
+texture = ExtResource("3_3t0t4")
+
+[node name="Right Peg" type="CollisionShape2D" parent="pegs"]
+unique_name_in_owner = true
+position = Vector2(200, 52)
+shape = SubResource("CapsuleShape2D_awuv4")
+
+[node name="Pag" type="Sprite2D" parent="pegs/Right Peg"]
+position = Vector2(-3.05176e-05, 0)
+scale = Vector2(0.206061, 0.206061)
+texture = ExtResource("3_3t0t4")

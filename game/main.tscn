@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dxtqm02dnl42d"]
+[gd_scene load_steps=7 format=3 uid="uid://dxtqm02dnl42d"]
 
 [ext_resource type="PackedScene" uid="uid://bh28ccd421trc" path="res://scenes/cat/cat.tscn" id="1_1cu0m"]
 [ext_resource type="PackedScene" uid="uid://ciacvo6retlhy" path="res://scenes/laserpointer/laserpointer.tscn" id="2_x85f1"]
@@ -9,20 +9,6 @@
 friction = 0.58
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3ysrg"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5ruui"]
-friction = 0.12
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ywyu"]
-size = Vector2(420, 20)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t6f1c"]
-rough = true
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_f34vw"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5jye"]
-size = Vector2(34, 112)
 
 [node name="Main" type="Node2D"]
 
@@ -41,131 +27,66 @@ shape = SubResource("WorldBoundaryShape2D_3ysrg")
 [node name="Laserpointer" parent="." instance=ExtResource("2_x85f1")]
 position = Vector2(1037, 972)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(1532, 779)
-physics_material_override = SubResource("PhysicsMaterial_5ruui")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(1808, 536)
-physics_material_override = SubResource("PhysicsMaterial_5ruui")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-shape = SubResource("RectangleShape2D_2ywyu")
-
-[node name="StaticBody2D4" type="RigidBody2D" parent="."]
-position = Vector2(1249, 337)
-mass = 6.45
-physics_material_override = SubResource("PhysicsMaterial_5ruui")
-gravity_scale = 0.5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-shape = SubResource("RectangleShape2D_2ywyu")
-
-[node name="StaticBody2D8" type="StaticBody2D" parent="."]
-position = Vector2(1283, 430)
-physics_material_override = SubResource("PhysicsMaterial_t6f1c")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
-position = Vector2(-129, -71)
-shape = SubResource("CircleShape2D_f34vw")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D8"]
-position = Vector2(71, -71)
-shape = SubResource("CircleShape2D_f34vw")
-
-[node name="StaticBody2D9" type="RigidBody2D" parent="."]
-position = Vector2(718, 52)
-mass = 6.45
-physics_material_override = SubResource("PhysicsMaterial_5ruui")
-gravity_scale = 0.5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
-shape = SubResource("RectangleShape2D_2ywyu")
-
-[node name="StaticBody2D10" type="StaticBody2D" parent="."]
-position = Vector2(752, 145)
-physics_material_override = SubResource("PhysicsMaterial_t6f1c")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10"]
-position = Vector2(-129, -71)
-shape = SubResource("CircleShape2D_f34vw")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D10"]
-position = Vector2(71, -71)
-shape = SubResource("CircleShape2D_f34vw")
-
-[node name="StaticBody2D11" type="RigidBody2D" parent="."]
-position = Vector2(1344, -221)
-mass = 6.45
-physics_material_override = SubResource("PhysicsMaterial_5ruui")
-gravity_scale = 0.5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11"]
-shape = SubResource("RectangleShape2D_2ywyu")
-
-[node name="StaticBody2D12" type="StaticBody2D" parent="."]
-position = Vector2(1378, -128)
-physics_material_override = SubResource("PhysicsMaterial_t6f1c")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D12"]
-position = Vector2(-129, -71)
-shape = SubResource("CircleShape2D_f34vw")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D12"]
-position = Vector2(71, -71)
-shape = SubResource("CircleShape2D_f34vw")
-
-[node name="StaticBody2D13" type="RigidBody2D" parent="."]
-position = Vector2(720, -317)
-mass = 6.45
-physics_material_override = SubResource("PhysicsMaterial_5ruui")
-gravity_scale = 0.5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D13"]
-shape = SubResource("RectangleShape2D_2ywyu")
-
-[node name="StaticBody2D14" type="StaticBody2D" parent="."]
-position = Vector2(754, -224)
-physics_material_override = SubResource("PhysicsMaterial_t6f1c")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D14"]
-position = Vector2(-129, -71)
-shape = SubResource("CircleShape2D_f34vw")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D14"]
-position = Vector2(71, -71)
-shape = SubResource("CircleShape2D_f34vw")
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="."]
-position = Vector2(836, 547)
-physics_material_override = SubResource("PhysicsMaterial_5ruui")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
-shape = SubResource("RectangleShape2D_2ywyu")
-
-[node name="StaticBody2D6" type="StaticBody2D" parent="."]
-position = Vector2(363, 897)
-physics_material_override = SubResource("PhysicsMaterial_5ruui")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
-shape = SubResource("RectangleShape2D_2ywyu")
-
-[node name="StaticBody2D7" type="StaticBody2D" parent="."]
-position = Vector2(209, 769)
-rotation = 0.762398
-physics_material_override = SubResource("PhysicsMaterial_5ruui")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
-shape = SubResource("RectangleShape2D_2ywyu")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(986, 475)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("RectangleShape2D_r5jye")
-
 [node name="Camera" parent="." instance=ExtResource("3_l7hjo")]
 position = Vector2(1024, 540)
 
 [node name="Shelf" parent="." instance=ExtResource("4_p4kp4")]
 position = Vector2(1432, 872)
+side_offset = -9.009
+
+[node name="Shelf12" parent="." instance=ExtResource("4_p4kp4")]
+position = Vector2(1704, 664)
+peg_distance = 60.923
+side_offset = -52.252
+
+[node name="Shelf2" parent="." instance=ExtResource("4_p4kp4")]
+position = Vector2(552, 737)
+peg_distance = 155.068
+board_width = 1.618
+side_offset = 0.0
+
+[node name="Shelf3" parent="." instance=ExtResource("4_p4kp4")]
+position = Vector2(1177, 457)
+peg_distance = 30.968
+board_width = 2.08
+side_offset = 0.0
+
+[node name="Shelf4" parent="." instance=ExtResource("4_p4kp4")]
+position = Vector2(395, 315)
+peg_distance = 73.761
+board_width = 1.331
+side_offset = 0.0
+
+[node name="Shelf5" parent="." instance=ExtResource("4_p4kp4")]
+position = Vector2(1662, 132)
+peg_distance = 114.414
+board_width = 0.934
+side_offset = 0.0
+
+[node name="Shelf6" parent="." instance=ExtResource("4_p4kp4")]
+position = Vector2(753, -215)
+side_offset = 0.0
+
+[node name="Shelf7" parent="." instance=ExtResource("4_p4kp4")]
+position = Vector2(1347, -368)
+peg_distance = 142.23
+board_width = 1.904
+side_offset = -80.12
+
+[node name="Shelf8" parent="." instance=ExtResource("4_p4kp4")]
+position = Vector2(334, -474)
+side_offset = 0.0
+
+[node name="Shelf9" parent="." instance=ExtResource("4_p4kp4")]
+position = Vector2(954, -679)
+side_offset = 0.0
+
+[node name="Shelf10" parent="." instance=ExtResource("4_p4kp4")]
+position = Vector2(1061, 16)
+board_width = 1.728
+side_offset = 0.0
+
+[node name="Shelf11" parent="." instance=ExtResource("4_p4kp4")]
+position = Vector2(1816, -204)
+board_width = 1.596
+side_offset = 0.0
