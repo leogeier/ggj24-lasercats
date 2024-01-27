@@ -9,6 +9,7 @@ var camera
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	camera = get_tree().get_first_node_in_group("camera")
+	last_position = get_laser_position()
 
 const SENSITIVITY = 0.5
 func _input(event):
@@ -19,14 +20,6 @@ func _input(event):
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-var _laser_line = Vector2.ZERO
-func _draw():
-	draw_circle(Vector2.ZERO, 10, Color.RED)
-	var points = [Vector2.ZERO, _laser_line]
-	var red_transparent = Color.RED
-	red_transparent.a = 0
-	var colors = [Color.RED, red_transparent]
-	draw_polyline_colors(points, colors, 5, true)
 
 func set_laser_position(new_pos):
 	var cam_pos = camera.get_screen_center_position()
@@ -44,8 +37,22 @@ func _process(delta):
 func get_laser_position():
 	return position
 
-func _physics_process(_delta):
-	_laser_line = last_position - get_laser_position()
+var laser_line = []
+func _draw():
+	draw_circle(Vector2.ZERO, 10, Color.RED)
+	
+	if laser_line.size() >= 1:
+		var points = [Vector2.ZERO] + (laser_line).map(func (global_p): return to_local(global_p))
+		
+		var colors = [Color(Color.RED, 0), Color(Color.RED, 0.5)]
+		draw_polyline_colors(points, colors, 5, true)
+
+const LASER_LINE_LENGTH = 10
+
+func _physics_process(delta):
 	queue_redraw()
 	velocity = get_laser_position().distance_to(last_position)
+	laser_line.push_back(to_global(last_position - get_laser_position()))
 	last_position = get_laser_position()
+	if laser_line.size() > LASER_LINE_LENGTH:
+		laser_line.pop_front()
