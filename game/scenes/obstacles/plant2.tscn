@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://chtvvcb71rmve"]
+
+[ext_resource type="Texture2D" uid="uid://bm14e4g28siqf" path="res://scenes/assets/plants/plant2.png" id="1_tt8oe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_477cu"]
+size = Vector2(113, 103)
+
+[node name="Plant2" type="RigidBody2D"]
+collision_layer = 5
+collision_mask = 5
+mass = 0.61
+center_of_mass_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_tt8oe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 52.5)
+shape = SubResource("RectangleShape2D_477cu")
