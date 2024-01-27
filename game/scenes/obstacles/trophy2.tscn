@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfd14ew6v7w8n"]
+
+[ext_resource type="Texture2D" uid="uid://wu1tawhkmjv4" path="res://scenes/assets/sports/sportitem3.png" id="1_kbijj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3cjw"]
+size = Vector2(88, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nexhv"]
+size = Vector2(208, 15)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j22od"]
+radius = 43.1823
+height = 155.77
+
+[node name="Trophy2" type="RigidBody2D"]
+collision_layer = 5
+collision_mask = 5
+mass = 0.75
+center_of_mass_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4, -71)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_kbijj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 0.5)
+shape = SubResource("RectangleShape2D_j3cjw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 21.5)
+shape = SubResource("RectangleShape2D_nexhv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(3, -103)
+rotation = 0.748746
+shape = SubResource("CapsuleShape2D_j22od")
