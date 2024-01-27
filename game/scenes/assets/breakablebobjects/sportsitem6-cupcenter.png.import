@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btqaba3a4snro"
-path="res://.godot/imported/plant1_pot.png-49f7bf971cbf6224562fb6874d7de02b.ctex"
+uid="uid://r3qvyfbnj52k"
+path="res://.godot/imported/sportsitem6-cupcenter.png-7bdeadc91cfd1025f12f30274e723380.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/assets/plants/plant1_pot.png"
-dest_files=["res://.godot/imported/plant1_pot.png-49f7bf971cbf6224562fb6874d7de02b.ctex"]
+source_file="res://scenes/assets/breakablebobjects/sportsitem6-cupcenter.png"
+dest_files=["res://.godot/imported/sportsitem6-cupcenter.png-7bdeadc91cfd1025f12f30274e723380.ctex"]
 
 [params]
 
