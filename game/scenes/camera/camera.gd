@@ -9,9 +9,14 @@ func _ready():
 func _process(delta):
 	move_camera()
 	check_for_fall()
+	if Input.is_action_pressed("ui_down"):
+		position.y += delta * position_smoothing_speed * 200
+	if Input.is_action_pressed("ui_up"):
+		position.y -= delta * position_smoothing_speed * 200
 
 func move_camera():
 	var new_position = kitty.position.y
+	new_position += self.get_half_extent().y / 3
 	# negative is up, so use the "min" to ensure the camera never goes down!
 	position.y = min(new_position, position.y)
 
