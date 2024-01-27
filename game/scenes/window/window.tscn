@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhkn2g6mktugj"]
+
+[ext_resource type="Script" path="res://scenes/window/window.gd" id="1_dg326"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mnex"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mr3c8"]
+size = Vector2(120, 10)
+
+[node name="Window" type="Node2D" groups=["window"]]
+script = ExtResource("1_dg326")
+
+[node name="Window" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window"]
+shape = SubResource("RectangleShape2D_8mnex")
+
+[node name="windowsill" type="RigidBody2D" parent="."]
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="windowsill"]
+position = Vector2(0, 57)
+shape = SubResource("RectangleShape2D_mr3c8")
+
+[connection signal="body_entered" from="Window" to="." method="_on_window_entered"]
