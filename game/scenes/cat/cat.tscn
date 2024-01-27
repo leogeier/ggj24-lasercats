@@ -40,15 +40,15 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r2qut"]
-radius = 18.19
-height = 64.0
+radius = 63.0
+height = 234.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xupk3"]
 size = Vector2(64, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fi3d3"]
-radius = 195.0
-height = 496.0
+radius = 276.0
+height = 774.0
 
 [node name="Cat" type="RigidBody2D" groups=["cat"]]
 position = Vector2(1, 0)
@@ -62,14 +62,15 @@ script = ExtResource("1_mcim8")
 
 [node name="Icon" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-4, 0)
-scale = Vector2(0.06, 0.06)
+position = Vector2(-11, -76)
+scale = Vector2(0.201786, 0.201786)
 sprite_frames = SubResource("SpriteFrames_6udcb")
 animation = &"idle"
 frame_progress = 0.19361
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(0, -87)
 shape = SubResource("CapsuleShape2D_r2qut")
 
 [node name="GroundCheck" type="Area2D" parent="."]
@@ -85,7 +86,8 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LaserCheck"]
-position = Vector2(-1, -157)
+position = Vector2(-2, -238)
+rotation = 1.57079
 shape = SubResource("CapsuleShape2D_fi3d3")
 
 [node name="JumpTimer" type="Timer" parent="."]
