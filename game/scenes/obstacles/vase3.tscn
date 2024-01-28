@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://5eyfr7via258"]
+
+[ext_resource type="Texture2D" uid="uid://sgp2f6hch5bi" path="res://scenes/assets/vases/vase3.png" id="1_xsfbo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oh50w"]
+size = Vector2(19, 35)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ttkt"]
+radius = 5.0
+height = 26.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wai5c"]
+size = Vector2(140, 120)
+
+[node name="Vase3" type="RigidBody2D"]
+collision_layer = 5
+collision_mask = 5
+mass = 0.2
+center_of_mass_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -20)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_xsfbo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -11.5)
+shape = SubResource("RectangleShape2D_oh50w")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(1, -41)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_3ttkt")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-2.98023e-07, -32)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_wai5c")

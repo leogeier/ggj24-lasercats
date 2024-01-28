@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj4ucj7bdp50n"]
+
+[ext_resource type="Texture2D" uid="uid://k8k6jg8x1lgv" path="res://scenes/assets/vases/vase7.png" id="1_8h7rw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8d6hq"]
+size = Vector2(223, 16)
+
+[node name="Vase7" type="RigidBody2D"]
+collision_layer = 5
+collision_mask = 5
+center_of_mass_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, -166)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("1_8h7rw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(5, -162)
+polygon = PackedVector2Array(-59, -80, -87, -60, -124, -61, -150, -54, -159, -8, -141, 23, -114, 24, -84, 10, -70, 4, -31, 4, -81, 140, -59, 153, -26, 151, -21, 168, 20, 168, 21, 142, 68, 142, 33, 7, 78, 5, 103, 29, 149, 22, 147, -24, 133, -60, 76, -61, 73, -83, 76, -110, 75, -133, 76, -161, 78, -188, 94, -222, 86, -253, 70, -287, 61, -223, 24, -220, 38, -262, 1, -297, -39, -264, -23, -234, -29, -219, -55, -245, -55, -280, -81, -269, -88, -214, -76, -188)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(6, -168)
+polygon = PackedVector2Array(-39, 175, -18, 162, 24, 161, 41, 176, 55, 197, 140, 238, 140, 267, 115, 286, -21, 285, -137, 276, -145, 243, -51, 197)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, 111)
+shape = SubResource("RectangleShape2D_8d6hq")
