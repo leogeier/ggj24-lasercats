@@ -35,7 +35,7 @@ func _input(event):
 
 func set_laser_position(new_pos):
 	var cam_pos = camera.get_screen_center_position()
-	var maxiumum = get_parent().to_local(cam_pos + camera.get_half_extent())
+	var maximum = get_parent().to_local(cam_pos + camera.get_half_extent())
 	var minimum = get_parent().to_local(cam_pos - camera.get_half_extent())
 	new_pos = new_pos.clamp(minimum, maximum)
 	if new_pos != position:
