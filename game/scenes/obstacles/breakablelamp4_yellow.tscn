@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://dumxh2dfmlrko"]
+
+[ext_resource type="Texture2D" uid="uid://dvhduptota5mw" path="res://scenes/assets/breakablebobjects/lamp4(hat).png" id="1_c36sj"]
+[ext_resource type="PackedScene" uid="uid://v4yt1hf67uqr" path="res://scenes/shadow/shadow.tscn" id="2_dihi2"]
+[ext_resource type="Texture2D" uid="uid://ckrd8k5yyhu6s" path="res://scenes/assets/breakablebobjects/lamp4(base).png" id="3_djbv8"]
+[ext_resource type="Script" path="res://scenes/obstacles/BreakableJoint.gd" id="4_asg5n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xa6is"]
+size = Vector2(150, 153)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ix2cf"]
+size = Vector2(59, 143)
+
+[node name="Breakablelamp4Yellow" type="Node2D"]
+
+[node name="base" type="RigidBody2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+center_of_mass_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="base"]
+position = Vector2(-4, -104)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_djbv8")
+
+[node name="Shadow" parent="base/Sprite2D" instance=ExtResource("2_dihi2")]
+position = Vector2(0, 57.1429)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="base"]
+position = Vector2(0, -40.5)
+shape = SubResource("RectangleShape2D_xa6is")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="base"]
+position = Vector2(-1.5, -171.5)
+shape = SubResource("RectangleShape2D_ix2cf")
+
+[node name="hat" type="RigidBody2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+mass = 0.3
+center_of_mass_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="hat"]
+position = Vector2(-3, -297)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_c36sj")
+
+[node name="Shadow" parent="hat/Sprite2D" instance=ExtResource("2_dihi2")]
+position = Vector2(0, 57.1428)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hat"]
+polygon = PackedVector2Array(-88, -394, -49, -411, 32, -407, 80, -399, 102, -381, 106, -343, 151, -211, 28, -243, -30, -243, -150, -219, -122, -276, -96, -353, -86, -394)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(0, -241)
+node_a = NodePath("../base")
+node_b = NodePath("../hat")
+script = ExtResource("4_asg5n")
