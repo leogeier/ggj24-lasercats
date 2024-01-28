@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5fwp8o3n08fb"]
+[gd_scene load_steps=7 format=3 uid="uid://c5fwp8o3n08fb"]
 
 [ext_resource type="Texture2D" uid="uid://bs5kukaua86cr" path="res://scenes/assets/lamps/lamp1.png" id="1_4dudg"]
 [ext_resource type="PackedScene" uid="uid://v4yt1hf67uqr" path="res://scenes/shadow/shadow.tscn" id="2_qhak5"]
+[ext_resource type="PackedScene" uid="uid://c3g0phbhutt4u" path="res://scenes/collision_sound/collision_sound.tscn" id="3_1252e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q218r"]
 size = Vector2(167.5, 79)
@@ -25,6 +26,7 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_4dudg")
 
 [node name="Shadow" parent="Sprite2D" instance=ExtResource("2_qhak5")]
+position = Vector2(0, 66.6667)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.75, 16)
@@ -38,3 +40,5 @@ shape = SubResource("CapsuleShape2D_fspk4")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
 position = Vector2(-246, -233)
 shape = SubResource("CapsuleShape2D_fia7p")
+
+[node name="CollisionSound" parent="." instance=ExtResource("3_1252e")]

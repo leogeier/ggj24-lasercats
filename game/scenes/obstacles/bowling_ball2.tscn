@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://61wq3reh2jyc"]
+[gd_scene load_steps=5 format=3 uid="uid://61wq3reh2jyc"]
 
 [ext_resource type="Texture2D" uid="uid://b7u7ha2jvxtqw" path="res://scenes/assets/sports/sportitem1.png" id="1_al76n"]
 [ext_resource type="PackedScene" uid="uid://v4yt1hf67uqr" path="res://scenes/shadow/shadow.tscn" id="2_rp86r"]
+[ext_resource type="PackedScene" uid="uid://c3g0phbhutt4u" path="res://scenes/collision_sound/collision_sound.tscn" id="3_w6en8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_twjdo"]
 radius = 92.0489
@@ -20,3 +21,5 @@ position = Vector2(0, 80)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_twjdo")
+
+[node name="CollisionSound" parent="." instance=ExtResource("3_w6en8")]

@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://drhm8ls40pfgj"]
+
+[node name="Checkpoint" type="Node2D" groups=["checkpoint"]]

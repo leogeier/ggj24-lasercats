@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8hf5520cc006"]
+[gd_scene load_steps=5 format=3 uid="uid://b8hf5520cc006"]
 
 [ext_resource type="Texture2D" uid="uid://cfnx8itlnykxi" path="res://scenes/assets/sports/sportitem2.png" id="1_s0gts"]
 [ext_resource type="PackedScene" uid="uid://v4yt1hf67uqr" path="res://scenes/shadow/shadow.tscn" id="2_7vyx7"]
+[ext_resource type="PackedScene" uid="uid://c3g0phbhutt4u" path="res://scenes/collision_sound/collision_sound.tscn" id="3_erqcq"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_twjdo"]
-radius = 85.0059
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w0v11"]
+radius = 80.0
+height = 174.0
 
 [node name="BowlingBall" type="RigidBody2D"]
 collision_layer = 5
@@ -19,4 +21,7 @@ texture = ExtResource("1_s0gts")
 position = Vector2(0, 80)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_twjdo")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_w0v11")
+
+[node name="CollisionSound" parent="." instance=ExtResource("3_erqcq")]

@@ -1,105 +1,135 @@
-[gd_scene load_steps=14 format=3 uid="uid://536k3eyx2ow7"]
+[gd_scene load_steps=21 format=3 uid="uid://536k3eyx2ow7"]
 
 [ext_resource type="PackedScene" uid="uid://b8hf5520cc006" path="res://scenes/obstacles/bowling_ball.tscn" id="1_rrwgb"]
+[ext_resource type="Texture2D" uid="uid://b2841qrw05hsj" path="res://scenes/assets/Livingroom/Wall Texture.png" id="1_rvuyk"]
 [ext_resource type="PackedScene" uid="uid://bh28ccd421trc" path="res://scenes/cat/cat.tscn" id="1_vp0h8"]
 [ext_resource type="PackedScene" uid="uid://ciacvo6retlhy" path="res://scenes/laserpointer/laserpointer.tscn" id="2_dw5os"]
 [ext_resource type="PackedScene" uid="uid://duehi6pdpwp2t" path="res://scenes/camera/camera.tscn" id="3_a537d"]
 [ext_resource type="PackedScene" uid="uid://dgd8s0xnbmy23" path="res://scenes/shelf/Shelf.tscn" id="4_x3774"]
 [ext_resource type="PackedScene" uid="uid://bhkn2g6mktugj" path="res://scenes/window/window.tscn" id="5_pluiw"]
-[ext_resource type="PackedScene" uid="uid://dhycu16i0hwl" path="res://scenes/obstacles/standing_lamp.tscn" id="7_7re07"]
 [ext_resource type="PackedScene" uid="uid://casjp0djtvre" path="res://scenes/obstacles/lamp.tscn" id="8_1q4a7"]
+[ext_resource type="PackedScene" uid="uid://bfumkh7ybh83y" path="res://scenes/obstacles/Chair.tscn" id="8_xfyuy"]
+[ext_resource type="Texture2D" uid="uid://bt1snowhokw1u" path="res://scenes/assets/Livingroom/Floor.png" id="9_bw6je"]
 [ext_resource type="PackedScene" uid="uid://br58ke2lsx3vo" path="res://scenes/obstacles/trophy.tscn" id="9_cibi5"]
-[ext_resource type="PackedScene" uid="uid://dqdsvcpprwbaa" path="res://scenes/obstacles/vase1.tscn" id="10_0jajy"]
 [ext_resource type="PackedScene" uid="uid://jn7l4rp06k8" path="res://scenes/obstacles/trophy_breakable.tscn" id="11_qdtuf"]
+[ext_resource type="PackedScene" uid="uid://dt8vsk3xd67ay" path="res://scenes/obstacles/sofa.tscn" id="12_h32sf"]
+[ext_resource type="PackedScene" uid="uid://gn2pfuvfjxep" path="res://scenes/obstacles/standing_lamp_smaller.tscn" id="13_okwsk"]
+[ext_resource type="PackedScene" uid="uid://b662bj4elnqs6" path="res://scenes/obstacles/painting.tscn" id="14_0cenj"]
+[ext_resource type="PackedScene" uid="uid://dkip6t3ofwu07" path="res://scenes/music/music_trigger.tscn" id="16_6hgtq"]
+[ext_resource type="PackedScene" uid="uid://6fklhk1bger" path="res://scenes/music/Music.tscn" id="17_8ixnr"]
+[ext_resource type="PackedScene" uid="uid://drhm8ls40pfgj" path="res://scenes/checkpoint.tscn" id="17_12aj7"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0688f"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3w1h3"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" groups=["level"]]
 
-[node name="BowlingBall" parent="." instance=ExtResource("1_rrwgb")]
-position = Vector2(1343, -54)
+[node name="WallTexture" type="Sprite2D" parent="."]
+z_index = -100
+texture_repeat = 2
+position = Vector2(981, -12043)
+scale = Vector2(0.381, 0.381)
+texture = ExtResource("1_rvuyk")
+region_enabled = true
+region_rect = Rect2(0, 0, 8192, 100000)
 
-[node name="Cat" parent="." instance=ExtResource("1_vp0h8")]
-position = Vector2(905, 1008)
+[node name="Sofa" parent="." instance=ExtResource("12_h32sf")]
+position = Vector2(1499, 1043)
 
-[node name="Laserpointer" parent="." instance=ExtResource("2_dw5os")]
-position = Vector2(904, 1008)
+[node name="Chair" parent="." instance=ExtResource("8_xfyuy")]
+position = Vector2(492, 1045)
 
-[node name="Shelf" parent="." instance=ExtResource("4_x3774")]
-position = Vector2(1520, 344)
-peg_distance = 118.359
-board_width = 0.694
-side_offset = -28.195
+[node name="StandingLamp" parent="." instance=ExtResource("13_okwsk")]
+position = Vector2(107, 1028)
 
 [node name="Shelf2" parent="." instance=ExtResource("4_x3774")]
-position = Vector2(845, 721)
+position = Vector2(1905, -139)
 peg_distance = 77.539
 
-[node name="Shelf3" parent="." instance=ExtResource("4_x3774")]
-position = Vector2(1847, 598)
-peg_distance = 100.0
-
-[node name="Shelf4" parent="." instance=ExtResource("4_x3774")]
-position = Vector2(644, 292)
-peg_distance = 144.336
+[node name="TrophyBreakable" parent="Shelf2" instance=ExtResource("11_qdtuf")]
+position = Vector2(35, -78)
 
 [node name="Shelf5" parent="." instance=ExtResource("4_x3774")]
-position = Vector2(1224, 62)
+position = Vector2(520, -119)
 peg_distance = 118.359
 board_width = 1.804
+side_offset = 47.727
+
+[node name="BowlingBall" parent="Shelf5" instance=ExtResource("1_rrwgb")]
+position = Vector2(199, -110)
+
+[node name="Trophy" parent="Shelf5" instance=ExtResource("9_cibi5")]
+position = Vector2(-260, -117)
 
 [node name="Shelf7" parent="." instance=ExtResource("4_x3774")]
-position = Vector2(1374, -587)
+position = Vector2(1442, -471)
 peg_distance = 118.359
 board_width = 1.804
 
-[node name="Shelf6" parent="." instance=ExtResource("4_x3774")]
-position = Vector2(750, -315)
-
 [node name="Shelf8" parent="." instance=ExtResource("4_x3774")]
-position = Vector2(310, -721)
+position = Vector2(361, -558)
+board_width = 2.114
+side_offset = -50.0
 
-[node name="Window" parent="." instance=ExtResource("5_pluiw")]
-position = Vector2(296, -846)
+[node name="Lamp2" parent="Shelf8" instance=ExtResource("8_1q4a7")]
+position = Vector2(-65, -56)
 
-[node name="StandingLamp" parent="." instance=ExtResource("7_7re07")]
-position = Vector2(192, 969)
+[node name="Shelf9" parent="." instance=ExtResource("4_x3774")]
+position = Vector2(865, -1128)
+board_width = 2.114
 
-[node name="Lamp" parent="." instance=ExtResource("8_1q4a7")]
-position = Vector2(1393, 1023)
-
-[node name="Trophy" parent="." instance=ExtResource("9_cibi5")]
-position = Vector2(1181, -47)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="BottomBoundary" type="StaticBody2D" parent="."]
+z_index = -100
 position = Vector2(906, 1058)
 collision_layer = 5
 collision_mask = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomBoundary"]
 shape = SubResource("WorldBoundaryShape2D_0688f")
 
-[node name="Vase1" parent="." instance=ExtResource("10_0jajy")]
-position = Vector2(1499, -677)
+[node name="Floor" type="Sprite2D" parent="BottomBoundary"]
+modulate = Color(1, 1, 1, 0.419608)
+position = Vector2(87, 111)
+texture = ExtResource("9_bw6je")
+
+[node name="LeftBoundary" type="StaticBody2D" parent="."]
+position = Vector2(-51, 708)
+rotation = 1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBoundary"]
+position = Vector2(-19.0019, 308)
+shape = SubResource("WorldBoundaryShape2D_3w1h3")
+
+[node name="RightBoundary" type="StaticBody2D" parent="."]
+position = Vector2(2099, 701)
+rotation = -1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBoundary"]
+position = Vector2(641.001, 227.996)
+shape = SubResource("WorldBoundaryShape2D_3w1h3")
+
+[node name="Window" parent="." instance=ExtResource("5_pluiw")]
+position = Vector2(1630, -1556)
+
+[node name="Painting" parent="." instance=ExtResource("14_0cenj")]
+position = Vector2(1117, -988)
+
+[node name="Cat" parent="." instance=ExtResource("1_vp0h8")]
+position = Vector2(844, 1016)
+
+[node name="Laserpointer" parent="." instance=ExtResource("2_dw5os")]
+position = Vector2(914, 795)
 
 [node name="Camera" parent="." instance=ExtResource("3_a537d")]
 position = Vector2(1024, 544)
 
-[node name="TrophyBreakable" parent="." instance=ExtResource("11_qdtuf")]
-position = Vector2(726, 644)
+[node name="MusicTrigger" parent="." instance=ExtResource("16_6hgtq")]
+position = Vector2(886, -1177)
+track_name = "Stage2"
+zoom_target = 0.9
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(-51, 708)
-rotation = 1.57079
+[node name="Checkpoint" parent="MusicTrigger" instance=ExtResource("17_12aj7")]
+position = Vector2(-16, -248)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-shape = SubResource("WorldBoundaryShape2D_3w1h3")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(2099, 701)
-rotation = -1.57079
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-shape = SubResource("WorldBoundaryShape2D_3w1h3")
+[node name="Music" parent="." instance=ExtResource("17_8ixnr")]

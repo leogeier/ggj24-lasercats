@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3g0phbhutt4u"]
+
+[ext_resource type="Script" path="res://scenes/collision_sound/collision_sound.gd" id="1_1bimw"]
+[ext_resource type="AudioStream" uid="uid://dokdutdx11o4b" path="res://sound/thump1.wav" id="2_j2yg0"]
+[ext_resource type="AudioStream" uid="uid://jkflvy44hto1" path="res://sound/thump2.wav" id="3_17ayp"]
+[ext_resource type="AudioStream" uid="uid://locb2mmnl8ax" path="res://sound/thump4.wav" id="4_jt7ce"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_c38b7"]
+random_pitch = 1.37
+streams_count = 3
+stream_0/stream = ExtResource("2_j2yg0")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("3_17ayp")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("4_jt7ce")
+stream_2/weight = 1.0
+
+[node name="CollisionSound" type="Node2D" groups=["sound"]]
+script = ExtResource("1_1bimw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_c38b7")
+volume_db = 4.0

@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="laser-cats"
-run/main_scene="res://main.tscn"
+run/main_scene="res://level.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Level="*res://level.gd"
 
 [display]
 

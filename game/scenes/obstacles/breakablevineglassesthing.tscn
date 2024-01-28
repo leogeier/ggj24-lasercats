@@ -1,0 +1,174 @@
+[gd_scene load_steps=16 format=3 uid="uid://o6err8xusldq"]
+
+[ext_resource type="Texture2D" uid="uid://cyv12722wh58g" path="res://scenes/assets/breakablebobjects/sportsitem6-base.png" id="1_77ndc"]
+[ext_resource type="PackedScene" uid="uid://v4yt1hf67uqr" path="res://scenes/shadow/shadow.tscn" id="2_ubw5w"]
+[ext_resource type="Texture2D" uid="uid://r3qvyfbnj52k" path="res://scenes/assets/breakablebobjects/sportsitem6-cupcenter.png" id="3_ebnb8"]
+[ext_resource type="PackedScene" uid="uid://c3g0phbhutt4u" path="res://scenes/collision_sound/collision_sound.tscn" id="3_i2gcf"]
+[ext_resource type="Texture2D" uid="uid://cemdvwleggv6q" path="res://scenes/assets/breakablebobjects/sportsitem6-cupright.png" id="4_d2hvt"]
+[ext_resource type="Texture2D" uid="uid://cmf3sg4t5mxmy" path="res://scenes/assets/breakablebobjects/sportsitem6-cupleft.png" id="5_1jx4s"]
+[ext_resource type="Texture2D" uid="uid://i6gvxlpics7u" path="res://scenes/assets/breakablebobjects/sportsitem6-podium.png" id="6_njks4"]
+[ext_resource type="Script" path="res://scenes/obstacles/BreakableJoint.gd" id="7_6ujtt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjdku"]
+size = Vector2(18, 163)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qv3de"]
+radius = 23.0
+height = 74.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xht7j"]
+size = Vector2(219, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pm0x"]
+size = Vector2(71, 134)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hu1io"]
+size = Vector2(87, 139)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5qqm"]
+size = Vector2(95, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqlbr"]
+size = Vector2(331, 32)
+
+[node name="Breakablevineglassesthing" type="Node2D"]
+
+[node name="base_stick" type="RigidBody2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+lock_rotation = true
+max_contacts_reported = 6
+contact_monitor = true
+
+[node name="Sprite2D" type="Sprite2D" parent="base_stick"]
+position = Vector2(4, -71)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_77ndc")
+
+[node name="Shadow" parent="base_stick/Sprite2D" instance=ExtResource("2_ubw5w")]
+position = Vector2(0, 57.1429)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="base_stick"]
+position = Vector2(-1, -110.5)
+shape = SubResource("RectangleShape2D_gjdku")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="base_stick"]
+position = Vector2(0, -4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_qv3de")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="base_stick"]
+position = Vector2(-3.5, -172)
+shape = SubResource("RectangleShape2D_xht7j")
+
+[node name="CollisionSound" parent="base_stick" instance=ExtResource("3_i2gcf")]
+
+[node name="center" type="RigidBody2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+mass = 0.3
+lock_rotation = true
+max_contacts_reported = 6
+contact_monitor = true
+
+[node name="Sprite2D" type="Sprite2D" parent="center"]
+position = Vector2(-12, -241)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_ebnb8")
+
+[node name="Shadow" parent="center/Sprite2D" instance=ExtResource("2_ubw5w")]
+position = Vector2(0, 57.1429)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="center"]
+position = Vector2(-7, -254)
+shape = SubResource("RectangleShape2D_1pm0x")
+
+[node name="CollisionSound" parent="center" instance=ExtResource("3_i2gcf")]
+
+[node name="right" type="RigidBody2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+mass = 0.3
+lock_rotation = true
+max_contacts_reported = 6
+contact_monitor = true
+
+[node name="Sprite2D" type="Sprite2D" parent="right"]
+position = Vector2(81, -232)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_d2hvt")
+
+[node name="Shadow" parent="right/Sprite2D" instance=ExtResource("2_ubw5w")]
+position = Vector2(0, 57.1429)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right"]
+position = Vector2(78, -253)
+shape = SubResource("RectangleShape2D_hu1io")
+
+[node name="CollisionSound" parent="right" instance=ExtResource("3_i2gcf")]
+
+[node name="left" type="RigidBody2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+mass = 0.3
+lock_rotation = true
+max_contacts_reported = 6
+contact_monitor = true
+
+[node name="Sprite2D" type="Sprite2D" parent="left"]
+position = Vector2(-99, -243)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("5_1jx4s")
+
+[node name="Shadow" parent="left/Sprite2D" instance=ExtResource("2_ubw5w")]
+position = Vector2(0, 57.1428)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left"]
+position = Vector2(-93, -252)
+shape = SubResource("RectangleShape2D_a5qqm")
+
+[node name="CollisionSound" parent="left" instance=ExtResource("3_i2gcf")]
+
+[node name="base2" type="RigidBody2D" parent="."]
+position = Vector2(95, 11)
+collision_layer = 5
+collision_mask = 5
+mass = 1.2
+max_contacts_reported = 6
+contact_monitor = true
+
+[node name="Sprite2D" type="Sprite2D" parent="base2"]
+position = Vector2(-90, 32)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("6_njks4")
+
+[node name="Shadow" parent="base2/Sprite2D" instance=ExtResource("2_ubw5w")]
+position = Vector2(0, 57.1429)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="base2"]
+position = Vector2(-93.5, 27)
+shape = SubResource("RectangleShape2D_fqlbr")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(-101, -184)
+node_a = NodePath("../left")
+node_b = NodePath("../base_stick")
+script = ExtResource("7_6ujtt")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(-4, -186)
+node_a = NodePath("../center")
+node_b = NodePath("../base_stick")
+script = ExtResource("7_6ujtt")
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2(76, -186)
+node_a = NodePath("../right")
+node_b = NodePath("../base_stick")
+script = ExtResource("7_6ujtt")
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="."]
+position = Vector2(2, 21)
+node_a = NodePath("../base_stick")
+node_b = NodePath("../base2")
+script = ExtResource("7_6ujtt")

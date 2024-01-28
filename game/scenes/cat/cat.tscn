@@ -1,17 +1,18 @@
-[gd_scene load_steps=21 format=3 uid="uid://bh28ccd421trc"]
+[gd_scene load_steps=23 format=3 uid="uid://bh28ccd421trc"]
 
 [ext_resource type="Script" path="res://scenes/cat/cat.gd" id="1_mcim8"]
 [ext_resource type="Texture2D" uid="uid://dorugsjjg745x" path="res://Animations/Sitting Tail Tapping Cycle.png" id="2_ve6i5"]
-[ext_resource type="Texture2D" uid="uid://dwyn6dvayivya" path="res://Animations/Run-Cycle-Animation_0005_Layer-11.png" id="3_ib1cc"]
-[ext_resource type="Texture2D" uid="uid://6w3onattvixx" path="res://Animations/Run-Cycle-Animation_0000_Layer-15.png" id="4_dnbaw"]
-[ext_resource type="Texture2D" uid="uid://bc7d2rdbeffb5" path="res://Animations/Run-Cycle-Animation_0001_Layer-10.png" id="5_53kmp"]
-[ext_resource type="Texture2D" uid="uid://bnprygp7ok34a" path="res://Animations/Run-Cycle-Animation_0002_Layer-9-copy.png" id="6_3hmoc"]
-[ext_resource type="Texture2D" uid="uid://b0h410y5wsoh5" path="res://Animations/Run-Cycle-Animation_0003_Layer-17.png" id="7_kal8u"]
-[ext_resource type="Texture2D" uid="uid://cbv4mvfxnya8o" path="res://Animations/Run-Cycle-Animation_0004_Layer-14.png" id="8_xln33"]
-[ext_resource type="Texture2D" uid="uid://c4trfvtiesx0o" path="res://Animations/Run-Cycle-Animation_0006_Layer-9.png" id="9_ytkva"]
+[ext_resource type="Texture2D" uid="uid://llq2pcek5q7l" path="res://Animations/Run-Cycle-Animation_0005_Layer-11.png" id="3_ib1cc"]
+[ext_resource type="Texture2D" uid="uid://bchhcqxfyql75" path="res://Animations/Run-Cycle-Animation_0000_Layer-15.png" id="4_dnbaw"]
+[ext_resource type="Texture2D" uid="uid://d2rsjfunprq3g" path="res://Animations/Run-Cycle-Animation_0001_Layer-10.png" id="5_53kmp"]
+[ext_resource type="Texture2D" uid="uid://c81kbdjnsahem" path="res://Animations/Run-Cycle-Animation_0002_Layer-9-copy.png" id="6_3hmoc"]
+[ext_resource type="Texture2D" uid="uid://d0yynw7nan1ff" path="res://Animations/Run-Cycle-Animation_0003_Layer-17.png" id="7_kal8u"]
+[ext_resource type="Texture2D" uid="uid://ck2yrs747ijo1" path="res://Animations/Run-Cycle-Animation_0004_Layer-14.png" id="8_xln33"]
+[ext_resource type="Texture2D" uid="uid://cnm1wqexpen7k" path="res://Animations/Run-Cycle-Animation_0006_Layer-9.png" id="9_ytkva"]
 [ext_resource type="Texture2D" uid="uid://tgnb4uub7wge" path="res://Animations/Stand-and-look_0002_Layer-2.png" id="10_tff5o"]
 [ext_resource type="Texture2D" uid="uid://cn1rsmneadbf4" path="res://Animations/Stand-and-look_0001_Layer-4.png" id="11_erl7o"]
 [ext_resource type="Texture2D" uid="uid://b0njda4lbefvo" path="res://Animations/Stand-and-look_0000_Layer-5.png" id="12_7drcb"]
+[ext_resource type="AudioStream" uid="uid://bk1jcfmqaaiq0" path="res://sound/thump3.wav" id="13_kinqs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sjwwl"]
 atlas = ExtResource("2_ve6i5")
@@ -99,13 +100,21 @@ radius = 63.0
 height = 190.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xupk3"]
-size = Vector2(64, 1)
+size = Vector2(140, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fi3d3"]
 radius = 54.0
 height = 378.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_77v65"]
+random_pitch = 1.2
+random_volume_offset_db = 0.4
+streams_count = 1
+stream_0/stream = ExtResource("13_kinqs")
+stream_0/weight = 1.0
+
 [node name="Cat" type="RigidBody2D" groups=["cat"]]
+z_index = 50
 position = Vector2(1, 0)
 collision_layer = 4
 collision_mask = 4
@@ -150,7 +159,7 @@ rotation = 1.57079
 shape = SubResource("CapsuleShape2D_fi3d3")
 
 [node name="JumpTimer" type="Timer" parent="."]
-wait_time = 0.207
+wait_time = 0.307
 one_shot = true
 
 [node name="JustLandedTimer" type="Timer" parent="."]
@@ -160,3 +169,6 @@ one_shot = true
 [node name="LowestPoint" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(0, 18)
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_77v65")

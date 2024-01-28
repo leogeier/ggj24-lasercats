@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://jn7l4rp06k8"]
+[gd_scene load_steps=8 format=3 uid="uid://jn7l4rp06k8"]
 
 [ext_resource type="Texture2D" uid="uid://bh63337ijyh1v" path="res://scenes/assets/breakablebobjects/sportsitem5-base.png" id="1_psmrx"]
 [ext_resource type="PackedScene" uid="uid://v4yt1hf67uqr" path="res://scenes/shadow/shadow.tscn" id="2_t4ikq"]
 [ext_resource type="Texture2D" uid="uid://clb2erurwgpyu" path="res://scenes/assets/breakablebobjects/sportsitem5-statue.png" id="2_xc84y"]
+[ext_resource type="PackedScene" uid="uid://c3g0phbhutt4u" path="res://scenes/collision_sound/collision_sound.tscn" id="3_0ri6l"]
 [ext_resource type="Script" path="res://scenes/obstacles/BreakableJoint.gd" id="3_prepj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sahff"]
@@ -34,6 +35,8 @@ position = Vector2(0, 133.333)
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_sahff")
 
+[node name="CollisionSound" parent="base" instance=ExtResource("3_0ri6l")]
+
 [node name="top" type="RigidBody2D" parent="."]
 collision_layer = 5
 collision_mask = 5
@@ -54,6 +57,8 @@ position = Vector2(0, 133.333)
 position = Vector2(16, -77)
 rotation = 0.291446
 shape = SubResource("CapsuleShape2D_e54pk")
+
+[node name="CollisionSound" parent="top" instance=ExtResource("3_0ri6l")]
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2(0, -5)
