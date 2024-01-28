@@ -1,9 +1,10 @@
-[gd_scene load_steps=45 format=3 uid="uid://b46h7o882wpvt"]
+[gd_scene load_steps=46 format=3 uid="uid://b46h7o882wpvt"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_7fo05"]
 [ext_resource type="Texture2D" uid="uid://b2841qrw05hsj" path="res://scenes/assets/Livingroom/Wall Texture.png" id="1_kqb8r"]
 [ext_resource type="PackedScene" uid="uid://dt8vsk3xd67ay" path="res://scenes/obstacles/sofa.tscn" id="2_ax0dk"]
 [ext_resource type="PackedScene" uid="uid://dpnce1c1fwpek" path="res://scenes/obstacles/Chair.tscn" id="3_b8nix"]
+[ext_resource type="Texture2D" uid="uid://coqubsfbrtqwy" path="res://scenes/assets/decor/decor2.png" id="3_jobxs"]
 [ext_resource type="PackedScene" uid="uid://gn2pfuvfjxep" path="res://scenes/obstacles/standing_lamp_smaller.tscn" id="4_avc2b"]
 [ext_resource type="PackedScene" uid="uid://dgd8s0xnbmy23" path="res://scenes/shelf/Shelf.tscn" id="5_nf331"]
 [ext_resource type="PackedScene" uid="uid://jn7l4rp06k8" path="res://scenes/obstacles/trophy_breakable.tscn" id="6_i0bw7"]
@@ -41,12 +42,11 @@
 [ext_resource type="PackedScene" uid="uid://o6err8xusldq" path="res://scenes/obstacles/breakablevineglassesthing.tscn" id="39_x2vuj"]
 [ext_resource type="PackedScene" uid="uid://wt2jqh4jyqo2" path="res://scenes/obstacles/breakableplant8.tscn" id="40_4a1rq"]
 [ext_resource type="PackedScene" uid="uid://co8y188ycb8fj" path="res://scenes/obstacles/painting2.tscn" id="41_74sxk"]
+[ext_resource type="PackedScene" uid="uid://33e24ccy7ly5" path="res://decorations.tscn" id="43_xlx3x"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0688f"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3w1h3"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cbhrw"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7fo05")
@@ -54,11 +54,16 @@ script = ExtResource("1_7fo05")
 [node name="WallTexture" type="Sprite2D" parent="."]
 z_index = -100
 texture_repeat = 2
-position = Vector2(981, -12043)
+position = Vector2(999, -12058)
 scale = Vector2(0.381, 0.381)
 texture = ExtResource("1_kqb8r")
 region_enabled = true
 region_rect = Rect2(0, 0, 8192, 100000)
+
+[node name="Decor4" type="Sprite2D" parent="WallTexture"]
+position = Vector2(1827.5, -3132.25)
+scale = Vector2(0.135057, 0.131579)
+texture = ExtResource("3_jobxs")
 
 [node name="Sofa" parent="." instance=ExtResource("2_ax0dk")]
 position = Vector2(1499, 1043)
@@ -189,15 +194,6 @@ position = Vector2(-54, -134)
 
 [node name="Window" parent="." instance=ExtResource("11_rga4o")]
 position = Vector2(844, -5973)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-211, -2265)
-collision_layer = 5
-collision_mask = 5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(913, 995)
-shape = SubResource("WorldBoundaryShape2D_cbhrw")
 
 [node name="Fixedshelf2" parent="." instance=ExtResource("25_akirc")]
 position = Vector2(499, -2069)
@@ -368,3 +364,10 @@ position = Vector2(1521, -1228)
 
 [node name="Fixedshelf15" parent="." instance=ExtResource("25_akirc")]
 position = Vector2(761, -1088)
+
+[node name="Decorations" parent="." instance=ExtResource("43_xlx3x")]
+position = Vector2(-44, -4519)
+rotation = 0.0174533
+
+[node name="Decorations" parent="Decorations" instance=ExtResource("43_xlx3x")]
+position = Vector2(-6, -8190)
