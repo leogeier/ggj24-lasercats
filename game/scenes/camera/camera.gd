@@ -53,7 +53,7 @@ func check_for_fall():
 
 var game_over_scene = preload("res://menus/game over.tscn")
 func game_over():
-	
+	kitty.queue_free()
 	add_child(game_over_scene.instantiate())
 	kitty_fell.emit()
 	end_game()
