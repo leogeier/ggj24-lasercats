@@ -67,6 +67,7 @@ func _integrate_forces(state):
 			jump_vector = laser_dir * jump_force
 		
 		if should_jump:
+			$JumpSound.play()
 			state.apply_central_impulse(jump_vector)
 			start_impulse_cooldown()
 			for body in %GroundCheck.get_overlapping_bodies():
@@ -89,6 +90,7 @@ func _integrate_forces(state):
 var was_on_ground = true
 func _physics_process(_delta):
 	if is_on_ground() and not was_on_ground:
+		$JumpSound.play()
 		start_jump_cooldown()
 	was_on_ground = is_on_ground()
 	highest_ground_position = highest_ground_position if highest_ground_position.y < position.y else position

@@ -17,7 +17,6 @@ func change_to_track(track_name):
 	tween.tween_method(func(v):
 		next_track.volume_db = linear_to_db(v)
 		current_track.volume_db = linear_to_db(1.0 - v)
-		print(next_track.name, current_track.name)
 		, 0.0, 1.0, 5)
 	
 	await tween.finished
