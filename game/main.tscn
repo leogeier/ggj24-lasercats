@@ -1,6 +1,5 @@
-[gd_scene load_steps=36 format=3 uid="uid://dxtqm02dnl42d"]
+[gd_scene load_steps=34 format=3 uid="uid://dxtqm02dnl42d"]
 
-[ext_resource type="PackedScene" uid="uid://bh28ccd421trc" path="res://scenes/cat/cat.tscn" id="1_1cu0m"]
 [ext_resource type="Texture2D" uid="uid://b2841qrw05hsj" path="res://scenes/assets/Livingroom/Wall Texture.png" id="1_6dd1l"]
 [ext_resource type="Texture2D" uid="uid://bt1snowhokw1u" path="res://scenes/assets/Livingroom/Floor.png" id="2_kiu21"]
 [ext_resource type="PackedScene" uid="uid://ciacvo6retlhy" path="res://scenes/laserpointer/laserpointer.tscn" id="2_x85f1"]
@@ -9,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://co8y188ycb8fj" path="res://scenes/obstacles/painting2.tscn" id="5_pyqlf"]
 [ext_resource type="PackedScene" uid="uid://bhkn2g6mktugj" path="res://scenes/window/window.tscn" id="5_vdtd7"]
 [ext_resource type="PackedScene" uid="uid://b662bj4elnqs6" path="res://scenes/obstacles/painting.tscn" id="7_lm102"]
-[ext_resource type="PackedScene" uid="uid://b1tq01w2gtc44" path="res://scenes/obstacles/vase2.tscn" id="8_nlk0f"]
+[ext_resource type="PackedScene" uid="uid://qdrxvhcsf5px" path="res://scenes/obstacles/vase2.tscn" id="8_nlk0f"]
 [ext_resource type="PackedScene" uid="uid://6fklhk1bger" path="res://scenes/music/Music.tscn" id="10_hk2vu"]
 [ext_resource type="PackedScene" uid="uid://br58ke2lsx3vo" path="res://scenes/obstacles/trophy.tscn" id="10_nwumi"]
 [ext_resource type="PackedScene" uid="uid://dkip6t3ofwu07" path="res://scenes/music/music_trigger.tscn" id="11_frwd3"]
@@ -33,8 +32,6 @@
 [ext_resource type="PackedScene" uid="uid://c5fwp8o3n08fb" path="res://scenes/obstacles/lamp1.tscn" id="34_f73hr"]
 [ext_resource type="PackedScene" uid="uid://b3fwtijyy8f0e" path="res://scenes/obstacles/lamp5.tscn" id="35_my3tn"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mm8be"]
-
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ci8g4"]
 friction = 0.58
 
@@ -56,19 +53,8 @@ texture = ExtResource("1_6dd1l")
 region_enabled = true
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 8150, 100000)
 
-[node name="Cat" parent="." instance=ExtResource("1_1cu0m")]
-position = Vector2(320, 322)
-auto_jump_horizontal_mod = 0.756
-
-[node name="RightWall" type="StaticBody2D" parent="."]
-position = Vector2(2679, -462)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-rotation = -1.57079
-shape = SubResource("WorldBoundaryShape2D_mm8be")
-
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(952, 1009)
+position = Vector2(952, 1798)
 collision_layer = 5
 collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_ci8g4")
@@ -79,11 +65,11 @@ shape = SubResource("WorldBoundaryShape2D_3ysrg")
 
 [node name="Floor" type="Sprite2D" parent="Floor"]
 modulate = Color(1, 1, 1, 0.419608)
-position = Vector2(87, 111)
+position = Vector2(87, 807)
 texture = ExtResource("2_kiu21")
 
 [node name="Laserpointer" parent="." instance=ExtResource("2_x85f1")]
-position = Vector2(1037, 972)
+position = Vector2(1037, 1761)
 
 [node name="Music" parent="." instance=ExtResource("10_hk2vu")]
 

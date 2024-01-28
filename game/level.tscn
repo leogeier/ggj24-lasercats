@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://b46h7o882wpvt"]
+[gd_scene load_steps=49 format=3 uid="uid://8nblrbgx1bbg"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_7fo05"]
 [ext_resource type="Texture2D" uid="uid://b2841qrw05hsj" path="res://scenes/assets/Livingroom/Wall Texture.png" id="1_kqb8r"]
@@ -21,28 +21,31 @@
 [ext_resource type="PackedScene" uid="uid://6fklhk1bger" path="res://scenes/music/Music.tscn" id="17_p5w55"]
 [ext_resource type="PackedScene" path="res://scenes/checkpoint.tscn" id="18_4gt6j"]
 [ext_resource type="PackedScene" uid="uid://dy65rypajb1j5" path="res://scenes/obstacles/plant5.tscn" id="19_3v87d"]
-[ext_resource type="PackedScene" uid="uid://my2f37c2haa3" path="res://scenes/obstacles/plant6.tscn" id="20_ero54"]
+[ext_resource type="PackedScene" uid="uid://daljixcxv8ulo" path="res://scenes/obstacles/plant6.tscn" id="20_ero54"]
 [ext_resource type="PackedScene" uid="uid://5eyfr7via258" path="res://scenes/obstacles/vase3.tscn" id="21_e1m6i"]
 [ext_resource type="PackedScene" uid="uid://c5fwp8o3n08fb" path="res://scenes/obstacles/lamp1.tscn" id="22_e2fyr"]
 [ext_resource type="PackedScene" uid="uid://chtvvcb71rmve" path="res://scenes/obstacles/plant2.tscn" id="23_8q7rs"]
 [ext_resource type="PackedScene" uid="uid://da7n6gj36i2aj" path="res://scenes/shelf/fixedshelf2.tscn" id="25_akirc"]
 [ext_resource type="PackedScene" uid="uid://b5oh4yfdngaqq" path="res://scenes/obstacles/breakablelamp4_red.tscn" id="26_6412y"]
 [ext_resource type="PackedScene" uid="uid://jrdncy2gxc1w" path="res://scenes/shelf/fixedshelf4.tscn" id="27_bpc4l"]
-[ext_resource type="PackedScene" uid="uid://dyh35kd320gm3" path="res://scenes/obstacles/plant7.tscn" id="28_hohnf"]
+[ext_resource type="PackedScene" uid="uid://c2jlwmnyvnpoh" path="res://scenes/obstacles/plant7.tscn" id="28_hohnf"]
 [ext_resource type="PackedScene" uid="uid://dc7efk1jwgxrr" path="res://scenes/shelf/fixedshelf1.tscn" id="29_ded4u"]
 [ext_resource type="PackedScene" uid="uid://xfs1f33p2fh" path="res://scenes/obstacles/breakableplant1.tscn" id="30_pf2i2"]
 [ext_resource type="PackedScene" uid="uid://b30rv2yrfa03i" path="res://scenes/obstacles/bowlingpin.tscn" id="31_d6qwg"]
-[ext_resource type="PackedScene" uid="uid://cqhk3td0syrm0" path="res://scenes/obstacles/vase4.tscn" id="32_swyk1"]
+[ext_resource type="PackedScene" uid="uid://j6yevw2bes1p" path="res://scenes/obstacles/vase4.tscn" id="32_swyk1"]
 [ext_resource type="PackedScene" uid="uid://61wq3reh2jyc" path="res://scenes/obstacles/bowling_ball2.tscn" id="33_weqe8"]
 [ext_resource type="PackedScene" uid="uid://ck8kneyxxbbsk" path="res://scenes/obstacles/plant3.tscn" id="34_u5rak"]
-[ext_resource type="PackedScene" uid="uid://4bvg4myxbuue" path="res://scenes/obstacles/vase5.tscn" id="35_esvad"]
+[ext_resource type="PackedScene" uid="uid://b6lnle4s8hakd" path="res://scenes/obstacles/vase5.tscn" id="35_esvad"]
 [ext_resource type="PackedScene" uid="uid://b36kbb1qcxr80" path="res://scenes/shelf/fixedshelf3.tscn" id="36_24shc"]
 [ext_resource type="PackedScene" uid="uid://qdrxvhcsf5px" path="res://scenes/obstacles/vase2.tscn" id="37_0jx4f"]
 [ext_resource type="PackedScene" uid="uid://dumxh2dfmlrko" path="res://scenes/obstacles/breakablelamp4_yellow.tscn" id="38_xvysk"]
 [ext_resource type="PackedScene" uid="uid://o6err8xusldq" path="res://scenes/obstacles/breakablevineglassesthing.tscn" id="39_x2vuj"]
 [ext_resource type="PackedScene" uid="uid://wt2jqh4jyqo2" path="res://scenes/obstacles/breakableplant8.tscn" id="40_4a1rq"]
 [ext_resource type="PackedScene" uid="uid://co8y188ycb8fj" path="res://scenes/obstacles/painting2.tscn" id="41_74sxk"]
-[ext_resource type="PackedScene" uid="uid://33e24ccy7ly5" path="res://decorations.tscn" id="43_xlx3x"]
+[ext_resource type="PackedScene" uid="uid://d4n1hjvo65214" path="res://scenes/obstacles/plant4.tscn" id="43_o2gtc"]
+[ext_resource type="PackedScene" path="res://decorations.tscn" id="43_xlx3x"]
+[ext_resource type="PackedScene" uid="uid://ci4kmkjs3y8rf" path="res://scenes/obstacles/trophy2.tscn" id="44_p57pi"]
+[ext_resource type="PackedScene" uid="uid://b3fwtijyy8f0e" path="res://scenes/obstacles/lamp5.tscn" id="45_vnq7n"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0688f"]
 
@@ -140,7 +143,7 @@ shape = SubResource("WorldBoundaryShape2D_3w1h3")
 position = Vector2(1117, -988)
 
 [node name="Cat" parent="." instance=ExtResource("13_q0usd")]
-position = Vector2(844, 1016)
+position = Vector2(1070, -11589)
 
 [node name="Laserpointer" parent="." instance=ExtResource("14_g4dui")]
 position = Vector2(914, 795)
@@ -151,7 +154,7 @@ position = Vector2(1024, 544)
 [node name="MusicTrigger" parent="." instance=ExtResource("16_1ooey")]
 position = Vector2(860, -1180)
 track_name = "Stage2"
-zoom_target = 0.75
+zoom_target = 0.8
 
 [node name="Checkpoint" parent="MusicTrigger" instance=ExtResource("18_4gt6j")]
 position = Vector2(-80, -23)
@@ -191,9 +194,6 @@ position = Vector2(32, -2541)
 
 [node name="Plant3" parent="Shelf6" instance=ExtResource("23_8q7rs")]
 position = Vector2(-54, -134)
-
-[node name="Window" parent="." instance=ExtResource("11_rga4o")]
-position = Vector2(844, -5973)
 
 [node name="Fixedshelf2" parent="." instance=ExtResource("25_akirc")]
 position = Vector2(499, -2069)
@@ -371,3 +371,333 @@ rotation = 0.0174533
 
 [node name="Decorations" parent="Decorations" instance=ExtResource("43_xlx3x")]
 position = Vector2(-6, -8190)
+
+[node name="LeoG" type="Node2D" parent="."]
+position = Vector2(-22, -6228)
+
+[node name="Shelves" type="Node2D" parent="LeoG"]
+
+[node name="Shelf" parent="LeoG/Shelves" instance=ExtResource("5_nf331")]
+position = Vector2(343, 575)
+peg_distance = 242.411
+board_width = 2.137
+
+[node name="Shelf3" parent="LeoG/Shelves" instance=ExtResource("5_nf331")]
+position = Vector2(998, 40)
+peg_distance = 160.417
+board_width = 1.407
+side_offset = 30.953
+
+[node name="Shelf3" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(-37, -298)
+peg_distance = 457.292
+board_width = 3.42
+side_offset = 97.62
+
+[node name="Shelf4" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(-590, -674)
+peg_distance = 103.869
+board_width = 1.495
+side_offset = 97.62
+
+[node name="Shelf5" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(-228, -1023)
+peg_distance = 67.115
+board_width = 0.971
+side_offset = -66.505
+
+[node name="Shelf8" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(426, -1339)
+peg_distance = 129.317
+board_width = 2.079
+side_offset = -99.839
+
+[node name="Shelf11" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(-221, -2572)
+peg_distance = 129.317
+board_width = 2.079
+side_offset = -99.839
+
+[node name="Shelf13" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(-695, -3182)
+peg_distance = 92.561
+board_width = 1.204
+side_offset = 66.827
+
+[node name="Shelf14" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(-664, -3524)
+peg_distance = 92.561
+board_width = 1.291
+side_offset = -76.03
+
+[node name="Shelf16" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(912, -3541)
+peg_distance = 92.561
+board_width = 2.108
+side_offset = -73.649
+
+[node name="Shelf17" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(954, -3846)
+peg_distance = 92.561
+board_width = 0.97
+side_offset = -18.887
+
+[node name="Shelf18" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(1101, -4139)
+peg_distance = 78.424
+board_width = 1.116
+side_offset = -18.887
+
+[node name="Shelf19" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(872, -4445)
+peg_distance = 140.626
+board_width = 0.97
+side_offset = -18.887
+
+[node name="Shelf20" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(116, -4986)
+peg_distance = 58.632
+board_width = 0.591
+
+[node name="Shelf34" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(-975, -4234)
+peg_distance = 58.632
+board_width = 0.591
+
+[node name="Shelf35" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(-668, -4390)
+peg_distance = 58.632
+board_width = 0.591
+
+[node name="Shelf21" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(139, -5273)
+peg_distance = 92.561
+board_width = 3.799
+
+[node name="Shelf22" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(-99, -5584)
+peg_distance = 52.978
+board_width = 2.078
+
+[node name="Shelf23" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(552, -5914)
+peg_distance = 58.632
+board_width = 2.37
+
+[node name="Shelf28" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(30, -8535)
+peg_distance = 318.751
+board_width = 3.537
+
+[node name="Shelf29" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(-652, -8866)
+peg_distance = 205.656
+board_width = 1.349
+
+[node name="Shelf30" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(7, -9107)
+peg_distance = 205.656
+board_width = 1.349
+
+[node name="Shelf24" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(619, -6230)
+peg_distance = 84.079
+board_width = 1.232
+side_offset = -57.143
+
+[node name="Shelf27" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(-778, -7307)
+peg_distance = 84.079
+board_width = 1.232
+side_offset = -57.143
+
+[node name="Shelf31" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(-851, -7643)
+peg_distance = 84.079
+board_width = 1.232
+side_offset = 57.143
+
+[node name="Shelf32" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(-822, -7987)
+peg_distance = 84.079
+board_width = 1.232
+side_offset = -57.143
+
+[node name="Shelf26" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(-924, -5119)
+peg_distance = 72.769
+board_width = 0.561
+
+[node name="Shelf25" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(815, -6576)
+peg_distance = 92.561
+board_width = 1.436
+side_offset = -71.429
+
+[node name="Shelf33" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(981, -6875)
+peg_distance = 92.561
+board_width = 1.436
+side_offset = -71.429
+
+[node name="Shelf15" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(-157, -2911)
+peg_distance = 92.561
+board_width = 1.204
+side_offset = -76.03
+
+[node name="Shelf9" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(720, -1670)
+peg_distance = 129.317
+board_width = 2.079
+side_offset = -99.839
+
+[node name="Shelf10" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(672, -1958)
+peg_distance = 171.728
+board_width = 1.379
+side_offset = -99.839
+
+[node name="Shelf6" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(918, -644)
+peg_distance = 106.697
+board_width = 1.35
+side_offset = -69.046
+
+[node name="Shelf7" parent="LeoG/Shelves/Shelf3" instance=ExtResource("5_nf331")]
+position = Vector2(548, -930)
+peg_distance = 95.387
+board_width = 1.729
+side_offset = 80.954
+
+[node name="Painting3" parent="LeoG/Shelves/Shelf3" instance=ExtResource("41_74sxk")]
+position = Vector2(-221, -2287)
+
+[node name="Painting4" parent="LeoG/Shelves/Shelf3" instance=ExtResource("41_74sxk")]
+position = Vector2(122, -4761)
+
+[node name="Painting5" parent="LeoG/Shelves/Shelf3" instance=ExtResource("41_74sxk")]
+position = Vector2(897, -8440)
+
+[node name="Shelf2" parent="LeoG/Shelves" instance=ExtResource("5_nf331")]
+position = Vector2(1811, 392)
+peg_distance = 112.351
+board_width = 2.254
+side_offset = -197.619
+
+[node name="Obstacle" type="Node2D" parent="LeoG"]
+
+[node name="Vase2" parent="LeoG/Obstacle" instance=ExtResource("37_0jx4f")]
+position = Vector2(-49, 514)
+
+[node name="Trophy" parent="LeoG/Obstacle" instance=ExtResource("8_qhqj3")]
+position = Vector2(2044, 272)
+
+[node name="BowlingBall" parent="LeoG/Obstacle" instance=ExtResource("33_weqe8")]
+position = Vector2(1903, 267)
+
+[node name="Vase6" parent="LeoG/Obstacle" instance=ExtResource("35_esvad")]
+position = Vector2(844, -6)
+
+[node name="Painting3" parent="LeoG/Obstacle" instance=ExtResource("12_7coqw")]
+position = Vector2(1438, -2532)
+
+[node name="Painting4" parent="LeoG/Obstacle" instance=ExtResource("12_7coqw")]
+position = Vector2(934, -3659)
+
+[node name="Painting6" parent="LeoG/Obstacle" instance=ExtResource("12_7coqw")]
+position = Vector2(1250, -7128)
+
+[node name="Painting7" parent="LeoG/Obstacle" instance=ExtResource("12_7coqw")]
+position = Vector2(701, -7304)
+
+[node name="Painting8" parent="LeoG/Obstacle" instance=ExtResource("12_7coqw")]
+position = Vector2(1321, -8292)
+
+[node name="Painting9" parent="LeoG/Obstacle" instance=ExtResource("12_7coqw")]
+position = Vector2(774, -8163)
+
+[node name="breakableplant9" parent="LeoG/Obstacle" instance=ExtResource("40_4a1rq")]
+position = Vector2(77, -5165)
+
+[node name="Plant11" parent="LeoG/Obstacle" instance=ExtResource("34_u5rak")]
+position = Vector2(1804, -2070)
+
+[node name="Plant12" parent="LeoG/Obstacle" instance=ExtResource("43_o2gtc")]
+position = Vector2(1689, -8566)
+
+[node name="Plant13" parent="LeoG/Obstacle" instance=ExtResource("19_3v87d")]
+position = Vector2(697, -2575)
+
+[node name="Plant15" parent="LeoG/Obstacle" instance=ExtResource("20_ero54")]
+position = Vector2(195, -3185)
+
+[node name="Plant14" parent="LeoG/Obstacle" instance=ExtResource("28_hohnf")]
+position = Vector2(632, -2560)
+
+[node name="Plant9" parent="LeoG/Obstacle" instance=ExtResource("28_hohnf")]
+position = Vector2(1485, -927)
+
+[node name="Plant10" parent="LeoG/Obstacle" instance=ExtResource("28_hohnf")]
+position = Vector2(1676, -1949)
+
+[node name="Trophy4" parent="LeoG/Obstacle" instance=ExtResource("44_p57pi")]
+position = Vector2(518, -8553)
+
+[node name="Trophy5" parent="LeoG/Obstacle" instance=ExtResource("8_qhqj3")]
+position = Vector2(687, -8606)
+
+[node name="TrophyBreakable2" parent="LeoG/Obstacle" instance=ExtResource("6_i0bw7")]
+position = Vector2(1404, -969)
+
+[node name="Vase11" parent="LeoG/Obstacle" instance=ExtResource("32_swyk1")]
+position = Vector2(2083, -6956)
+
+[node name="Bowlingpin2" parent="LeoG/Obstacle" instance=ExtResource("31_d6qwg")]
+position = Vector2(1992, -1678)
+
+[node name="Bowlingpin3" parent="LeoG/Obstacle" instance=ExtResource("31_d6qwg")]
+position = Vector2(1931, -1677)
+
+[node name="Bowlingpin4" parent="LeoG/Obstacle" instance=ExtResource("31_d6qwg")]
+position = Vector2(1868, -1677)
+
+[node name="BowlingBall4" parent="LeoG/Obstacle" instance=ExtResource("7_aktqx")]
+position = Vector2(172, -8971)
+
+[node name="Breakablelamp4Yellow3" parent="LeoG/Obstacle" instance=ExtResource("26_6412y")]
+position = Vector2(328, -717)
+
+[node name="Vase10" parent="LeoG/Obstacle" instance=ExtResource("30_pf2i2")]
+position = Vector2(1382, -346)
+
+[node name="Lamp2" parent="LeoG/Obstacle" instance=ExtResource("22_e2fyr")]
+position = Vector2(74, -8030)
+
+[node name="Lamp7" parent="LeoG/Obstacle" instance=ExtResource("45_vnq7n")]
+position = Vector2(349, -5371)
+
+[node name="Lamp8" parent="LeoG/Obstacle" instance=ExtResource("45_vnq7n")]
+position = Vector2(1924, -5369)
+
+[node name="Lamp6" parent="LeoG/Obstacle" instance=ExtResource("45_vnq7n")]
+position = Vector2(402, -394)
+
+[node name="MusicTrigger" parent="LeoG" instance=ExtResource("16_1ooey")]
+position = Vector2(992, 569)
+track_name = "Stage3"
+zoom_target = 0.7
+
+[node name="Checkpoint" parent="LeoG/MusicTrigger" instance=ExtResource("18_4gt6j")]
+position = Vector2(-642, -177)
+
+[node name="MusicTrigger2" parent="LeoG" instance=ExtResource("16_1ooey")]
+position = Vector2(1125, -3517)
+track_name = "Stage4"
+zoom_target = 0.6
+
+[node name="Checkpoint2" parent="LeoG/MusicTrigger2" instance=ExtResource("18_4gt6j")]
+position = Vector2(-810, -140)
+
+[node name="Window" parent="LeoG" instance=ExtResource("11_rga4o")]
+position = Vector2(1631, -9538)

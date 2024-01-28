@@ -10,6 +10,7 @@ var track_name = "Stage1"
 var has_triggered = false
 
 func _process(_delta):
+	if Engine.is_editor_hint(): return
 	if has_triggered: return
 	
 	var cat = get_tree().get_first_node_in_group(&"cat")
@@ -17,6 +18,15 @@ func _process(_delta):
 		trigger()
 
 func trigger():
+	# make sure that only the last trigger triggers
+	var cat = get_tree().get_first_node_in_group("cat")
+	for t in get_tree().get_nodes_in_group("trigger"):
+		if t == self: continue
+		if t.global_position.y < global_position.y and t.global_position.y > cat.global_position.y:
+			has_triggered = true
+			return
+	
+	print(track_name)
 	get_tree().call_group(&"music", &"change_to_track", track_name)
 	
 	var cam = get_tree().get_first_node_in_group("camera")

@@ -12,7 +12,7 @@ func respawn():
 	
 	if cat and checkpoint_node:
 		relative_respawn(checkpoint_node, cat, "laserpointer")
-		relative_respawn(checkpoint_node, cat, "camera")
+		#relative_respawn(checkpoint_node, cat, "camera")
 		cat.global_position = checkpoint_node.global_position
 
 func relative_respawn(checkpoint_node: Node2D, cat: Node2D, group: String):

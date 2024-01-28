@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://scenes/music/music_trigger.gd" id="1_oukqr"]
 
-[node name="MusicTrigger" type="Node2D"]
+[node name="MusicTrigger" type="Node2D" groups=["trigger"]]
 script = ExtResource("1_oukqr")
