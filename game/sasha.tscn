@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://b4h13dq5xv7c"]
+[gd_scene load_steps=34 format=3 uid="uid://b4h13dq5xv7c"]
 
 [ext_resource type="PackedScene" uid="uid://bh28ccd421trc" path="res://scenes/cat/cat.tscn" id="1_4gta6"]
 [ext_resource type="PackedScene" uid="uid://b8hf5520cc006" path="res://scenes/obstacles/bowling_ball.tscn" id="1_qo8gh"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://bkabjvyrbmea2" path="res://scenes/obstacles/breakablelamp4_red.tscn" id="28_wjnnk"]
 [ext_resource type="PackedScene" uid="uid://jn7l4rp06k8" path="res://scenes/obstacles/trophy_breakable.tscn" id="29_xpns1"]
 [ext_resource type="PackedScene" uid="uid://cs6hxy1xjclh" path="res://scenes/obstacles/breakableplant8.tscn" id="30_r1ygt"]
+[ext_resource type="PackedScene" uid="uid://dc7efk1jwgxrr" path="res://scenes/shelf/fixedshelf1.tscn" id="31_rhkma"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5jye"]
 size = Vector2(34, 112)
@@ -197,3 +198,7 @@ position = Vector2(241, 671)
 
 [node name="breakableplant8" parent="." instance=ExtResource("30_r1ygt")]
 position = Vector2(1364, 854)
+
+[node name="Fixedshelf1" parent="." instance=ExtResource("31_rhkma")]
+position = Vector2(425, -2050)
+rotation = -0.0682256
