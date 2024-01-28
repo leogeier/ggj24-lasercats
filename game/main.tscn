@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dxtqm02dnl42d"]
+[gd_scene load_steps=15 format=3 uid="uid://dxtqm02dnl42d"]
 
 [ext_resource type="PackedScene" uid="uid://bh28ccd421trc" path="res://scenes/cat/cat.tscn" id="1_1cu0m"]
 [ext_resource type="Texture2D" uid="uid://b2841qrw05hsj" path="res://scenes/assets/Livingroom/Wall Texture.png" id="1_6dd1l"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://co8y188ycb8fj" path="res://scenes/obstacles/painting2.tscn" id="5_pyqlf"]
 [ext_resource type="PackedScene" uid="uid://bhkn2g6mktugj" path="res://scenes/window/window.tscn" id="5_vdtd7"]
 [ext_resource type="PackedScene" uid="uid://b662bj4elnqs6" path="res://scenes/obstacles/painting.tscn" id="7_lm102"]
+[ext_resource type="PackedScene" uid="uid://6fklhk1bger" path="res://scenes/music/Music.tscn" id="10_hk2vu"]
+[ext_resource type="PackedScene" uid="uid://dkip6t3ofwu07" path="res://scenes/music/music_trigger.tscn" id="11_frwd3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ci8g4"]
 friction = 0.58
@@ -118,3 +120,9 @@ position = Vector2(2679, -462)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
 rotation = -1.57079
 shape = SubResource("WorldBoundaryShape2D_mm8be")
+
+[node name="Music" parent="." instance=ExtResource("10_hk2vu")]
+
+[node name="MusicTrigger" parent="." instance=ExtResource("11_frwd3")]
+position = Vector2(1012, 55)
+track_name = "Stage4"

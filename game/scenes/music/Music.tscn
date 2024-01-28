@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://6fklhk1bger"]
+
+[ext_resource type="AudioStream" uid="uid://bi32t60if0bjb" path="res://music/Laser Cat music stage 1.wav" id="1_72thy"]
+[ext_resource type="Script" path="res://scenes/music/Music.gd" id="1_ggeye"]
+[ext_resource type="AudioStream" uid="uid://gg0o2ea06cv7" path="res://music/Laser Cat music stage 2.wav" id="2_scxgq"]
+[ext_resource type="AudioStream" uid="uid://33cncob4bo81" path="res://music/Laser Cat music stage 3.wav" id="3_01xsd"]
+[ext_resource type="AudioStream" uid="uid://dk8cdh18k7blv" path="res://music/Laser Cat music stage 4.wav" id="4_bouau"]
+
+[node name="Music" type="Node" groups=["music"]]
+script = ExtResource("1_ggeye")
+
+[node name="Stage1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_72thy")
+autoplay = true
+
+[node name="Stage2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_scxgq")
+volume_db = -80.0
+autoplay = true
+
+[node name="Stage3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_01xsd")
+volume_db = -80.0
+autoplay = true
+
+[node name="Stage4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bouau")
+volume_db = -80.0
+autoplay = true
