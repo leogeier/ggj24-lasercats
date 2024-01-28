@@ -99,7 +99,7 @@ radius = 63.0
 height = 190.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xupk3"]
-size = Vector2(64, 1)
+size = Vector2(140, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fi3d3"]
 radius = 54.0
@@ -150,7 +150,7 @@ rotation = 1.57079
 shape = SubResource("CapsuleShape2D_fi3d3")
 
 [node name="JumpTimer" type="Timer" parent="."]
-wait_time = 0.207
+wait_time = 0.307
 one_shot = true
 
 [node name="JustLandedTimer" type="Timer" parent="."]
