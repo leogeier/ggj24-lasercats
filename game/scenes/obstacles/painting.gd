@@ -13,7 +13,8 @@ func _physics_process(_delta):
 		is_connected = false
 		queue_redraw()
 		$"../PinJoint2D".queue_free()
-		
+		$CollisionShape2D.disabled = true
+		$BigCollider.disabled = false
 
 func _draw():
 	if not is_connected: return

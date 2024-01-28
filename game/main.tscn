@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dxtqm02dnl42d"]
+[gd_scene load_steps=13 format=3 uid="uid://dxtqm02dnl42d"]
 
 [ext_resource type="PackedScene" uid="uid://bh28ccd421trc" path="res://scenes/cat/cat.tscn" id="1_1cu0m"]
+[ext_resource type="Texture2D" uid="uid://b2841qrw05hsj" path="res://scenes/assets/Livingroom/Wall Texture.png" id="1_6dd1l"]
 [ext_resource type="Texture2D" uid="uid://bt1snowhokw1u" path="res://scenes/assets/Livingroom/Floor.png" id="2_kiu21"]
 [ext_resource type="PackedScene" uid="uid://ciacvo6retlhy" path="res://scenes/laserpointer/laserpointer.tscn" id="2_x85f1"]
 [ext_resource type="PackedScene" uid="uid://duehi6pdpwp2t" path="res://scenes/camera/camera.tscn" id="3_l7hjo"]
@@ -14,11 +15,22 @@ friction = 0.58
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3ysrg"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mm8be"]
+
 [node name="Main" type="Node2D"]
 position = Vector2(0, -144)
 
+[node name="WallTexture" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(1018, -12152)
+scale = Vector2(0.261104, 0.261104)
+texture = ExtResource("1_6dd1l")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 8150, 100000)
+
 [node name="Cat" parent="." instance=ExtResource("1_1cu0m")]
 position = Vector2(905, 953)
+auto_jump_horizontal_mod = 0.756
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(952, 1009)
@@ -100,3 +112,17 @@ position = Vector2(971, -1106)
 
 [node name="Painting" parent="." instance=ExtResource("7_lm102")]
 position = Vector2(484, 305)
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+position = Vector2(-679, -530)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+rotation = 1.57079
+shape = SubResource("WorldBoundaryShape2D_mm8be")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2(2679, -462)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+rotation = -1.57079
+shape = SubResource("WorldBoundaryShape2D_mm8be")

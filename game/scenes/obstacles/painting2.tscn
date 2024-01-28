@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://co8y188ycb8fj"]
+[gd_scene load_steps=7 format=3 uid="uid://co8y188ycb8fj"]
 
 [ext_resource type="Script" path="res://scenes/obstacles/painting.gd" id="1_0voqn"]
 [ext_resource type="Script" path="res://scenes/obstacles/painting_parent.gd" id="1_eu74o"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlald"]
 size = Vector2(544, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2mvhj"]
+size = Vector2(545, 726)
 
 [node name="Painting" type="Node2D"]
 position = Vector2(-1, 0)
@@ -37,6 +40,11 @@ position = Vector2(-230, -155)
 
 [node name="MarkerRight" type="Marker2D" parent="Painting"]
 position = Vector2(210, -154)
+
+[node name="BigCollider" type="CollisionShape2D" parent="Painting"]
+position = Vector2(-0.5, 203)
+shape = SubResource("RectangleShape2D_2mvhj")
+disabled = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 0
