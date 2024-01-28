@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b4h13dq5xv7c"]
+[gd_scene load_steps=31 format=3 uid="uid://b4h13dq5xv7c"]
 
 [ext_resource type="PackedScene" uid="uid://bh28ccd421trc" path="res://scenes/cat/cat.tscn" id="1_4gta6"]
 [ext_resource type="PackedScene" uid="uid://b8hf5520cc006" path="res://scenes/obstacles/bowling_ball.tscn" id="1_qo8gh"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://bj4ucj7bdp50n" path="res://scenes/obstacles/vase7.tscn" id="25_rxnxl"]
 [ext_resource type="PackedScene" uid="uid://dtyt7npi5elwt" path="res://scenes/obstacles/vase8.tscn" id="26_phh43"]
 [ext_resource type="PackedScene" uid="uid://dumxh2dfmlrko" path="res://scenes/obstacles/breakablelamp4_yellow.tscn" id="27_p257u"]
+[ext_resource type="PackedScene" uid="uid://bkabjvyrbmea2" path="res://scenes/obstacles/breakablelamp4_red.tscn" id="28_wjnnk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5jye"]
 size = Vector2(34, 112)
@@ -68,7 +69,7 @@ position = Vector2(857, -1529)
 position = Vector2(1617, -373)
 
 [node name="Shelf4" parent="." instance=ExtResource("4_20ksb")]
-position = Vector2(348, 233)
+position = Vector2(317, 476)
 
 [node name="Shelf5" parent="." instance=ExtResource("4_20ksb")]
 position = Vector2(1186, -106)
@@ -83,6 +84,12 @@ position = Vector2(-800, -221)
 position = Vector2(671, -526)
 
 [node name="Shelf5" parent="Shelf5/Shelf5/Shelf5/Shelf5" instance=ExtResource("4_20ksb")]
+position = Vector2(671, -526)
+
+[node name="Shelf6" parent="Shelf5/Shelf5/Shelf5/Shelf5" instance=ExtResource("4_20ksb")]
+position = Vector2(671, -526)
+
+[node name="Shelf5" parent="Shelf5/Shelf5/Shelf5/Shelf5/Shelf6" instance=ExtResource("4_20ksb")]
 position = Vector2(671, -526)
 
 [node name="Shelf6" parent="." instance=ExtResource("4_20ksb")]
@@ -172,10 +179,13 @@ position = Vector2(1133, -1935)
 position = Vector2(1611, -2432)
 
 [node name="Vase12" parent="." instance=ExtResource("25_rxnxl")]
-position = Vector2(227, 45)
+position = Vector2(2335, -3103)
 
 [node name="Vase13" parent="." instance=ExtResource("26_phh43")]
 position = Vector2(239, -1447)
 
 [node name="Breakablelamp4Yellow" parent="." instance=ExtResource("27_p257u")]
-position = Vector2(777, 636)
+position = Vector2(683, 656)
+
+[node name="Breakablelamp4Yellow2" parent="." instance=ExtResource("28_wjnnk")]
+position = Vector2(1017, 649)
