@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtyt7npi5elwt"]
+
+[ext_resource type="Texture2D" uid="uid://c1jc4o0e0kxvt" path="res://scenes/assets/vases/vase8.png" id="1_ue8ew"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7r44u"]
+radius = 35.0
+height = 72.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4v7vt"]
+size = Vector2(27, 20)
+
+[node name="Vase8" type="RigidBody2D"]
+collision_layer = 5
+collision_mask = 5
+mass = 1.43
+center_of_mass_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-10, -35)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_ue8ew")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(20, -63, 30, -59, 45, -45, 39, -6, 31, 7, 42, 12, 46, 19, 41, 38, 33, 48, 42, 54, 47, 60, 47, 70, 46, 75, 30, 75, 18, 70, 19, 51, 13, 45, 21, 31, -12, 32, -14, 38, -11, 50, -17, 59, -14, 67, -22, 72, -44, 74, -42, 66, -42, 57, -37, 52, -24, 54, -40, 22, -39, 14, -31, 4, -33, -6, -28, -15, -39, -3, -46, 14, -48, 26, -52, 31, -61, 30, -64, 25, -70, 14, -62, 6, -53, -17, -19, -62, -12, -59)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -92)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_7r44u")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-25, -142, -15, -139, -6, -128, 10, -127, 26, -144, 32, -136, 31, -112, -26, -114)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-29.5, 64)
+shape = SubResource("RectangleShape2D_4v7vt")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(34.5, 64)
+shape = SubResource("RectangleShape2D_4v7vt")

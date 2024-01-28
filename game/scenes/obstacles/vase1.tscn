@@ -26,7 +26,6 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_x0weq")
 
 [node name="Shadow" parent="RigidBody2D2/Plant1Pot" instance=ExtResource("2_bolmv")]
-position = Vector2(0, 66.6667)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
 position = Vector2(-2, -3)
@@ -44,7 +43,6 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_s4bwe")
 
 [node name="Shadow2" parent="RigidBody2D/Plant1Plant" instance=ExtResource("2_bolmv")]
-position = Vector2(0, 66.6666)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(-5.7, -38.75)

@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5fwp8o3n08fb"]
+[gd_scene load_steps=6 format=3 uid="uid://c5fwp8o3n08fb"]
 
 [ext_resource type="Texture2D" uid="uid://bs5kukaua86cr" path="res://scenes/assets/lamps/lamp1.png" id="1_4dudg"]
 [ext_resource type="PackedScene" uid="uid://v4yt1hf67uqr" path="res://scenes/shadow/shadow.tscn" id="2_qhak5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q218r"]
-size = Vector2(56, 29)
+size = Vector2(167.5, 79)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fspk4"]
-radius = 17.0809
-height = 51.8391
+radius = 38.2444
+height = 132.811
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fia7p"]
+radius = 18.0
+height = 48.0
 
 [node name="Lamp1" type="RigidBody2D"]
 collision_layer = 5
@@ -16,18 +20,22 @@ collision_mask = 5
 center_of_mass_mode = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-39, -38)
-scale = Vector2(0.1, 0.1)
+position = Vector2(-110, -104)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_4dudg")
 
 [node name="Shadow" parent="Sprite2D" instance=ExtResource("2_qhak5")]
-position = Vector2(0, 200)
+position = Vector2(0, 66.6667)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 3.5)
+position = Vector2(-0.75, 16)
 shape = SubResource("RectangleShape2D_q218r")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-81, -66)
+position = Vector2(-236, -179)
 rotation = 1.24093
 shape = SubResource("CapsuleShape2D_fspk4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-246, -233)
+shape = SubResource("CapsuleShape2D_fia7p")
