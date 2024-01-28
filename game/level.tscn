@@ -143,7 +143,7 @@ shape = SubResource("WorldBoundaryShape2D_3w1h3")
 position = Vector2(1117, -988)
 
 [node name="Cat" parent="." instance=ExtResource("13_q0usd")]
-position = Vector2(1070, -11589)
+position = Vector2(898, 1016)
 
 [node name="Laserpointer" parent="." instance=ExtResource("14_g4dui")]
 position = Vector2(914, 795)
