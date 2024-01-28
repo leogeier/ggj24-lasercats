@@ -35,14 +35,14 @@ func _input(event):
 
 func set_laser_position(new_pos):
 	var cam_pos = camera.get_screen_center_position()
-	var max = get_parent().to_local(cam_pos + camera.get_half_extent())
-	var min = get_parent().to_local(cam_pos - camera.get_half_extent())
-	new_pos = new_pos.clamp(min, max)
+	var maxiumum = get_parent().to_local(cam_pos + camera.get_half_extent())
+	var minimum = get_parent().to_local(cam_pos - camera.get_half_extent())
+	new_pos = new_pos.clamp(minimum, maximum)
 	if new_pos != position:
 		position = new_pos
 		position_changed.emit(get_laser_position())
 
-func _process(delta):
+func _process(_delta):
 	# Ensure the laser pointer stays on screen
 	set_laser_position(position)
 
@@ -63,7 +63,7 @@ func _draw():
 
 const LASER_LINE_LENGTH = 5
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	queue_redraw()
 	velocity = get_laser_position().distance_to(last_position)
 	laser_line.push_back(to_global(last_position - get_laser_position()))
