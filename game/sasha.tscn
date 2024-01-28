@@ -200,5 +200,5 @@ position = Vector2(241, 671)
 position = Vector2(1364, 854)
 
 [node name="Fixedshelf1" parent="." instance=ExtResource("31_rhkma")]
-position = Vector2(425, -2050)
+position = Vector2(518, -2228)
 rotation = -0.0682256

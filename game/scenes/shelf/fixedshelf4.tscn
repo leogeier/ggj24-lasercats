@@ -6,7 +6,7 @@
 size = Vector2(773.333, 65)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1anmp"]
-size = Vector2(76.6667, 241.667)
+size = Vector2(76.6667, 93.3333)
 
 [node name="Fixedshelf1" type="StaticBody2D"]
 scale = Vector2(0.6, 0.6)
@@ -24,5 +24,6 @@ shape = SubResource("RectangleShape2D_3eytp")
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(11.6667, 110.833)
+position = Vector2(10, 96.6667)
 shape = SubResource("RectangleShape2D_1anmp")
+one_way_collision = true
