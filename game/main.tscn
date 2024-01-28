@@ -46,36 +46,36 @@ position = Vector2(1648, -447)
 
 [node name="Shelf" parent="." instance=ExtResource("4_p4kp4")]
 position = Vector2(1432, 648)
-side_offset = -9.009
 
 [node name="Shelf12" parent="." instance=ExtResource("4_p4kp4")]
 position = Vector2(1704, 440)
-peg_distance = 60.923
-side_offset = -52.252
 
+<<<<<<< Updated upstream
+=======
+[node name="Shelf2" parent="." instance=ExtResource("4_p4kp4")]
+position = Vector2(552, 513)
+
+>>>>>>> Stashed changes
 [node name="Shelf3" parent="." instance=ExtResource("4_p4kp4")]
 position = Vector2(1177, 233)
-peg_distance = 30.968
-board_width = 2.08
 
 [node name="Shelf4" parent="." instance=ExtResource("4_p4kp4")]
 position = Vector2(395, 91)
-peg_distance = 73.761
-board_width = 1.331
 
 [node name="Shelf5" parent="." instance=ExtResource("4_p4kp4")]
+<<<<<<< Updated upstream
 position = Vector2(7, -121)
 peg_distance = 114.414
 board_width = 0.934
+=======
+position = Vector2(1662, -92)
+>>>>>>> Stashed changes
 
 [node name="Shelf6" parent="." instance=ExtResource("4_p4kp4")]
 position = Vector2(753, -439)
 
 [node name="Shelf7" parent="." instance=ExtResource("4_p4kp4")]
 position = Vector2(1347, -592)
-peg_distance = 142.23
-board_width = 1.904
-side_offset = -80.12
 
 [node name="Shelf8" parent="." instance=ExtResource("4_p4kp4")]
 position = Vector2(334, -698)
@@ -84,9 +84,17 @@ position = Vector2(334, -698)
 position = Vector2(954, -903)
 
 [node name="Shelf10" parent="." instance=ExtResource("4_p4kp4")]
+<<<<<<< Updated upstream
 position = Vector2(929, -183)
 board_width = 1.728
 
+=======
+position = Vector2(1061, -208)
+
+[node name="Shelf11" parent="." instance=ExtResource("4_p4kp4")]
+position = Vector2(1816, -428)
+
+>>>>>>> Stashed changes
 [node name="Window" parent="." instance=ExtResource("5_vdtd7")]
 position = Vector2(971, -1106)
 
