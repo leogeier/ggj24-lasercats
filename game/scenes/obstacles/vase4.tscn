@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqhk3td0syrm0"]
+[gd_scene load_steps=3 format=3 uid="uid://j6yevw2bes1p"]
 
 [ext_resource type="Texture2D" uid="uid://d4kjq7wgk27b8" path="res://scenes/assets/vases/vase4.png" id="1_80opm"]
+[ext_resource type="PackedScene" uid="uid://c3g0phbhutt4u" path="res://scenes/collision_sound/collision_sound.tscn" id="2_4fl32"]
 
 [node name="Vase4" type="RigidBody2D"]
 collision_layer = 5
@@ -17,3 +18,5 @@ texture = ExtResource("1_80opm")
 position = Vector2(1.5, -130)
 scale = Vector2(0.6, 0.6)
 polygon = PackedVector2Array(-220, 337.5, -182.5, 362.5, 142.5, 365, 207.5, 305, 215, 275, 200, 275, 182.5, 267.5, 155, 215, 142.5, 217.5, 147.5, 197.5, 107.5, 160, 95, 165, 77.5, 85, 137.5, 107.5, 162.5, 80, 155, 9.99997, 130, -32.5, 77.5, -40, 65, -47.5, 72.5, -87.5, 65, -122.5, 77.5, -152.5, 60, -212.5, 20, -247.5, 50, -307.5, -12.5, -350, -77.5, -295, -90, -245, -85, -245, -65, -225, -110, -172.5, -152.5, -167.5, -215, -107.5, -205, -82.5, -182.5, -57.5, -150, -30, -140, 7.49997, -135, 60, -160, 92.5, -175, 107.5, -170, 137.5, -162.5, 167.5, -142.5, 210, -167.5, 232.5, -190, 272.5, -177.5, 280, -192.5, 282.5, -215, 275, -222.5, 295)
+
+[node name="CollisionSound" parent="." instance=ExtResource("2_4fl32")]

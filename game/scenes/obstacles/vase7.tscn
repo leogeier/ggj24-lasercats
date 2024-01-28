@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj4ucj7bdp50n"]
+[gd_scene load_steps=4 format=3 uid="uid://xoetbpdbo5ld"]
 
 [ext_resource type="Texture2D" uid="uid://k8k6jg8x1lgv" path="res://scenes/assets/vases/vase7.png" id="1_8h7rw"]
+[ext_resource type="PackedScene" uid="uid://c3g0phbhutt4u" path="res://scenes/collision_sound/collision_sound.tscn" id="2_g1jdt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8d6hq"]
 size = Vector2(223, 16)
@@ -26,3 +27,5 @@ polygon = PackedVector2Array(-39, 175, -18, 162, 24, 161, 41, 176, 55, 197, 140,
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(12, 111)
 shape = SubResource("RectangleShape2D_8d6hq")
+
+[node name="CollisionSound" parent="." instance=ExtResource("2_g1jdt")]
