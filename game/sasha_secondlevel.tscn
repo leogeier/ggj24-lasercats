@@ -17,51 +17,71 @@
 [ext_resource type="PackedScene" uid="uid://da7n6gj36i2aj" path="res://scenes/shelf/fixedshelf2.tscn" id="18_n60vh"]
 [ext_resource type="PackedScene" uid="uid://jrdncy2gxc1w" path="res://scenes/shelf/fixedshelf4.tscn" id="19_cy2v4"]
 [ext_resource type="PackedScene" uid="uid://61wq3reh2jyc" path="res://scenes/obstacles/bowling_ball2.tscn" id="20_2syeu"]
-[ext_resource type="PackedScene" uid="uid://dqdsvcpprwbaa" path="res://scenes/obstacles/breakableplant1.tscn" id="20_cp1ii"]
+[ext_resource type="PackedScene" uid="uid://xfs1f33p2fh" path="res://scenes/obstacles/breakableplant1.tscn" id="20_cp1ii"]
 [ext_resource type="PackedScene" uid="uid://qdrxvhcsf5px" path="res://scenes/obstacles/vase2.tscn" id="21_2dbfi"]
 [ext_resource type="PackedScene" uid="uid://5eyfr7via258" path="res://scenes/obstacles/vase3.tscn" id="22_gknd0"]
 [ext_resource type="PackedScene" uid="uid://cqhk3td0syrm0" path="res://scenes/obstacles/vase4.tscn" id="23_y1bb2"]
 [ext_resource type="PackedScene" uid="uid://4bvg4myxbuue" path="res://scenes/obstacles/vase5.tscn" id="24_wmdse"]
 [ext_resource type="PackedScene" uid="uid://dumxh2dfmlrko" path="res://scenes/obstacles/breakablelamp4_yellow.tscn" id="26_8lf6h"]
 [ext_resource type="PackedScene" uid="uid://b662bj4elnqs6" path="res://scenes/obstacles/painting.tscn" id="26_15vv3"]
-[ext_resource type="PackedScene" uid="uid://bkabjvyrbmea2" path="res://scenes/obstacles/breakablelamp4_red.tscn" id="27_fhilb"]
+[ext_resource type="PackedScene" uid="uid://b5oh4yfdngaqq" path="res://scenes/obstacles/breakablelamp4_red.tscn" id="27_fhilb"]
 [ext_resource type="PackedScene" uid="uid://b36kbb1qcxr80" path="res://scenes/shelf/fixedshelf3.tscn" id="27_ph8sh"]
-[ext_resource type="PackedScene" uid="uid://c6tco1hyut0xb" path="res://scenes/obstacles/breakablevineglassesthing.tscn" id="28_nilql"]
+[ext_resource type="PackedScene" uid="uid://o6err8xusldq" path="res://scenes/obstacles/breakablevineglassesthing.tscn" id="28_nilql"]
 [ext_resource type="PackedScene" uid="uid://co8y188ycb8fj" path="res://scenes/obstacles/painting2.tscn" id="29_rorim"]
-[ext_resource type="PackedScene" uid="uid://cs6hxy1xjclh" path="res://scenes/obstacles/breakableplant8.tscn" id="30_wtvqa"]
+[ext_resource type="PackedScene" uid="uid://wt2jqh4jyqo2" path="res://scenes/obstacles/breakableplant8.tscn" id="30_wtvqa"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fo2e5"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Shelf10" parent="." instance=ExtResource("5_y1vn4")]
-position = Vector2(1183, -2731)
-
 [node name="Cat" parent="." instance=ExtResource("2_3tbpk")]
-position = Vector2(905, 953)
+position = Vector2(937, 929)
 
 [node name="Laserpointer" parent="." instance=ExtResource("3_wvf5c")]
 position = Vector2(1037, 972)
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(542, -1400)
-collision_layer = 5
-collision_mask = 5
+[node name="Painting2" parent="." instance=ExtResource("29_rorim")]
+position = Vector2(432, -2959)
 
 [node name="Camera" parent="." instance=ExtResource("4_sxt1v")]
 position = Vector2(1024, 544)
+zoom = Vector2(0.8, 0.8)
+
+[node name="Shelf10" parent="." instance=ExtResource("5_y1vn4")]
+position = Vector2(1188, -2640)
+
+[node name="Plant5" parent="Shelf10" instance=ExtResource("16_jcjhw")]
+position = Vector2(-1, -92)
+
+[node name="Plant9" parent="Shelf10" instance=ExtResource("17_iwmsi")]
+position = Vector2(-132, -99)
+
+[node name="Painting3" parent="." instance=ExtResource("26_15vv3")]
+position = Vector2(1883, -2953)
 
 [node name="Shelf" parent="." instance=ExtResource("5_y1vn4")]
 position = Vector2(1331, 689)
 
+[node name="Vase5" parent="Shelf" instance=ExtResource("22_gknd0")]
+position = Vector2(-172, -50)
+
+[node name="Vase6" parent="Shelf" instance=ExtResource("22_gknd0")]
+position = Vector2(-43, -49)
+
+[node name="Lamp2" parent="Shelf" instance=ExtResource("11_ou56v")]
+position = Vector2(131, -97)
+
 [node name="Shelf3" parent="." instance=ExtResource("5_y1vn4")]
-position = Vector2(1244, 217)
+position = Vector2(911, 531)
 
 [node name="Shelf6" parent="." instance=ExtResource("5_y1vn4")]
 position = Vector2(243, -276)
 
+[node name="Plant3" parent="Shelf6" instance=ExtResource("13_bv4d1")]
+position = Vector2(-54, -134)
+
 [node name="Window" parent="." instance=ExtResource("6_1l1kn")]
-position = Vector2(1652, -3174)
+position = Vector2(996, -3468)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 5
@@ -71,156 +91,162 @@ collision_mask = 5
 position = Vector2(913, 995)
 shape = SubResource("WorldBoundaryShape2D_fo2e5")
 
-[node name="Lamp2" parent="." instance=ExtResource("11_ou56v")]
-position = Vector2(1462, 592)
-
-[node name="Plant2" parent="." instance=ExtResource("13_bv4d1")]
-position = Vector2(60, -1310)
-
-[node name="Plant5" parent="." instance=ExtResource("16_jcjhw")]
-position = Vector2(1026, -2794)
-
-[node name="Plant6" parent="." instance=ExtResource("17_iwmsi")]
-position = Vector2(178, 412)
-
-[node name="Plant7" parent="." instance=ExtResource("18_0u2f6")]
-position = Vector2(314, 428)
-
-[node name="Vase2" parent="." instance=ExtResource("21_2dbfi")]
-position = Vector2(1619, -2407)
-
-[node name="Vase3" parent="." instance=ExtResource("22_gknd0")]
-position = Vector2(1249, -876)
-
-[node name="Vase4" parent="." instance=ExtResource("22_gknd0")]
-position = Vector2(848, -737)
-
-[node name="Vase5" parent="." instance=ExtResource("22_gknd0")]
-position = Vector2(1159, 639)
-
-[node name="Vase6" parent="." instance=ExtResource("22_gknd0")]
-position = Vector2(1288, 640)
-
-[node name="Vase7" parent="." instance=ExtResource("22_gknd0")]
-position = Vector2(768, 136)
-
-[node name="Vase8" parent="." instance=ExtResource("22_gknd0")]
-position = Vector2(831, 122)
-
-[node name="Vase9" parent="." instance=ExtResource("22_gknd0")]
-position = Vector2(932, -716)
-
-[node name="Vase10" parent="." instance=ExtResource("23_y1bb2")]
-position = Vector2(885, -1616)
-
 [node name="Fixedshelf2" parent="." instance=ExtResource("18_n60vh")]
 position = Vector2(710, 196)
 
+[node name="Breakablelamp4Yellow3" parent="Fixedshelf2" instance=ExtResource("27_fhilb")]
+position = Vector2(-91.6666, -118.333)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Vase7" parent="Fixedshelf2" instance=ExtResource("22_gknd0")]
+position = Vector2(96.6667, -100)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Vase8" parent="Fixedshelf2" instance=ExtResource("22_gknd0")]
+position = Vector2(201.667, -123.333)
+scale = Vector2(1.66667, 1.66667)
+
 [node name="Fixedshelf3" parent="." instance=ExtResource("19_cy2v4")]
 position = Vector2(134, 469)
+
+[node name="Plant6" parent="Fixedshelf3" instance=ExtResource("17_iwmsi")]
+position = Vector2(73.3333, -95)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Plant7" parent="Fixedshelf3" instance=ExtResource("18_0u2f6")]
+position = Vector2(153.333, -68.3333)
+scale = Vector2(1.66667, 1.66667)
 
 [node name="Fixedshelf4" parent="." instance=ExtResource("17_cln8x")]
 position = Vector2(459, 805)
 
 [node name="Shelf7" parent="." instance=ExtResource("5_y1vn4")]
-position = Vector2(782, -702)
+position = Vector2(833, -534)
+
+[node name="Vase1" parent="Shelf7" instance=ExtResource("20_cp1ii")]
+position = Vector2(-108, -131)
+
+[node name="Vase4" parent="Shelf7" instance=ExtResource("22_gknd0")]
+position = Vector2(15, -203)
+
+[node name="Vase9" parent="Shelf7" instance=ExtResource("22_gknd0")]
+position = Vector2(99, -182)
 
 [node name="Shelf8" parent="." instance=ExtResource("5_y1vn4")]
-position = Vector2(443, -1681)
+position = Vector2(454, -1897)
+
+[node name="Bowlingpin" parent="Shelf8" instance=ExtResource("10_f6gbh")]
+position = Vector2(-80, -63)
+
+[node name="Plant10" parent="Shelf8" instance=ExtResource("18_0u2f6")]
+position = Vector2(85, -54)
+
+[node name="Fixedshelf14" parent="." instance=ExtResource("18_n60vh")]
+position = Vector2(1983, -135)
+
+[node name="Bowlingpin6" parent="Fixedshelf14" instance=ExtResource("10_f6gbh")]
+position = Vector2(-20, -240)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Bowlingpin5" parent="Fixedshelf14/Bowlingpin6" instance=ExtResource("10_f6gbh")]
+position = Vector2(-98, 47)
+
+[node name="Bowlingpin2" parent="Fixedshelf14/Bowlingpin6" instance=ExtResource("10_f6gbh")]
+position = Vector2(172, 26)
+
+[node name="Bowlingpin3" parent="Fixedshelf14/Bowlingpin6" instance=ExtResource("10_f6gbh")]
+position = Vector2(66, 32)
+
+[node name="Bowlingpin4" parent="Fixedshelf14/Bowlingpin6" instance=ExtResource("10_f6gbh")]
+position = Vector2(241, 36)
+
+[node name="Fixedshelf9" parent="Fixedshelf14" instance=ExtResource("18_n60vh")]
+position = Vector2(-780, 0)
+scale = Vector2(1, 1)
+
+[node name="BowlingBall3" parent="Fixedshelf14/Fixedshelf9" instance=ExtResource("1_v1s33")]
+position = Vector2(-165, -316.667)
+scale = Vector2(1.66667, 1.66667)
 
 [node name="Shelf9" parent="." instance=ExtResource("5_y1vn4")]
-position = Vector2(869, -1512)
+position = Vector2(888, -1421)
+
+[node name="Vase10" parent="Shelf9" instance=ExtResource("23_y1bb2")]
+position = Vector2(31, -172)
 
 [node name="Shelf11" parent="." instance=ExtResource("5_y1vn4")]
-position = Vector2(1471, -1784)
+position = Vector2(2220, -1601)
 
 [node name="Fixedshelf6" parent="." instance=ExtResource("18_n60vh")]
 position = Vector2(1426, -839)
 
-[node name="Bowlingpin" parent="." instance=ExtResource("10_f6gbh")]
-position = Vector2(450, -1817)
+[node name="BowlingBall2" parent="Fixedshelf6" instance=ExtResource("20_2syeu")]
+position = Vector2(170, -256.667)
+scale = Vector2(1.66667, 1.66667)
 
-[node name="BowlingBall2" parent="." instance=ExtResource("20_2syeu")]
-position = Vector2(1528, -993)
+[node name="Plant8" parent="Fixedshelf6" instance=ExtResource("16_jcjhw")]
+position = Vector2(-170, -136.667)
+scale = Vector2(1.66667, 1.66667)
 
-[node name="Breakablelamp4Yellow2" parent="." instance=ExtResource("26_8lf6h")]
-position = Vector2(241, -1246)
-
-[node name="Breakablelamp4Yellow3" parent="." instance=ExtResource("27_fhilb")]
-position = Vector2(655, 125)
-
-[node name="Vase1" parent="." instance=ExtResource("20_cp1ii")]
-position = Vector2(677, -788)
-
-[node name="breakableplant8" parent="." instance=ExtResource("30_wtvqa")]
-position = Vector2(1327, -1876)
-
-[node name="Breakablevineglassesthing" parent="." instance=ExtResource("28_nilql")]
-position = Vector2(2419, -2094)
+[node name="Vase3" parent="Fixedshelf6" instance=ExtResource("22_gknd0")]
+position = Vector2(-295, -61.6667)
+scale = Vector2(1.66667, 1.66667)
 
 [node name="Painting" parent="." instance=ExtResource("26_15vv3")]
 position = Vector2(1825, 236)
 
 [node name="Fixedshelf5" parent="." instance=ExtResource("18_n60vh")]
-position = Vector2(564, -2320)
+position = Vector2(824, -2189)
+
+[node name="Plant4" parent="Fixedshelf5" instance=ExtResource("14_u5l4g")]
+position = Vector2(-163.333, -268.333)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Vase11" parent="Fixedshelf5" instance=ExtResource("24_wmdse")]
+position = Vector2(98.3334, -161.667)
+scale = Vector2(1.66667, 1.66667)
 
 [node name="Fixedshelf7" parent="." instance=ExtResource("27_ph8sh")]
-position = Vector2(1726, -2261)
+position = Vector2(1815, -2187)
 
-[node name="Plant3" parent="." instance=ExtResource("13_bv4d1")]
-position = Vector2(189, -410)
-
-[node name="Plant4" parent="." instance=ExtResource("14_u5l4g")]
-position = Vector2(409, -2480)
-
-[node name="Plant8" parent="." instance=ExtResource("16_jcjhw")]
-position = Vector2(1324, -921)
-
-[node name="Plant9" parent="." instance=ExtResource("17_iwmsi")]
-position = Vector2(1128, -2804)
-
-[node name="Plant10" parent="." instance=ExtResource("18_0u2f6")]
-position = Vector2(609, -1785)
-
-[node name="Vase11" parent="." instance=ExtResource("24_wmdse")]
-position = Vector2(678, -2371)
+[node name="Vase2" parent="Fixedshelf7" instance=ExtResource("21_2dbfi")]
+position = Vector2(163.333, -95)
+scale = Vector2(1.66667, 1.66667)
 
 [node name="Fixedshelf8" parent="." instance=ExtResource("17_cln8x")]
 position = Vector2(39, -727)
 
+[node name="Vase12" parent="Fixedshelf8" instance=ExtResource("21_2dbfi")]
+position = Vector2(-275, -105)
+scale = Vector2(1.66667, 1.66667)
+
 [node name="Fixedshelf1" parent="." instance=ExtResource("18_n60vh")]
-position = Vector2(209, -1151)
+position = Vector2(276, -1113)
 
-[node name="Fixedshelf9" parent="." instance=ExtResource("18_n60vh")]
-position = Vector2(1724, -166)
-scale = Vector2(1.3, 0.6)
+[node name="Breakablelamp4Yellow2" parent="Fixedshelf1" instance=ExtResource("26_8lf6h")]
+position = Vector2(230, -116.667)
+scale = Vector2(1.66667, 1.66667)
 
-[node name="Bowlingpin2" parent="." instance=ExtResource("10_f6gbh")]
-position = Vector2(2143, -253)
-
-[node name="Bowlingpin3" parent="." instance=ExtResource("10_f6gbh")]
-position = Vector2(2037, -247)
-
-[node name="Bowlingpin4" parent="." instance=ExtResource("10_f6gbh")]
-position = Vector2(2212, -243)
+[node name="Plant2" parent="Fixedshelf1" instance=ExtResource("13_bv4d1")]
+position = Vector2(-368.333, -243.333)
+scale = Vector2(1.66667, 1.66667)
 
 [node name="Fixedshelf10" parent="." instance=ExtResource("17_cln8x")]
-position = Vector2(2156, -1163)
-
-[node name="Bowlingpin5" parent="." instance=ExtResource("10_f6gbh")]
-position = Vector2(1873, -232)
-
-[node name="Bowlingpin6" parent="." instance=ExtResource("10_f6gbh")]
-position = Vector2(1971, -279)
-
-[node name="BowlingBall3" parent="." instance=ExtResource("1_v1s33")]
-position = Vector2(1416, -325)
+position = Vector2(1967, -1148)
 
 [node name="Fixedshelf11" parent="." instance=ExtResource("18_n60vh")]
-position = Vector2(1549, -3069)
+position = Vector2(990, -3013)
 
 [node name="Fixedshelf12" parent="." instance=ExtResource("27_ph8sh")]
-position = Vector2(2326, -2014)
+position = Vector2(2318, -1942)
 
-[node name="Painting2" parent="." instance=ExtResource("29_rorim")]
-position = Vector2(2817, -1779)
+[node name="Breakablevineglassesthing" parent="Fixedshelf12" instance=ExtResource("28_nilql")]
+position = Vector2(68.3333, -155)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Fixedshelf13" parent="." instance=ExtResource("18_n60vh")]
+position = Vector2(1519, -1819)
+
+[node name="breakableplant8" parent="Fixedshelf13" instance=ExtResource("30_wtvqa")]
+position = Vector2(-285, -241.667)
+scale = Vector2(1.66667, 1.66667)
