@@ -62,7 +62,4 @@ node_b = NodePath("../base")
 bias = 0.066
 disable_collision = false
 softness = 1.25
-angular_limit_enabled = true
-angular_limit_lower = -0.0523599
-angular_limit_upper = 0.0523599
 script = ExtResource("3_prepj")
