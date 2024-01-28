@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://cs6hxy1xjclh"]
+
+[ext_resource type="Texture2D" uid="uid://cnr0wo4dcap3" path="res://scenes/assets/breakablebobjects/plant8_plant.png" id="1_h5da6"]
+[ext_resource type="PackedScene" uid="uid://v4yt1hf67uqr" path="res://scenes/shadow/shadow.tscn" id="2_qfhud"]
+[ext_resource type="Texture2D" uid="uid://cv3ppw0b2gch8" path="res://scenes/assets/breakablebobjects/plant8_pot.png" id="3_e4upj"]
+[ext_resource type="Script" path="res://scenes/obstacles/BreakableJoint.gd" id="4_vfkcc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbrst"]
+size = Vector2(68, 124.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h07cq"]
+size = Vector2(150, 130)
+
+[node name="breakableplant8" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(0, -69)
+max_contacts_reported = 3
+contact_monitor = true
+
+[node name="Plant8Plant" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(0, -141)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_h5da6")
+
+[node name="Shadow2" parent="RigidBody2D/Plant8Plant" instance=ExtResource("2_qfhud")]
+position = Vector2(0, 66.6667)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(2, -61.75)
+shape = SubResource("RectangleShape2D_wbrst")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+mass = 2.3
+max_contacts_reported = 3
+contact_monitor = true
+
+[node name="Plant1Pot" type="Sprite2D" parent="RigidBody2D2"]
+position = Vector2(-1, -3)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_e4upj")
+
+[node name="Shadow" parent="RigidBody2D2/Plant1Pot" instance=ExtResource("2_qfhud")]
+position = Vector2(0, 66.6667)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+position = Vector2(-2, -3)
+shape = SubResource("RectangleShape2D_h07cq")
+
+[node name="Joint" type="PinJoint2D" parent="."]
+position = Vector2(0, -68)
+node_a = NodePath("../RigidBody2D2")
+node_b = NodePath("../RigidBody2D")
+disable_collision = false
+angular_limit_enabled = true
+angular_limit_lower = -0.0523599
+angular_limit_upper = 0.0523599
+script = ExtResource("4_vfkcc")

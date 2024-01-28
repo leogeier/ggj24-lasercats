@@ -5,13 +5,31 @@
 [ext_resource type="Texture2D" uid="uid://6bwoscqyvcsa" path="res://scenes/assets/breakablebobjects/plant1_plant.png" id="2_s4bwe"]
 [ext_resource type="Script" path="res://scenes/obstacles/BreakableJoint.gd" id="3_v6rex"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h07cq"]
-size = Vector2(150, 130)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbrst"]
 size = Vector2(126, 78.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h07cq"]
+size = Vector2(150, 130)
+
 [node name="Vase1" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(0, -69)
+mass = 0.5
+max_contacts_reported = 3
+contact_monitor = true
+
+[node name="Plant1Plant" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(-1, -51)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_s4bwe")
+
+[node name="Shadow2" parent="RigidBody2D/Plant1Plant" instance=ExtResource("2_bolmv")]
+position = Vector2(0, 66.6667)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(-5.7, -38.75)
+shape = SubResource("RectangleShape2D_wbrst")
 
 [node name="RigidBody2D2" type="RigidBody2D" parent="."]
 collision_layer = 5
@@ -31,24 +49,6 @@ position = Vector2(0, 66.6667)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
 position = Vector2(-2, -3)
 shape = SubResource("RectangleShape2D_h07cq")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(0, -69)
-mass = 0.5
-max_contacts_reported = 3
-contact_monitor = true
-
-[node name="Plant1Plant" type="Sprite2D" parent="RigidBody2D"]
-position = Vector2(-0.699997, -99.5)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_s4bwe")
-
-[node name="Shadow2" parent="RigidBody2D/Plant1Plant" instance=ExtResource("2_bolmv")]
-position = Vector2(0, 66.6666)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(-5.7, -38.75)
-shape = SubResource("RectangleShape2D_wbrst")
 
 [node name="Joint" type="PinJoint2D" parent="."]
 position = Vector2(0, -68)
