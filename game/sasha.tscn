@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b4h13dq5xv7c"]
+[gd_scene load_steps=31 format=3 uid="uid://b4h13dq5xv7c"]
 
 [ext_resource type="PackedScene" uid="uid://bh28ccd421trc" path="res://scenes/cat/cat.tscn" id="1_4gta6"]
 [ext_resource type="PackedScene" uid="uid://b8hf5520cc006" path="res://scenes/obstacles/bowling_ball.tscn" id="1_qo8gh"]
@@ -26,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://4bvg4myxbuue" path="res://scenes/obstacles/vase5.tscn" id="24_7pgpt"]
 [ext_resource type="PackedScene" uid="uid://bj4ucj7bdp50n" path="res://scenes/obstacles/vase7.tscn" id="25_rxnxl"]
 [ext_resource type="PackedScene" uid="uid://dtyt7npi5elwt" path="res://scenes/obstacles/vase8.tscn" id="26_phh43"]
+[ext_resource type="PackedScene" uid="uid://dumxh2dfmlrko" path="res://scenes/obstacles/breakablelamp4_yellow.tscn" id="27_p257u"]
+[ext_resource type="PackedScene" uid="uid://bkabjvyrbmea2" path="res://scenes/obstacles/breakablelamp4_red.tscn" id="28_wjnnk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5jye"]
 size = Vector2(34, 112)
@@ -44,7 +46,7 @@ position = Vector2(905, 953)
 position = Vector2(1037, 972)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(699, 202)
+position = Vector2(542, -1400)
 collision_layer = 5
 collision_mask = 5
 
@@ -67,7 +69,7 @@ position = Vector2(857, -1529)
 position = Vector2(1617, -373)
 
 [node name="Shelf4" parent="." instance=ExtResource("4_20ksb")]
-position = Vector2(644, 292)
+position = Vector2(317, 476)
 
 [node name="Shelf5" parent="." instance=ExtResource("4_20ksb")]
 position = Vector2(1186, -106)
@@ -77,6 +79,18 @@ position = Vector2(-30, -979)
 
 [node name="Shelf5" parent="Shelf5/Shelf5" instance=ExtResource("4_20ksb")]
 position = Vector2(-800, -221)
+
+[node name="Shelf5" parent="Shelf5/Shelf5/Shelf5" instance=ExtResource("4_20ksb")]
+position = Vector2(671, -526)
+
+[node name="Shelf5" parent="Shelf5/Shelf5/Shelf5/Shelf5" instance=ExtResource("4_20ksb")]
+position = Vector2(671, -526)
+
+[node name="Shelf6" parent="Shelf5/Shelf5/Shelf5/Shelf5" instance=ExtResource("4_20ksb")]
+position = Vector2(671, -526)
+
+[node name="Shelf5" parent="Shelf5/Shelf5/Shelf5/Shelf5/Shelf6" instance=ExtResource("4_20ksb")]
+position = Vector2(671, -526)
 
 [node name="Shelf6" parent="." instance=ExtResource("4_20ksb")]
 position = Vector2(678, -528)
@@ -114,13 +128,13 @@ position = Vector2(1184, -422)
 position = Vector2(1001, -1236)
 
 [node name="Plant3" parent="." instance=ExtResource("14_tkynx")]
-position = Vector2(498, -40)
+position = Vector2(413, -1676)
 
 [node name="Plant4" parent="." instance=ExtResource("15_xuiwa")]
 position = Vector2(1659, 282)
 
 [node name="Plant5" parent="." instance=ExtResource("16_tln1l")]
-position = Vector2(830, 263)
+position = Vector2(525, -1555)
 
 [node name="Plant6" parent="." instance=ExtResource("17_keir4")]
 position = Vector2(1033, -317)
@@ -159,13 +173,19 @@ position = Vector2(1605, -545)
 position = Vector2(1613, -461)
 
 [node name="Vase10" parent="." instance=ExtResource("23_qashn")]
-position = Vector2(196, -1431)
+position = Vector2(1133, -1935)
 
 [node name="Vase11" parent="." instance=ExtResource("24_7pgpt")]
-position = Vector2(715, 636)
+position = Vector2(1611, -2432)
 
 [node name="Vase12" parent="." instance=ExtResource("25_rxnxl")]
-position = Vector2(457, -1450)
+position = Vector2(2335, -3103)
 
 [node name="Vase13" parent="." instance=ExtResource("26_phh43")]
-position = Vector2(260, 884)
+position = Vector2(239, -1447)
+
+[node name="Breakablelamp4Yellow" parent="." instance=ExtResource("27_p257u")]
+position = Vector2(683, 656)
+
+[node name="Breakablelamp4Yellow2" parent="." instance=ExtResource("28_wjnnk")]
+position = Vector2(1017, 649)

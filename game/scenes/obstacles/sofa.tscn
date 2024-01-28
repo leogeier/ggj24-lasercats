@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt8vsk3xd67ay"]
+
+[ext_resource type="Texture2D" uid="uid://conyk4dd6amq6" path="res://scenes/assets/Livingroom/Bookcase and sofa.png" id="1_4r456"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nb4cc"]
+size = Vector2(917, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1oug3"]
+size = Vector2(835, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gj1mj"]
+size = Vector2(81, 299)
+
+[node name="Sofa" type="StaticBody2D"]
+collision_layer = 5
+collision_mask = 5
+
+[node name="BookcaseAndSofa" type="Sprite2D" parent="."]
+position = Vector2(0, -612)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_4r456")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-11, -168.5)
+shape = SubResource("RectangleShape2D_nb4cc")
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(-15.5, -461)
+rotation = -0.00170117
+shape = SubResource("RectangleShape2D_1oug3")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-509, -152.5)
+shape = SubResource("RectangleShape2D_gj1mj")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(490, -158)
+shape = SubResource("RectangleShape2D_gj1mj")
+one_way_collision = true

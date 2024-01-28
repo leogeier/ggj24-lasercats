@@ -25,7 +25,6 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_4dudg")
 
 [node name="Shadow" parent="Sprite2D" instance=ExtResource("2_qhak5")]
-position = Vector2(0, 66.6667)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.75, 16)
