@@ -11,7 +11,7 @@ func _integrate_forces(_state):
 		jumping_frames += 1
 	else:
 		jumping_frames = 0
-	is_active = jumping_frames <= 10 or abs(rotation) > 0.01
+	is_active = jumping_frames <= 5 or abs(rotation) > 0.01
 	
 	set_collision_layer_value(3, is_active)
 	set_collision_mask_value(3, is_active)
