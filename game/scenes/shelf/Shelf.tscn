@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dgd8s0xnbmy23"]
+[gd_scene load_steps=10 format=3 uid="uid://dgd8s0xnbmy23"]
 
 [ext_resource type="Script" path="res://scenes/shelf/Shelf.gd" id="1_hlisx"]
 [ext_resource type="Script" path="res://scenes/shelf/board.gd" id="2_mouh0"]
 [ext_resource type="Texture2D" uid="uid://dljeps1dasj0s" path="res://scenes/assets/shelves/modular/modularshelf.png" id="3_4h076"]
 [ext_resource type="PackedScene" uid="uid://v4yt1hf67uqr" path="res://scenes/shadow/shadow.tscn" id="4_8gsid"]
 [ext_resource type="Texture2D" uid="uid://btn5fat4oghme" path="res://scenes/assets/shelves/modular/pag.png" id="4_8myiw"]
+[ext_resource type="PackedScene" uid="uid://c3g0phbhutt4u" path="res://scenes/collision_sound/collision_sound.tscn" id="5_0nfg4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a2aq4"]
 friction = 0.5
@@ -37,6 +38,8 @@ position = Vector2(0, 75.2174)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="board"]
 shape = SubResource("RectangleShape2D_bsq5f")
+
+[node name="CollisionSound" parent="board" instance=ExtResource("5_0nfg4")]
 
 [node name="pegs" type="RigidBody2D" parent="."]
 modulate = Color(0.247059, 0.368627, 1, 1)

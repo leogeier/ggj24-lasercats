@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfd14ew6v7w8n"]
+[gd_scene load_steps=6 format=3 uid="uid://ci4kmkjs3y8rf"]
 
 [ext_resource type="Texture2D" uid="uid://wu1tawhkmjv4" path="res://scenes/assets/sports/sportitem3.png" id="1_kbijj"]
+[ext_resource type="PackedScene" uid="uid://c3g0phbhutt4u" path="res://scenes/collision_sound/collision_sound.tscn" id="2_dts8g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3cjw"]
 size = Vector2(88, 29)
@@ -35,3 +36,5 @@ shape = SubResource("RectangleShape2D_nexhv")
 position = Vector2(3, -103)
 rotation = 0.748746
 shape = SubResource("CapsuleShape2D_j22od")
+
+[node name="CollisionSound" parent="." instance=ExtResource("2_dts8g")]

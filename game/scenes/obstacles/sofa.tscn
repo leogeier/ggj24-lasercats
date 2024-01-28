@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dt8vsk3xd67ay"]
 
-[ext_resource type="Texture2D" uid="uid://c2gx5t66q7y1l" path="res://scenes/assets/Livingroom/Bookcase and sofa Short.png" id="1_us6ou"]
+[ext_resource type="Texture2D" uid="uid://bx4xdc51ky7wt" path="res://scenes/assets/Livingroom/Bookcase and sofa Short.png" id="1_us6ou"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nb4cc"]
 size = Vector2(917, 45)

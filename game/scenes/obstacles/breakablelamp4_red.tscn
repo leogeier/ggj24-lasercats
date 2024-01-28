@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkabjvyrbmea2"]
+[gd_scene load_steps=8 format=3 uid="uid://b5oh4yfdngaqq"]
 
 [ext_resource type="Texture2D" uid="uid://ckrd8k5yyhu6s" path="res://scenes/assets/breakablebobjects/lamp4(base).png" id="1_ky5qt"]
 [ext_resource type="PackedScene" uid="uid://v4yt1hf67uqr" path="res://scenes/shadow/shadow.tscn" id="2_p6xnw"]
 [ext_resource type="Texture2D" uid="uid://bgegnkdrbrclg" path="res://scenes/assets/breakablebobjects/lamp4(hat_othercolor).png" id="3_a8y6l"]
+[ext_resource type="PackedScene" uid="uid://c3g0phbhutt4u" path="res://scenes/collision_sound/collision_sound.tscn" id="3_y1sng"]
 [ext_resource type="Script" path="res://scenes/obstacles/BreakableJoint.gd" id="4_l77ak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa6is"]
@@ -36,6 +37,8 @@ shape = SubResource("RectangleShape2D_xa6is")
 position = Vector2(1, -169)
 shape = SubResource("RectangleShape2D_ix2cf")
 
+[node name="CollisionSound" parent="base" instance=ExtResource("3_y1sng")]
+
 [node name="hat" type="RigidBody2D" parent="."]
 collision_layer = 5
 collision_mask = 5
@@ -54,6 +57,8 @@ position = Vector2(0, 57.1428)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hat"]
 polygon = PackedVector2Array(-88, -394, -49, -411, 32, -407, 80, -399, 102, -381, 106, -343, 151, -211, 36, -188, 28, -243, -24, -243, -34, -197, -150, -219, -122, -276, -96, -353, -86, -394)
+
+[node name="CollisionSound" parent="hat" instance=ExtResource("3_y1sng")]
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2(0, -241)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfumkh7ybh83y"]
+[gd_scene load_steps=6 format=3 uid="uid://dpnce1c1fwpek"]
 
 [ext_resource type="Texture2D" uid="uid://dv85n2u3xvahm" path="res://scenes/assets/Livingroom/Chair.png" id="1_ir13t"]
+[ext_resource type="PackedScene" uid="uid://c3g0phbhutt4u" path="res://scenes/collision_sound/collision_sound.tscn" id="2_ir2s4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_teomj"]
 size = Vector2(254, 32)
@@ -38,3 +39,5 @@ rotation = 3.14159
 scale = Vector2(2.02, 0.96)
 shape = SubResource("CircleShape2D_bjbrf")
 one_way_collision = true
+
+[node name="CollisionSound" parent="." instance=ExtResource("2_ir2s4")]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://co8y188ycb8fj"]
+[gd_scene load_steps=8 format=3 uid="uid://co8y188ycb8fj"]
 
 [ext_resource type="Script" path="res://scenes/obstacles/painting.gd" id="1_0voqn"]
 [ext_resource type="Script" path="res://scenes/obstacles/painting_parent.gd" id="1_eu74o"]
 [ext_resource type="Texture2D" uid="uid://ccruc327bum4r" path="res://scenes/assets/arts/picture2.png" id="2_quhto"]
 [ext_resource type="PackedScene" uid="uid://v4yt1hf67uqr" path="res://scenes/shadow/shadow.tscn" id="3_15vs3"]
+[ext_resource type="PackedScene" uid="uid://c3g0phbhutt4u" path="res://scenes/collision_sound/collision_sound.tscn" id="5_h6qtj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlald"]
 size = Vector2(544, 66)
@@ -45,6 +46,8 @@ position = Vector2(210, -154)
 position = Vector2(-0.5, 203)
 shape = SubResource("RectangleShape2D_2mvhj")
 disabled = true
+
+[node name="CollisionSound" parent="Painting" instance=ExtResource("5_h6qtj")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 0

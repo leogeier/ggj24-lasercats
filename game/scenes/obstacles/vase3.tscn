@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://5eyfr7via258"]
+[gd_scene load_steps=6 format=3 uid="uid://7lbotfksvxsh"]
 
 [ext_resource type="Texture2D" uid="uid://sgp2f6hch5bi" path="res://scenes/assets/vases/vase3.png" id="1_xsfbo"]
+[ext_resource type="PackedScene" uid="uid://c3g0phbhutt4u" path="res://scenes/collision_sound/collision_sound.tscn" id="2_kbf27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oh50w"]
 size = Vector2(19, 35)
@@ -36,3 +37,5 @@ shape = SubResource("CapsuleShape2D_3ttkt")
 position = Vector2(-2.98023e-07, -32)
 scale = Vector2(0.1, 0.1)
 shape = SubResource("RectangleShape2D_wai5c")
+
+[node name="CollisionSound" parent="." instance=ExtResource("2_kbf27")]
