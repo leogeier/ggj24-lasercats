@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6cp7h1kx6t63"]
+[gd_scene load_steps=7 format=3 uid="uid://b6cp7h1kx6t63"]
 
 [ext_resource type="Script" path="res://menus/end card.gd" id="1_eo8j0"]
+[ext_resource type="Texture2D" uid="uid://c0m45l8k8hyw2" path="res://scenes/assets/YouTube Page.png" id="2_jwli8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nfrxm"]
 font_size = 90
+font_color = Color(0.172549, 0.172549, 0.172549, 1)
 
 [sub_resource type="Animation" id="Animation_0then"]
 length = 0.001
@@ -42,6 +44,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_dh575"]
@@ -83,6 +97,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jlcn8"]
 _data = {
@@ -99,6 +125,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_eo8j0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -1920.0
+offset_top = -1080.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_jwli8")
 
 [node name="GridContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

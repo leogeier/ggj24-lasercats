@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhkn2g6mktugj"]
+[gd_scene load_steps=6 format=3 uid="uid://bhkn2g6mktugj"]
 
 [ext_resource type="Script" path="res://scenes/window/window.gd" id="1_dg326"]
 [ext_resource type="Texture2D" uid="uid://du1i6wgtmd0n7" path="res://scenes/assets/shelves/fixed/WIN Window.png" id="2_e8dwh"]
+[ext_resource type="PackedScene" uid="uid://dvo2nnr1cpk5r" path="res://scenes/mama.tscn" id="3_6mjyn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mnex"]
-size = Vector2(500, 251)
+size = Vector2(500, 473)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b6450"]
 size = Vector2(686, 22)
@@ -22,7 +23,7 @@ collision_layer = 5
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Window"]
-position = Vector2(0, -124.5)
+position = Vector2(0, -13.5)
 shape = SubResource("RectangleShape2D_8mnex")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -33,5 +34,8 @@ collision_mask = 5
 position = Vector2(-8, 275)
 shape = SubResource("RectangleShape2D_b6450")
 one_way_collision = true
+
+[node name="Mama" parent="." instance=ExtResource("3_6mjyn")]
+position = Vector2(72, 263)
 
 [connection signal="body_entered" from="Window" to="." method="_on_window_entered"]

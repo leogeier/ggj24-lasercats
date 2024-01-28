@@ -42,7 +42,7 @@ func move_camera():
 	position.y = min(new_position, position.y)
 
 func get_half_extent():
-	return get_viewport_rect().size / 2.0
+	return get_viewport_rect().size / zoom / 2.0
 
 
 func check_for_fall():

@@ -120,6 +120,8 @@ func _process(_delta):
 	#print(x.max())
 
 func _ready():
+	Level.respawn()
+	
 	laser_pointer = get_tree().get_first_node_in_group("laserpointer")
 	laser_pointer.position_changed.connect(_on_laser_pointer_position_changed)
 	last_laser_pointer_position = laser_pointer.position
@@ -127,3 +129,4 @@ func _ready():
 	var end_window = get_tree().get_first_node_in_group("window")
 	if end_window:
 		end_window.game_finished.connect(end_game)
+	
