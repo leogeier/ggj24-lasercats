@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b6cp7h1kx6t63"]
 
 [ext_resource type="Script" path="res://menus/end card.gd" id="1_eo8j0"]
-[ext_resource type="Texture2D" uid="uid://cqysins1d2xa0" path="res://menus/youtube.png" id="2_3g73r"]
+[ext_resource type="Texture2D" uid="uid://c0m45l8k8hyw2" path="res://scenes/assets/YouTube Page.png" id="2_jwli8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nfrxm"]
 font_size = 90
@@ -130,7 +130,7 @@ layout_mode = 0
 offset_left = -1920.0
 offset_top = -1080.0
 scale = Vector2(2, 2)
-texture = ExtResource("2_3g73r")
+texture = ExtResource("2_jwli8")
 
 [node name="GridContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvo2nnr1cpk5r"]
+
+[ext_resource type="Script" path="res://scenes/mama.gd" id="1_1hesl"]
+[ext_resource type="Texture2D" uid="uid://yshxg6hbymr0" path="res://Animations/Mama-Cat_0000_Layer-1.png" id="1_1i10s"]
+[ext_resource type="Texture2D" uid="uid://dj68td5gtynvo" path="res://Animations/Mama-Cat_0001_Layer-1-copy.png" id="2_juecd"]
+[ext_resource type="Texture2D" uid="uid://djxbgay8exls2" path="res://Animations/Mama-Cat_0002_Layer-1-copy-3.png" id="3_a3ypd"]
+[ext_resource type="Texture2D" uid="uid://dwkuxqq08vo1s" path="res://Animations/Mama-Cat_0003_Layer-1-copy-2.png" id="4_yg66k"]
+[ext_resource type="Texture2D" uid="uid://dinlxu3686mfq" path="res://Animations/Mama-Cat_0005_Layer-1-copy-5.png" id="5_v8kxp"]
+[ext_resource type="Texture2D" uid="uid://chhp4cg5020qk" path="res://Animations/Mama-Cat_0004_Layer-1-copy-4.png" id="6_4b7m5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h200s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1i10s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_juecd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a3ypd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yg66k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v8kxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4b7m5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Mama" type="Node2D"]
+script = ExtResource("1_1hesl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-95, -178)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_h200s")
+autoplay = "default"
+frame_progress = 0.805861

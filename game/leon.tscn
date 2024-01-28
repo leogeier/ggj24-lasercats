@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dgd8s0xnbmy23" path="res://scenes/shelf/Shelf.tscn" id="4_x3774"]
 [ext_resource type="PackedScene" uid="uid://bhkn2g6mktugj" path="res://scenes/window/window.tscn" id="5_pluiw"]
 [ext_resource type="PackedScene" uid="uid://casjp0djtvre" path="res://scenes/obstacles/lamp.tscn" id="8_1q4a7"]
-[ext_resource type="PackedScene" uid="uid://bfumkh7ybh83y" path="res://scenes/obstacles/Chair.tscn" id="8_xfyuy"]
+[ext_resource type="PackedScene" uid="uid://dpnce1c1fwpek" path="res://scenes/obstacles/Chair.tscn" id="8_xfyuy"]
 [ext_resource type="Texture2D" uid="uid://bt1snowhokw1u" path="res://scenes/assets/Livingroom/Floor.png" id="9_bw6je"]
 [ext_resource type="PackedScene" uid="uid://br58ke2lsx3vo" path="res://scenes/obstacles/trophy.tscn" id="9_cibi5"]
 [ext_resource type="PackedScene" uid="uid://jn7l4rp06k8" path="res://scenes/obstacles/trophy_breakable.tscn" id="11_qdtuf"]
@@ -110,7 +110,7 @@ position = Vector2(641.001, 227.996)
 shape = SubResource("WorldBoundaryShape2D_3w1h3")
 
 [node name="Window" parent="." instance=ExtResource("5_pluiw")]
-position = Vector2(1630, -1556)
+position = Vector2(1366, -113)
 
 [node name="Painting" parent="." instance=ExtResource("14_0cenj")]
 position = Vector2(1117, -988)
