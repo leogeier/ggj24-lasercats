@@ -3,6 +3,7 @@ extends Node2D
 
 @export_enum("Stage1", "Stage2", "Stage3", "Stage4")
 var track_name = "Stage1"
+@export var zoom_target = 1.0
 
 @export var show_in_game = false
 
@@ -14,6 +15,13 @@ func _process(_delta):
 	var cat = get_tree().get_first_node_in_group(&"cat")
 	if cat and cat.global_position.y < global_position.y:
 		get_tree().call_group(&"music", &"change_to_track", track_name)
+		
+		var cam = get_tree().get_first_node_in_group("camera")
+		if cam:
+			var tween = get_tree().create_tween()
+			tween.set_trans(Tween.TRANS_SINE)
+			tween.tween_property(cam, "zoom", Vector2.ONE * zoom_target, 5)
+		
 		has_triggered = true
 
 func _enter_tree():
