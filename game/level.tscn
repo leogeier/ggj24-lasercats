@@ -1,9 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://baidon4cgvdp6"]
+[gd_scene load_steps=45 format=3 uid="uid://b46h7o882wpvt"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_7fo05"]
 [ext_resource type="Texture2D" uid="uid://b2841qrw05hsj" path="res://scenes/assets/Livingroom/Wall Texture.png" id="1_kqb8r"]
 [ext_resource type="PackedScene" uid="uid://dt8vsk3xd67ay" path="res://scenes/obstacles/sofa.tscn" id="2_ax0dk"]
-[ext_resource type="PackedScene" uid="uid://bfumkh7ybh83y" path="res://scenes/obstacles/Chair.tscn" id="3_b8nix"]
+[ext_resource type="PackedScene" uid="uid://dpnce1c1fwpek" path="res://scenes/obstacles/Chair.tscn" id="3_b8nix"]
 [ext_resource type="PackedScene" uid="uid://gn2pfuvfjxep" path="res://scenes/obstacles/standing_lamp_smaller.tscn" id="4_avc2b"]
 [ext_resource type="PackedScene" uid="uid://dgd8s0xnbmy23" path="res://scenes/shelf/Shelf.tscn" id="5_nf331"]
 [ext_resource type="PackedScene" uid="uid://jn7l4rp06k8" path="res://scenes/obstacles/trophy_breakable.tscn" id="6_i0bw7"]
@@ -18,11 +18,35 @@
 [ext_resource type="PackedScene" uid="uid://duehi6pdpwp2t" path="res://scenes/camera/camera.tscn" id="15_kintb"]
 [ext_resource type="PackedScene" uid="uid://dkip6t3ofwu07" path="res://scenes/music/music_trigger.tscn" id="16_1ooey"]
 [ext_resource type="PackedScene" uid="uid://6fklhk1bger" path="res://scenes/music/Music.tscn" id="17_p5w55"]
-[ext_resource type="PackedScene" uid="uid://drhm8ls40pfgj" path="res://scenes/checkpoint.tscn" id="18_4gt6j"]
+[ext_resource type="PackedScene" path="res://scenes/checkpoint.tscn" id="18_4gt6j"]
+[ext_resource type="PackedScene" uid="uid://dy65rypajb1j5" path="res://scenes/obstacles/plant5.tscn" id="19_3v87d"]
+[ext_resource type="PackedScene" uid="uid://my2f37c2haa3" path="res://scenes/obstacles/plant6.tscn" id="20_ero54"]
+[ext_resource type="PackedScene" uid="uid://5eyfr7via258" path="res://scenes/obstacles/vase3.tscn" id="21_e1m6i"]
+[ext_resource type="PackedScene" uid="uid://c5fwp8o3n08fb" path="res://scenes/obstacles/lamp1.tscn" id="22_e2fyr"]
+[ext_resource type="PackedScene" uid="uid://chtvvcb71rmve" path="res://scenes/obstacles/plant2.tscn" id="23_8q7rs"]
+[ext_resource type="PackedScene" uid="uid://da7n6gj36i2aj" path="res://scenes/shelf/fixedshelf2.tscn" id="25_akirc"]
+[ext_resource type="PackedScene" uid="uid://b5oh4yfdngaqq" path="res://scenes/obstacles/breakablelamp4_red.tscn" id="26_6412y"]
+[ext_resource type="PackedScene" uid="uid://jrdncy2gxc1w" path="res://scenes/shelf/fixedshelf4.tscn" id="27_bpc4l"]
+[ext_resource type="PackedScene" uid="uid://dyh35kd320gm3" path="res://scenes/obstacles/plant7.tscn" id="28_hohnf"]
+[ext_resource type="PackedScene" uid="uid://dc7efk1jwgxrr" path="res://scenes/shelf/fixedshelf1.tscn" id="29_ded4u"]
+[ext_resource type="PackedScene" uid="uid://xfs1f33p2fh" path="res://scenes/obstacles/breakableplant1.tscn" id="30_pf2i2"]
+[ext_resource type="PackedScene" uid="uid://b30rv2yrfa03i" path="res://scenes/obstacles/bowlingpin.tscn" id="31_d6qwg"]
+[ext_resource type="PackedScene" uid="uid://cqhk3td0syrm0" path="res://scenes/obstacles/vase4.tscn" id="32_swyk1"]
+[ext_resource type="PackedScene" uid="uid://61wq3reh2jyc" path="res://scenes/obstacles/bowling_ball2.tscn" id="33_weqe8"]
+[ext_resource type="PackedScene" uid="uid://ck8kneyxxbbsk" path="res://scenes/obstacles/plant3.tscn" id="34_u5rak"]
+[ext_resource type="PackedScene" uid="uid://4bvg4myxbuue" path="res://scenes/obstacles/vase5.tscn" id="35_esvad"]
+[ext_resource type="PackedScene" uid="uid://b36kbb1qcxr80" path="res://scenes/shelf/fixedshelf3.tscn" id="36_24shc"]
+[ext_resource type="PackedScene" uid="uid://qdrxvhcsf5px" path="res://scenes/obstacles/vase2.tscn" id="37_0jx4f"]
+[ext_resource type="PackedScene" uid="uid://dumxh2dfmlrko" path="res://scenes/obstacles/breakablelamp4_yellow.tscn" id="38_xvysk"]
+[ext_resource type="PackedScene" uid="uid://o6err8xusldq" path="res://scenes/obstacles/breakablevineglassesthing.tscn" id="39_x2vuj"]
+[ext_resource type="PackedScene" uid="uid://wt2jqh4jyqo2" path="res://scenes/obstacles/breakableplant8.tscn" id="40_4a1rq"]
+[ext_resource type="PackedScene" uid="uid://co8y188ycb8fj" path="res://scenes/obstacles/painting2.tscn" id="41_74sxk"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0688f"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3w1h3"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cbhrw"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7fo05")
@@ -77,10 +101,6 @@ side_offset = -50.0
 [node name="Lamp2" parent="Shelf8" instance=ExtResource("9_ngm3f")]
 position = Vector2(-65, -56)
 
-[node name="Shelf9" parent="." instance=ExtResource("5_nf331")]
-position = Vector2(865, -1128)
-board_width = 2.114
-
 [node name="BottomBoundary" type="StaticBody2D" parent="."]
 z_index = -100
 position = Vector2(906, 1058)
@@ -111,9 +131,6 @@ rotation = -1.57079
 position = Vector2(641.001, 227.996)
 shape = SubResource("WorldBoundaryShape2D_3w1h3")
 
-[node name="Window" parent="." instance=ExtResource("11_rga4o")]
-position = Vector2(1630, -1556)
-
 [node name="Painting" parent="." instance=ExtResource("12_7coqw")]
 position = Vector2(1117, -988)
 
@@ -129,9 +146,224 @@ position = Vector2(1024, 544)
 [node name="MusicTrigger" parent="." instance=ExtResource("16_1ooey")]
 position = Vector2(860, -1180)
 track_name = "Stage2"
-zoom_target = 0.9
 
 [node name="Checkpoint" parent="MusicTrigger" instance=ExtResource("18_4gt6j")]
 position = Vector2(-80, -23)
 
 [node name="Music" parent="." instance=ExtResource("17_p5w55")]
+
+[node name="Shelf10" parent="." instance=ExtResource("5_nf331")]
+position = Vector2(977, -4905)
+
+[node name="Plant5" parent="Shelf10" instance=ExtResource("19_3v87d")]
+position = Vector2(-1, -92)
+
+[node name="Plant9" parent="Shelf10" instance=ExtResource("20_ero54")]
+position = Vector2(-132, -99)
+
+[node name="Painting3" parent="." instance=ExtResource("12_7coqw")]
+position = Vector2(1672, -5218)
+rotation = -0.0785398
+
+[node name="Shelf" parent="." instance=ExtResource("5_nf331")]
+position = Vector2(1120, -1576)
+
+[node name="Vase5" parent="Shelf" instance=ExtResource("21_e1m6i")]
+position = Vector2(-172, -50)
+
+[node name="Vase6" parent="Shelf" instance=ExtResource("21_e1m6i")]
+position = Vector2(-43, -49)
+
+[node name="Lamp2" parent="Shelf" instance=ExtResource("22_e2fyr")]
+position = Vector2(131, -97)
+
+[node name="Shelf3" parent="." instance=ExtResource("5_nf331")]
+position = Vector2(700, -1734)
+
+[node name="Shelf6" parent="." instance=ExtResource("5_nf331")]
+position = Vector2(32, -2541)
+
+[node name="Plant3" parent="Shelf6" instance=ExtResource("23_8q7rs")]
+position = Vector2(-54, -134)
+
+[node name="Window" parent="." instance=ExtResource("11_rga4o")]
+position = Vector2(844, -5973)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-211, -2265)
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(913, 995)
+shape = SubResource("WorldBoundaryShape2D_cbhrw")
+
+[node name="Fixedshelf2" parent="." instance=ExtResource("25_akirc")]
+position = Vector2(499, -2069)
+
+[node name="Breakablelamp4Yellow3" parent="Fixedshelf2" instance=ExtResource("26_6412y")]
+position = Vector2(-91.6666, -118.333)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Vase7" parent="Fixedshelf2" instance=ExtResource("21_e1m6i")]
+position = Vector2(96.6667, -100)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Vase8" parent="Fixedshelf2" instance=ExtResource("21_e1m6i")]
+position = Vector2(201.667, -123.333)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Fixedshelf3" parent="." instance=ExtResource("27_bpc4l")]
+position = Vector2(-77, -1796)
+
+[node name="Plant6" parent="Fixedshelf3" instance=ExtResource("20_ero54")]
+position = Vector2(73.3333, -95)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Plant7" parent="Fixedshelf3" instance=ExtResource("28_hohnf")]
+position = Vector2(153.333, -68.3333)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Fixedshelf4" parent="." instance=ExtResource("29_ded4u")]
+position = Vector2(248, -1359)
+
+[node name="Shelf11" parent="." instance=ExtResource("5_nf331")]
+position = Vector2(622, -2799)
+
+[node name="Vase1" parent="Shelf11" instance=ExtResource("30_pf2i2")]
+position = Vector2(-108, -131)
+
+[node name="Vase4" parent="Shelf11" instance=ExtResource("21_e1m6i")]
+position = Vector2(15, -203)
+
+[node name="Vase9" parent="Shelf11" instance=ExtResource("21_e1m6i")]
+position = Vector2(99, -182)
+
+[node name="Shelf12" parent="." instance=ExtResource("5_nf331")]
+position = Vector2(243, -4162)
+
+[node name="Bowlingpin" parent="Shelf12" instance=ExtResource("31_d6qwg")]
+position = Vector2(-80, -63)
+
+[node name="Plant10" parent="Shelf12" instance=ExtResource("28_hohnf")]
+position = Vector2(85, -54)
+
+[node name="Fixedshelf14" parent="." instance=ExtResource("25_akirc")]
+position = Vector2(1772, -2400)
+
+[node name="Bowlingpin6" parent="Fixedshelf14" instance=ExtResource("31_d6qwg")]
+position = Vector2(-20, -240)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Bowlingpin5" parent="Fixedshelf14/Bowlingpin6" instance=ExtResource("31_d6qwg")]
+position = Vector2(-98, 47)
+
+[node name="Bowlingpin2" parent="Fixedshelf14/Bowlingpin6" instance=ExtResource("31_d6qwg")]
+position = Vector2(172, 26)
+
+[node name="Bowlingpin3" parent="Fixedshelf14/Bowlingpin6" instance=ExtResource("31_d6qwg")]
+position = Vector2(66, 32)
+
+[node name="Bowlingpin4" parent="Fixedshelf14/Bowlingpin6" instance=ExtResource("31_d6qwg")]
+position = Vector2(241, 36)
+
+[node name="Fixedshelf9" parent="Fixedshelf14" instance=ExtResource("25_akirc")]
+position = Vector2(-780, 0)
+scale = Vector2(1, 1)
+
+[node name="BowlingBall3" parent="Fixedshelf14/Fixedshelf9" instance=ExtResource("7_aktqx")]
+position = Vector2(-165, -316.667)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Shelf13" parent="." instance=ExtResource("5_nf331")]
+position = Vector2(677, -3686)
+
+[node name="Vase10" parent="Shelf13" instance=ExtResource("32_swyk1")]
+position = Vector2(31, -172)
+
+[node name="Shelf14" parent="." instance=ExtResource("5_nf331")]
+position = Vector2(2009, -3866)
+
+[node name="Fixedshelf6" parent="." instance=ExtResource("25_akirc")]
+position = Vector2(1215, -3104)
+
+[node name="BowlingBall2" parent="Fixedshelf6" instance=ExtResource("33_weqe8")]
+position = Vector2(170, -256.667)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Plant8" parent="Fixedshelf6" instance=ExtResource("19_3v87d")]
+position = Vector2(-170, -136.667)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Vase3" parent="Fixedshelf6" instance=ExtResource("21_e1m6i")]
+position = Vector2(-295, -61.6667)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Painting2" parent="." instance=ExtResource("12_7coqw")]
+position = Vector2(1614, -2029)
+
+[node name="Fixedshelf5" parent="." instance=ExtResource("25_akirc")]
+position = Vector2(613, -4454)
+
+[node name="Plant4" parent="Fixedshelf5" instance=ExtResource("34_u5rak")]
+position = Vector2(-163.333, -268.333)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Vase11" parent="Fixedshelf5" instance=ExtResource("35_esvad")]
+position = Vector2(98.3334, -161.667)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Fixedshelf7" parent="." instance=ExtResource("36_24shc")]
+position = Vector2(1604, -4452)
+
+[node name="Vase2" parent="Fixedshelf7" instance=ExtResource("37_0jx4f")]
+position = Vector2(163.333, -95)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Fixedshelf8" parent="." instance=ExtResource("29_ded4u")]
+position = Vector2(-172, -2992)
+
+[node name="Vase12" parent="Fixedshelf8" instance=ExtResource("37_0jx4f")]
+position = Vector2(-275, -105)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Fixedshelf1" parent="." instance=ExtResource("25_akirc")]
+position = Vector2(65, -3378)
+
+[node name="Breakablelamp4Yellow2" parent="Fixedshelf1" instance=ExtResource("38_xvysk")]
+position = Vector2(230, -116.667)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Plant2" parent="Fixedshelf1" instance=ExtResource("23_8q7rs")]
+position = Vector2(-368.333, -243.333)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Fixedshelf10" parent="." instance=ExtResource("29_ded4u")]
+position = Vector2(1756, -3413)
+
+[node name="Fixedshelf11" parent="." instance=ExtResource("25_akirc")]
+position = Vector2(779, -5278)
+
+[node name="Fixedshelf12" parent="." instance=ExtResource("36_24shc")]
+position = Vector2(2107, -4207)
+
+[node name="Breakablevineglassesthing" parent="Fixedshelf12" instance=ExtResource("39_x2vuj")]
+position = Vector2(68.3333, -155)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Fixedshelf13" parent="." instance=ExtResource("25_akirc")]
+position = Vector2(1308, -4084)
+
+[node name="breakableplant8" parent="Fixedshelf13" instance=ExtResource("40_4a1rq")]
+position = Vector2(-285, -241.667)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Painting4" parent="." instance=ExtResource("41_74sxk")]
+position = Vector2(165, -5244)
+rotation = 0.0537094
+
+[node name="Fixedshelf9" parent="." instance=ExtResource("29_ded4u")]
+position = Vector2(1756, -1079)
+
+[node name="Fixedshelf15" parent="." instance=ExtResource("25_akirc")]
+position = Vector2(761, -1088)

@@ -17,18 +17,18 @@
 [ext_resource type="PackedScene" uid="uid://da7n6gj36i2aj" path="res://scenes/shelf/fixedshelf2.tscn" id="18_n60vh"]
 [ext_resource type="PackedScene" uid="uid://jrdncy2gxc1w" path="res://scenes/shelf/fixedshelf4.tscn" id="19_cy2v4"]
 [ext_resource type="PackedScene" uid="uid://61wq3reh2jyc" path="res://scenes/obstacles/bowling_ball2.tscn" id="20_2syeu"]
-[ext_resource type="PackedScene" uid="uid://dqdsvcpprwbaa" path="res://scenes/obstacles/breakableplant1.tscn" id="20_cp1ii"]
+[ext_resource type="PackedScene" uid="uid://xfs1f33p2fh" path="res://scenes/obstacles/breakableplant1.tscn" id="20_cp1ii"]
 [ext_resource type="PackedScene" uid="uid://qdrxvhcsf5px" path="res://scenes/obstacles/vase2.tscn" id="21_2dbfi"]
 [ext_resource type="PackedScene" uid="uid://5eyfr7via258" path="res://scenes/obstacles/vase3.tscn" id="22_gknd0"]
 [ext_resource type="PackedScene" uid="uid://cqhk3td0syrm0" path="res://scenes/obstacles/vase4.tscn" id="23_y1bb2"]
 [ext_resource type="PackedScene" uid="uid://4bvg4myxbuue" path="res://scenes/obstacles/vase5.tscn" id="24_wmdse"]
 [ext_resource type="PackedScene" uid="uid://dumxh2dfmlrko" path="res://scenes/obstacles/breakablelamp4_yellow.tscn" id="26_8lf6h"]
 [ext_resource type="PackedScene" uid="uid://b662bj4elnqs6" path="res://scenes/obstacles/painting.tscn" id="26_15vv3"]
-[ext_resource type="PackedScene" uid="uid://bkabjvyrbmea2" path="res://scenes/obstacles/breakablelamp4_red.tscn" id="27_fhilb"]
+[ext_resource type="PackedScene" uid="uid://b5oh4yfdngaqq" path="res://scenes/obstacles/breakablelamp4_red.tscn" id="27_fhilb"]
 [ext_resource type="PackedScene" uid="uid://b36kbb1qcxr80" path="res://scenes/shelf/fixedshelf3.tscn" id="27_ph8sh"]
-[ext_resource type="PackedScene" uid="uid://c6tco1hyut0xb" path="res://scenes/obstacles/breakablevineglassesthing.tscn" id="28_nilql"]
+[ext_resource type="PackedScene" uid="uid://o6err8xusldq" path="res://scenes/obstacles/breakablevineglassesthing.tscn" id="28_nilql"]
 [ext_resource type="PackedScene" uid="uid://co8y188ycb8fj" path="res://scenes/obstacles/painting2.tscn" id="29_rorim"]
-[ext_resource type="PackedScene" uid="uid://cs6hxy1xjclh" path="res://scenes/obstacles/breakableplant8.tscn" id="30_wtvqa"]
+[ext_resource type="PackedScene" uid="uid://wt2jqh4jyqo2" path="res://scenes/obstacles/breakableplant8.tscn" id="30_wtvqa"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fo2e5"]
 
@@ -40,13 +40,13 @@ position = Vector2(937, 929)
 [node name="Laserpointer" parent="." instance=ExtResource("3_wvf5c")]
 position = Vector2(1037, 972)
 
-[node name="Painting2" parent="." instance=ExtResource("29_rorim")]
-position = Vector2(432, -2959)
-
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(542, -1400)
 collision_layer = 5
 collision_mask = 5
+
+[node name="Painting2" parent="." instance=ExtResource("29_rorim")]
+position = Vector2(432, -2959)
 
 [node name="Camera" parent="." instance=ExtResource("4_sxt1v")]
 position = Vector2(1024, 544)

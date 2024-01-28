@@ -128,7 +128,6 @@ shape = SubResource("WorldBoundaryShape2D_mm8be")
 [node name="MusicTrigger" parent="." instance=ExtResource("11_frwd3")]
 position = Vector2(1012, 55)
 track_name = "Stage4"
-zoom_target = 0.9
 
 [node name="BowlingBall" parent="." instance=ExtResource("12_tlqpj")]
 position = Vector2(116, 269)
