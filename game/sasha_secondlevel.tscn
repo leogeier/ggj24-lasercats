@@ -40,11 +40,6 @@ position = Vector2(937, 929)
 [node name="Laserpointer" parent="." instance=ExtResource("3_wvf5c")]
 position = Vector2(1037, 972)
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(542, -1400)
-collision_layer = 5
-collision_mask = 5
-
 [node name="Painting2" parent="." instance=ExtResource("29_rorim")]
 position = Vector2(432, -2959)
 

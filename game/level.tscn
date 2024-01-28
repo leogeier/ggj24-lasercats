@@ -146,6 +146,7 @@ position = Vector2(1024, 544)
 [node name="MusicTrigger" parent="." instance=ExtResource("16_1ooey")]
 position = Vector2(860, -1180)
 track_name = "Stage2"
+zoom_target = 0.75
 
 [node name="Checkpoint" parent="MusicTrigger" instance=ExtResource("18_4gt6j")]
 position = Vector2(-80, -23)
@@ -363,7 +364,7 @@ position = Vector2(165, -5244)
 rotation = 0.0537094
 
 [node name="Fixedshelf9" parent="." instance=ExtResource("29_ded4u")]
-position = Vector2(1756, -1079)
+position = Vector2(1521, -1228)
 
 [node name="Fixedshelf15" parent="." instance=ExtResource("25_akirc")]
 position = Vector2(761, -1088)
