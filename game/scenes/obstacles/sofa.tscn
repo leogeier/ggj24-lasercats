@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dt8vsk3xd67ay"]
+[gd_scene load_steps=6 format=3 uid="uid://dt8vsk3xd67ay"]
 
-[ext_resource type="Texture2D" uid="uid://conyk4dd6amq6" path="res://scenes/assets/Livingroom/Bookcase and sofa.png" id="1_4r456"]
+[ext_resource type="Texture2D" uid="uid://c2gx5t66q7y1l" path="res://scenes/assets/Livingroom/Bookcase and sofa Short.png" id="1_us6ou"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nb4cc"]
 size = Vector2(917, 45)
@@ -11,6 +11,9 @@ size = Vector2(835, 45)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gj1mj"]
 size = Vector2(81, 299)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_av0kn"]
+size = Vector2(1000, 41)
+
 [node name="Sofa" type="StaticBody2D"]
 collision_layer = 5
 collision_mask = 5
@@ -18,7 +21,7 @@ collision_mask = 5
 [node name="BookcaseAndSofa" type="Sprite2D" parent="."]
 position = Vector2(0, -612)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_4r456")
+texture = ExtResource("1_us6ou")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-11, -168.5)
@@ -39,4 +42,9 @@ one_way_collision = true
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
 position = Vector2(490, -158)
 shape = SubResource("RectangleShape2D_gj1mj")
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -857.5)
+shape = SubResource("RectangleShape2D_av0kn")
 one_way_collision = true
