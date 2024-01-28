@@ -11,6 +11,7 @@ func _on_window_entered(body):
 		return
 	finished = true
 	
+	Level.checkpoint = null
 	var end_screen = end_scene.instantiate()
 	get_tree().get_first_node_in_group("camera").add_child(end_screen)
 
