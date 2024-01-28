@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cfnx8itlnykxi" path="res://scenes/assets/sports/sportitem2.png" id="1_s0gts"]
 [ext_resource type="PackedScene" uid="uid://v4yt1hf67uqr" path="res://scenes/shadow/shadow.tscn" id="2_7vyx7"]
-[ext_resource type="PackedScene" uid="uid://c3g0phbhutt4u" path="res://scenes/collision_sound/collision_sound.tscn" id="3_36h4c"]
+[ext_resource type="PackedScene" uid="uid://c3g0phbhutt4u" path="res://scenes/collision_sound/collision_sound.tscn" id="3_erqcq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w0v11"]
 radius = 80.0
@@ -21,6 +21,7 @@ texture = ExtResource("1_s0gts")
 position = Vector2(0, 80)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_twjdo")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_w0v11")
 
-[node name="CollisionSound" parent="." instance=ExtResource("3_36h4c")]
+[node name="CollisionSound" parent="." instance=ExtResource("3_erqcq")]
