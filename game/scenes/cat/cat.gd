@@ -2,6 +2,7 @@ extends RigidBody2D
 
 @export var horizontal_forward_force = 9000
 @export var jump_force = 6000
+@export_range(0.1, 2.0) var auto_jump_horizontal_mod = 1.0
 @export var jump_flick_threshold = 50
 @export var just_landed_slowdown = 0.5
 @export var air_slowdown = 1.0
@@ -59,7 +60,7 @@ func _integrate_forces(state):
 		if auto_jump and relative_laser_pos.length() > 300 and laser_dir.y < -0.8:
 			##print("here", impulse_cooldown)
 			should_jump = true
-			jump_vector = laser_dir * jump_force * Vector2(0.5, 1)
+			jump_vector = laser_dir * jump_force * Vector2(auto_jump_horizontal_mod, 1)
 		# Without Autojump we require a flick (maybe better for trackpad)
 		if !auto_jump and laser_pointer.velocity > jump_flick_threshold:
 			should_jump = true
@@ -71,7 +72,7 @@ func _integrate_forces(state):
 			for body in %GroundCheck.get_overlapping_bodies():
 				if body is RigidBody2D:
 					var impulse_pos = body.to_local(%GroundCheck.global_position)
-					print(impulse_pos)
+					#print(impulse_pos)
 					body.apply_impulse(Vector2.DOWN * jump_body_impulse_strength, impulse_pos)
 			return
 	
