@@ -47,9 +47,6 @@ side_offset = -50.0
 position = Vector2(865, -1128)
 board_width = 2.114
 
-[node name="Lamp" parent="." instance=ExtResource("8_1q4a7")]
-position = Vector2(2478, 1046)
-
 [node name="Trophy" parent="." instance=ExtResource("9_cibi5")]
 position = Vector2(804, -231)
 
