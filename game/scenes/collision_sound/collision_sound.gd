@@ -26,5 +26,5 @@ func get_last_velocity(node):
 			return c.last_velocity
 
 func _on_body_entered(node):
-	if last_velocity.length() > 1000 and (not node_has_sound(node) or get_last_velocity(node) < last_velocity):
+	if last_velocity.length() > 500 and (not node_has_sound(node) or get_last_velocity(node) < last_velocity):
 		$AudioStreamPlayer.play()

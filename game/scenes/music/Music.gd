@@ -15,8 +15,8 @@ func change_to_track(track_name):
 	
 	var tween = get_tree().create_tween()
 	tween.tween_method(func(v):
-		next_track.volume_db = linear_to_db(v)
-		current_track.volume_db = linear_to_db(1.0 - v)
+		next_track.volume_db = linear_to_db(v * 0.251189)
+		current_track.volume_db = linear_to_db((1.0 - v) * 0.251189)
 		, 0.0, 1.0, 5)
 	
 	await tween.finished

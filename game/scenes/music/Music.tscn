@@ -11,6 +11,7 @@ script = ExtResource("1_ggeye")
 
 [node name="Stage1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_72thy")
+volume_db = -8.0
 autoplay = true
 
 [node name="Stage2" type="AudioStreamPlayer" parent="."]
