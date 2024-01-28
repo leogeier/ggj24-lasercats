@@ -23,9 +23,6 @@
 [node name="BowlingBall" parent="." instance=ExtResource("1_rrwgb")]
 position = Vector2(492, -229)
 
-[node name="Cat" parent="." instance=ExtResource("1_vp0h8")]
-position = Vector2(844, 1016)
-
 [node name="Shelf2" parent="." instance=ExtResource("4_x3774")]
 position = Vector2(1812, -79)
 peg_distance = 77.539
@@ -49,12 +46,6 @@ side_offset = -50.0
 [node name="Shelf9" parent="." instance=ExtResource("4_x3774")]
 position = Vector2(865, -1128)
 board_width = 2.114
-
-[node name="Window" parent="." instance=ExtResource("5_pluiw")]
-position = Vector2(748, -1346)
-
-[node name="Lamp" parent="." instance=ExtResource("8_1q4a7")]
-position = Vector2(2478, 1046)
 
 [node name="Trophy" parent="." instance=ExtResource("9_cibi5")]
 position = Vector2(804, -231)
@@ -95,14 +86,20 @@ position = Vector2(1499, 1043)
 [node name="StandingLamp" parent="." instance=ExtResource("13_okwsk")]
 position = Vector2(107, 1028)
 
-[node name="Laserpointer" parent="." instance=ExtResource("2_dw5os")]
-position = Vector2(914, 795)
-
-[node name="Camera" parent="." instance=ExtResource("3_a537d")]
-position = Vector2(1024, 544)
+[node name="Window" parent="." instance=ExtResource("5_pluiw")]
+position = Vector2(1630, -1556)
 
 [node name="Lamp2" parent="." instance=ExtResource("8_1q4a7")]
 position = Vector2(296, -614)
 
 [node name="Painting" parent="." instance=ExtResource("14_0cenj")]
 position = Vector2(1117, -988)
+
+[node name="Cat" parent="." instance=ExtResource("1_vp0h8")]
+position = Vector2(844, 1016)
+
+[node name="Laserpointer" parent="." instance=ExtResource("2_dw5os")]
+position = Vector2(914, 795)
+
+[node name="Camera" parent="." instance=ExtResource("3_a537d")]
+position = Vector2(1024, 544)

@@ -114,6 +114,7 @@ stream_0/stream = ExtResource("13_kinqs")
 stream_0/weight = 1.0
 
 [node name="Cat" type="RigidBody2D" groups=["cat"]]
+z_index = 50
 position = Vector2(1, 0)
 collision_layer = 4
 collision_mask = 4

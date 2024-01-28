@@ -1,15 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhkn2g6mktugj"]
+[gd_scene load_steps=5 format=3 uid="uid://bhkn2g6mktugj"]
 
 [ext_resource type="Script" path="res://scenes/window/window.gd" id="1_dg326"]
+[ext_resource type="Texture2D" uid="uid://du1i6wgtmd0n7" path="res://scenes/assets/shelves/fixed/WIN Window.png" id="2_e8dwh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mnex"]
-size = Vector2(100, 100)
+size = Vector2(500, 500)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mr3c8"]
-size = Vector2(120, 10)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6450"]
+size = Vector2(686, 22)
 
 [node name="Window" type="Node2D" groups=["window"]]
 script = ExtResource("1_dg326")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 28)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_e8dwh")
 
 [node name="Window" type="Area2D" parent="."]
 collision_layer = 5
@@ -18,12 +24,13 @@ collision_mask = 5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Window"]
 shape = SubResource("RectangleShape2D_8mnex")
 
-[node name="windowsill" type="RigidBody2D" parent="."]
-lock_rotation = true
-freeze = true
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 5
+collision_mask = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="windowsill"]
-position = Vector2(0, 57)
-shape = SubResource("RectangleShape2D_mr3c8")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-8, 275)
+shape = SubResource("RectangleShape2D_b6450")
+one_way_collision = true
 
 [connection signal="body_entered" from="Window" to="." method="_on_window_entered"]
