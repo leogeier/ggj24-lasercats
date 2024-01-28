@@ -410,9 +410,6 @@ zoom_target = 0.7
 [node name="Window" parent="LeoG" instance=ExtResource("5_vdtd7")]
 position = Vector2(1631, -9538)
 
-[node name="Vase4" parent="." instance=ExtResource("24_cwmrg")]
-position = Vector2(-1193, -3393)
-
 [node name="Vase6" parent="." instance=ExtResource("12_egfc6")]
 position = Vector2(268, -4402)
 
