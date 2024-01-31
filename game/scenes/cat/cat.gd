@@ -48,7 +48,15 @@ func start_impulse_cooldown():
 func _on_laser_pointer_position_changed(pos):
 	last_laser_pointer_position = pos
 
-func _integrate_forces(state):
+var movement_cooldown = true
+func start_movement_cooldown():
+	if %MovementTimer.is_stopped():
+		%MovementTimer.start()
+
+func _on_movement_timer_timeout():
+	movement_cooldown = false
+
+func get_movement_action(state):
 	var relative_laser_pos = last_laser_pointer_position - position
 	var laser_dir = relative_laser_pos.normalized()
 	
@@ -58,7 +66,6 @@ func _integrate_forces(state):
 		
 		# Autojump fells more cat-like and works better with mouse
 		if auto_jump and relative_laser_pos.length() > 300 and laser_dir.y < -0.8:
-			##print("here", impulse_cooldown)
 			should_jump = true
 			jump_vector = laser_dir * jump_force * Vector2(auto_jump_horizontal_mod, 1)
 		# Without Autojump we require a flick (maybe better for trackpad)
@@ -67,24 +74,45 @@ func _integrate_forces(state):
 			jump_vector = laser_dir * jump_force
 		
 		if should_jump:
-			$JumpSound.play()
-			state.apply_central_impulse(jump_vector)
-			start_impulse_cooldown()
-			for body in %GroundCheck.get_overlapping_bodies():
-				if body is RigidBody2D:
-					var impulse_pos = body.to_local(%GroundCheck.global_position)
-					#print(impulse_pos)
-					body.apply_impulse(Vector2.DOWN * jump_body_impulse_strength, impulse_pos)
-			return
+			return func():
+				$JumpSound.play()
+				state.apply_central_impulse(jump_vector)
+				start_impulse_cooldown()
+				for body in %GroundCheck.get_overlapping_bodies():
+					if body is RigidBody2D:
+						var impulse_pos = body.to_local(%GroundCheck.global_position)
+						#print(impulse_pos)
+						body.apply_impulse(Vector2.DOWN * jump_body_impulse_strength, impulse_pos)
 	
 	if abs(relative_laser_pos.x) > horizontal_deadzone:
 		var _air_slowdown = 1.0 if is_on_ground() else air_slowdown
 		var horizontal_slowdown = 1.0 if is_jump_cooldown_complete() else just_landed_slowdown
 		var force = Vector2.ZERO
 		force.x = laser_dir.x * horizontal_forward_force * horizontal_slowdown * _air_slowdown
-		state.apply_central_force(force)
-	elif is_on_ground():
-		linear_velocity *= 0.9
+		return func():
+			state.apply_central_force(force)
+	elif is_on_ground() and linear_velocity.abs().length() > 0.1:
+		return func():
+			linear_velocity *= 0.9
+	return null
+
+var previous_velocity = Vector2.ZERO
+const MOVEMENT_THRESHOLD = 5
+func _integrate_forces(state):
+	var movement_action = get_movement_action(state)
+	
+	var last_velocity = previous_velocity
+	previous_velocity = linear_velocity
+	if linear_velocity.abs().length() < MOVEMENT_THRESHOLD:
+		if last_velocity.abs().length() >= MOVEMENT_THRESHOLD:
+			movement_cooldown = true
+		if movement_action != null:
+			start_movement_cooldown()
+		if movement_cooldown:
+			return
+	
+	if movement_action != null:
+		movement_action.call()
 
 
 var was_on_ground = true
