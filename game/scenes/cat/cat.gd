@@ -1,14 +1,26 @@
 extends RigidBody2D
 
-@export var horizontal_forward_force = 9000
-@export var jump_force = 6000
-@export_range(0.1, 2.0) var auto_jump_horizontal_mod = 1.0
-@export var jump_flick_threshold = 50
-@export var just_landed_slowdown = 0.5
-@export var air_slowdown = 1.0
-@export var horizontal_deadzone = 30
-@export var jump_body_impulse_strength = 5000
+
+@export_category("Jumping")
 @export var auto_jump = true
+@export var jump_force = 6500
+@export_range(0.1, 2.0) var auto_jump_horizontal_mod = 0.75
+@export var jump_flick_threshold = 50
+@export var jump_body_impulse_strength = 5000
+
+@export_category("Slowdowns")
+@export var just_landed_slowdown = 0.5
+@export var air_slowdown = 0.5
+
+
+@export_category("Horizontal Movement")
+@export var horizontal_deadzone = 30
+@export var horizontal_max_distance = 200
+@export var horizontal_forward_force = 9000
+
+@export_category("debug")
+@export var debugging = false
+
 
 var last_laser_pointer_position = Vector2.ZERO
 var laser_pointer
@@ -41,13 +53,29 @@ func start_impulse_cooldown():
 	await get_tree().create_timer(.1).timeout
 	impulse_cooldown = false
 
-#func _draw():
-	#var dir = position.direction_to(last_laser_pointer_position)
-	#draw_line(Vector2.ZERO, dir * 100, Color.RED, 3)
+func _draw():
+	if !debugging:
+		return
+	var laser_dir = position.direction_to(last_laser_pointer_position)
+	draw_line(Vector2.ZERO, laser_dir * 100, Color.RED, 3)
+	
+	# Slowdown indicators
+	draw_line(Vector2.ZERO, Vector2.DOWN * 100 * distance_slowdown, Color.AQUA, 20)
+	draw_line(Vector2.ZERO + Vector2.RIGHT * 30, Vector2.DOWN * 100 * fly_slowdown + Vector2.RIGHT * 30, Color.AQUA, 20)
+	draw_line(Vector2.ZERO + Vector2.RIGHT * 60, Vector2.DOWN * 100 * horizontal_slowdown + Vector2.RIGHT * 60, Color.AQUA, 20)
 
 func _on_laser_pointer_position_changed(pos):
 	last_laser_pointer_position = pos
+	if debugging:
+		queue_redraw()
 
+func is_opposite_horizontal_direction(a: Vector2, b: Vector2):
+	return a.x * b.x < 0  
+
+# These variables are made members for debug drawing
+var fly_slowdown = 1.0
+var horizontal_slowdown = 1.0
+var distance_slowdown = 1.0
 func _integrate_forces(state):
 	var relative_laser_pos = last_laser_pointer_position - position
 	var laser_dir = relative_laser_pos.normalized()
@@ -78,10 +106,13 @@ func _integrate_forces(state):
 			return
 	
 	if abs(relative_laser_pos.x) > horizontal_deadzone:
-		var _air_slowdown = 1.0 if is_on_ground() else air_slowdown
-		var horizontal_slowdown = 1.0 if is_jump_cooldown_complete() else just_landed_slowdown
+		fly_slowdown = 1.0 if is_on_ground() else air_slowdown
+		horizontal_slowdown = 1.0 if is_jump_cooldown_complete() or is_opposite_horizontal_direction(laser_dir, linear_velocity) else just_landed_slowdown
+		distance_slowdown = clampf(abs(relative_laser_pos.x), 0, horizontal_max_distance) / horizontal_max_distance
+		if debugging:
+			queue_redraw()
 		var force = Vector2.ZERO
-		force.x = laser_dir.x * horizontal_forward_force * horizontal_slowdown * _air_slowdown
+		force.x = laser_dir.x * distance_slowdown * horizontal_forward_force * horizontal_slowdown * fly_slowdown
 		state.apply_central_force(force)
 	elif is_on_ground():
 		linear_velocity *= 0.9
