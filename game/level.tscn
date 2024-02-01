@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://duehi6pdpwp2t" path="res://scenes/camera/camera.tscn" id="15_kintb"]
 [ext_resource type="PackedScene" uid="uid://dkip6t3ofwu07" path="res://scenes/music/music_trigger.tscn" id="16_1ooey"]
 [ext_resource type="PackedScene" uid="uid://6fklhk1bger" path="res://scenes/music/Music.tscn" id="17_p5w55"]
-[ext_resource type="PackedScene" path="res://scenes/checkpoint.tscn" id="18_4gt6j"]
+[ext_resource type="PackedScene" uid="uid://drhm8ls40pfgj" path="res://scenes/checkpoint.tscn" id="18_4gt6j"]
 [ext_resource type="PackedScene" uid="uid://dy65rypajb1j5" path="res://scenes/obstacles/plant5.tscn" id="19_3v87d"]
 [ext_resource type="PackedScene" uid="uid://daljixcxv8ulo" path="res://scenes/obstacles/plant6.tscn" id="20_ero54"]
 [ext_resource type="PackedScene" uid="uid://5eyfr7via258" path="res://scenes/obstacles/vase3.tscn" id="21_e1m6i"]
@@ -43,7 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://wt2jqh4jyqo2" path="res://scenes/obstacles/breakableplant8.tscn" id="40_4a1rq"]
 [ext_resource type="PackedScene" uid="uid://co8y188ycb8fj" path="res://scenes/obstacles/painting2.tscn" id="41_74sxk"]
 [ext_resource type="PackedScene" uid="uid://d4n1hjvo65214" path="res://scenes/obstacles/plant4.tscn" id="43_o2gtc"]
-[ext_resource type="PackedScene" path="res://decorations.tscn" id="43_xlx3x"]
+[ext_resource type="PackedScene" uid="uid://33e24ccy7ly5" path="res://decorations.tscn" id="43_xlx3x"]
 [ext_resource type="PackedScene" uid="uid://ci4kmkjs3y8rf" path="res://scenes/obstacles/trophy2.tscn" id="44_p57pi"]
 [ext_resource type="PackedScene" uid="uid://b3fwtijyy8f0e" path="res://scenes/obstacles/lamp5.tscn" id="45_vnq7n"]
 
